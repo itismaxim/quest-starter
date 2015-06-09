@@ -2,11 +2,27 @@
 <html>
 <head>
   <title>QuestStarter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if signed_in? %>
+  <p>
+    Hello <%= current_user.name.capitalize%>! Would you like to
+    <%= link_to "Log Out", session_url, :method => :delete %>?
+  </p>
+<% else %>
+  <p>
+    Why not <%= link_to "Sign In", new_session_url %> or
+    <%= link_to "Register", new_user_url %>?
+  </p>
+<% end %>
+
+<p>
+<%= render "layouts/errors" %>
+</p>
 
 <%= yield %>
 

@@ -12,16 +12,16 @@
 #
 
 class User < ActiveRecord::Base
-  validates :name, :email, :session_token, uniqueness: true, presence: true
-  validates :password, length: { minimum: 6, allnow_nil: true }
+  validates :name, :session_token, :pass_hash, uniqueness: true, presence: true # :email
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
 
   after_initialize :ensure_session_token
 
-  def self.find_by_credentials(name, password)
-    user = User.find_by_name(name)
-    return nil unless user && user.is_password?(password)
+  def self.find_by_credentials(params)
+    user = User.find_by_name(params[:name])
+    return nil unless user && user.is_password?(params[:password])
     user
   end
 
@@ -30,18 +30,18 @@ class User < ActiveRecord::Base
     self.pass_hash = BCrypt::Password.create(password)
   end
 
-  def is_password?(Password)
-    BCrypt::Password.new(self.pass_hash).is_password?
+  def is_password?(password)
+    BCrypt::Password.new(self.pass_hash).is_password?(password)
   end
 
   def reset_session_token!
-    self.session_token = SeccureRandom.urlsafe_base64
+    self.session_token = SecureRandom.urlsafe_base64
     self.save!
     self.session_token
   end
 
   def ensure_session_token
-    self.session_token ||= SeccureRandom.urlsafe_base64
+    self.session_token ||= SecureRandom.urlsafe_base64
   end
 
 end
