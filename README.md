@@ -68,7 +68,7 @@ Table Of Stuff I Will Have To Do
 | :---------: | :-----: | :-----: | :-----: | :-----: | :-----: | :------: |
 | Rails Models                    | User | Games | Survey | Answers |  |  |
 | Rails Controllers               | User, Session | Games | Surveys | Answers |  |  |
-| Rails Routes and Views          | Root, User[new, create], Session[new, create, destroy] | User[show], Game[new, create, edit, update, destroy, show] | Surveys[new, create] | Answers[new, create, show] | Survey[show] |  |
+| Rails Routes and Views          | Root, User [new, create], Session [new, create, destroy] | User [show], Game [new, create, edit, update, destroy, show] | Surveys [new, create] | Answers [new, create, show] | Survey [show] |  |
 | Backbone Models And Collections |  | User, Games | Survey | Answers |  |  |
 | Backbone Routers                |  | Router |  |  |  |  |
 | Backbone Views (Haven't Figured This Out Yet)                  |  |  |  |  |  |  |
