@@ -63,3 +63,17 @@ See the aggregate results for a survey. Has to be super awesome and easy to read
 YEEEESSSSSS LET'S MAKE IT BEAUTIFUL MWAHAHAHAHAHAHA.
 
 Table Of Stuff I Will Have To Do
+
+| I will use:    | Phase 1         | Phase 2      | Phase 3      | Phase 4      | Phase 5      |  Phase 6      |
+| :---------------------------------: | :-------------: | :----------: | :----------: | :----------: | :----------: | :-----------: |
+| Rails Models                    |  |  |  |  |  |  |
+| Rails Controllers               |  |  |  |  |  |  |
+| Rails Routes                    |  |  |  |  |  |  |
+| Rails Views                     |  |  |  |  |  |  |
+| Backbone Models And Collections |  |  |  |  |  |  |
+| Backbone Routers                |  |  |  |  |  |  |
+| Backbone Views                  |  |  |  |  |  |  |
+| Backbone Templates              |  |  |  |  |  |  |
+| CSS                             |  |  |  |  |  |  |
+| 3rd Party Gems                  |  |  |  |  |  |  |
+
