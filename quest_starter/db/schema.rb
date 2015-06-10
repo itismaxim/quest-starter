@@ -17,19 +17,16 @@ ActiveRecord::Schema.define(version: 20150609181459) do
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
-    t.integer  "user_id",            null: false
-    t.string   "summary",            null: false
-    t.text     "description",        null: false
-    t.string   "image_url",          null: false
-    t.string   "status",             null: false
-    t.integer  "interested_players", null: false
-    t.string   "confirmed_players",  null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "user_id",                            null: false
+    t.string   "summary"
+    t.text     "description"
+    t.string   "image_url"
+    t.boolean  "active",             default: false, null: false
+    t.integer  "interested_players", default: 0,     null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
-  add_index "games", ["status"], name: "index_games_on_status", using: :btree
-  add_index "games", ["summary"], name: "index_games_on_summary", using: :btree
   add_index "games", ["user_id"], name: "index_games_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|

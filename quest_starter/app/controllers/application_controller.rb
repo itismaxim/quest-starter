@@ -30,5 +30,4 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_url unless signed_in?
   end
 
-# Sign In, Log Out, Register
 end

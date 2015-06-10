@@ -1,0 +1,22 @@
+Okay, game plan time.
+
+Make Users Model
+Make Games Model
+
+Link the two up with a has_many in BACKBONE: figure out how to do that.
+DISPLAY THIS
+
+
+
+
+
+
+
+
+
+
+
+
+Super far later features: User show page for player side:
+Has all the games you are in.
+You click them? That's a good minimum.

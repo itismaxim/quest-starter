@@ -4,7 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  name          :string           not null
-#  email         :string           not null
+#  email         :string
 #  session_token :string           not null
 #  pass_hash     :string           not null
 #  created_at    :datetime         not null
@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
+
+  has_many :games
+  # has_many :surveys, through: :surveys
+  # I think I won't need this at all. When do you call ALL the surveys?
+  # You always sort them by board don't you?
 
   after_initialize :ensure_session_token
 
