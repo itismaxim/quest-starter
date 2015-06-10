@@ -64,16 +64,15 @@ YEEEESSSSSS LET'S MAKE IT BEAUTIFUL MWAHAHAHAHAHAHA.
 
 Table Of Stuff I Will Have To Do
 
-| I will use:    | Phase 1         | Phase 2      | Phase 3      | Phase 4      | Phase 5      |  Phase 6      |
-| :---------------------------------: | :-------------: | :----------: | :----------: | :----------: | :----------: | :-----------: |
-| Rails Models                    |  |  |  |  |  |  |
-| Rails Controllers               |  |  |  |  |  |  |
-| Rails Routes                    |  |  |  |  |  |  |
-| Rails Views                     |  |  |  |  |  |  |
-| Backbone Models And Collections |  |  |  |  |  |  |
-| Backbone Routers                |  |  |  |  |  |  |
-| Backbone Views                  |  |  |  |  |  |  |
-| Backbone Templates              |  |  |  |  |  |  |
-| CSS                             |  |  |  |  |  |  |
+| I will use: | Phase 1 | Phase 2 | Phase 3 | Phase 4 | Phase 5 |  Phase 6 |
+| :---------: | :-----: | :-----: | :-----: | :-----: | :-----: | :------: |
+| Rails Models                    | User | Games | Survey | Answers |  |  |
+| Rails Controllers               | User, Session | Games | Surveys | Answers |  |  |
+| Rails Routes and Views          | Root, User[new, create], Session[new, create, destroy] | User[show], Game[new, create, edit, update, destroy, show] | Surveys[new, create] | Answers[new, create, show] | Survey[show] |  |
+| Backbone Models And Collections |  | User, Games | Survey | Answers |  |  |
+| Backbone Routers                |  | Router |  |  |  |  |
+| Backbone Views (Haven't Figured This Out Yet)                  |  |  |  |  |  |  |
+| Backbone Templates (Ditto)              |  |  |  |  |  |  |
+| CSS                             |  |  |  |  |  | ALL OF IT |
 | 3rd Party Gems                  |  |  |  |  |  |  |
 
