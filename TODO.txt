@@ -6,17 +6,10 @@ Make Games Model
 Link the two up with a has_many in BACKBONE: figure out how to do that.
 DISPLAY THIS
 
+Do this for both users and for gms?
+A my games screen?
+This is users show.
 
-
-
-
-
-
-
-
-
-
-
-Super far later features: User show page for player side:
+User show page for player side:
 Has all the games you are in.
 You click them? That's a good minimum.

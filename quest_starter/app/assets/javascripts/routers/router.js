@@ -1,4 +1,8 @@
 QuestStarter.Routers.Router = Backbone.Router.extend({
+  initialize: function() {
+    this.$rootEl = $('#main');
+  },
+
   // initialize: function() {
   //   var dropDownView = new TrelloClone.Views.DropDownView({
   //     collection: TrelloClone.Collections.games
@@ -18,11 +22,9 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
   },
 
   splash: function () {
-    var view = QuestStarter.Views.splash();
-
+    var view = new QuestStarter.Views.Splash();
     this._swapView(view);
   },
-
 
   // gamesIndex: function () {
   //   TrelloClone.Collections.games.fetch();
@@ -47,6 +49,11 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
   _swapView: function (view) {
     this.currentView && this.currentView.remove();
     this.currentView = view;
-    this.$rootEl.html(view.render().$el);
+    var elem = view.render().$el;
+    console.log(elem);
+    this.$rootEl.html(elem);
+
+
+    // this.$rootEl.html(view.render().$el);
   }
 });
