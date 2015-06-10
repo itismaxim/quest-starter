@@ -34,3 +34,32 @@ Note: PC stands for Player Character. Here, PCs are guests: they may, but do not
 - [ ] GMs and Users can Comment on Games.
 - [ ] Users can search GM and Games.
 - [ ] Sign up through Google.
+
+## Design Docs
+* [View Site Map][views]
+* [DB schema][schema]
+
+[views]: ./docs/views.md
+[schema]: ./docs/schema.md
+
+## Implementation Timeline
+
+### Phase 1: Auth, Rewrite Readme  (~1 day)
+Start up rails, make users, make auth, and re-figure out how this project is going to work and what my goals are. Third time's the charm, eh? At least my wireframes are mostly intact.
+
+### Phase 2: Making Games, Viewing Games (~2 days)
+Solidify the games model, write the views, be able to create and update games. Transition everything to backbone: hope she runs nice now.
+
+### Phase 3: Surveys (~3 days)
+This is either going to be suprisingly easy or an utter nightmare. In short: make the survey builder form. Each survey can have three(+?) types of input: schedule, fill-in-the-blank, and multiple-choice. Each survey needs a name slot. If a user is signed in, the survey is associeated with her, but you can also be anonymous.
+
+### Phase 4: Survey Fill In and View (~1 days)
+A user can visit the site, click on a game, and fill out the survey. Then the gm can view the survey, from a list of all the filled out surveys. The INTERESTED PLAYERS number on the game should go up for every unique visitor who fills out a survey.
+
+### Phase 5: Survey Results Fancy Display (~2 days)
+See the aggregate results for a survey. Has to be super awesome and easy to read.
+
+### Phase 6: CSS (everything else)
+YEEEESSSSSS LET'S MAKE IT BEAUTIFUL MWAHAHAHAHAHAHA.
+
+Table Of Stuff I Will Have To Do
