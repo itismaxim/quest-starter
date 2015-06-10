@@ -49,11 +49,6 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
   _swapView: function (view) {
     this.currentView && this.currentView.remove();
     this.currentView = view;
-    var elem = view.render().$el;
-    console.log(elem);
-    this.$rootEl.html(elem);
-
-
-    // this.$rootEl.html(view.render().$el);
+    this.$rootEl.html(view.render().$el);
   }
 });
