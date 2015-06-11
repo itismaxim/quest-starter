@@ -20,4 +20,4 @@ QuestStarter.Collections.Games = Backbone.Collection.extend({
   }
 });
 
-QuestStarter.Collections.games = new QuestStarter.Collections.Games
+QuestStarter.Collections.games = new QuestStarter.Collections.Games();

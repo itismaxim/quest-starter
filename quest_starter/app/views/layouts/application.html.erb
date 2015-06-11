@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<% if current_user %>
+  <script>
+    QuestStarter.currentUser = {
+      showName: "<%= current_user.name.capitalize %>",
+      name: "<%= current_user.name %>",
+      id: <%= current_user.id %>
+    }
+  </script>
+<% end %>
+
 <% if signed_in? %>
   <p>
     Hello <%= current_user.name.capitalize%>! Would you like to

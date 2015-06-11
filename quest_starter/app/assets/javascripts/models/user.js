@@ -1,30 +1,30 @@
 QuestStarter.Models.User = Backbone.Model.extend({
   urlRoot: 'api/users',
 
-  authored_games: function () {
-    if (!this._authored_games) {
-      this._authored_games = new QuestStarter.Collections.games([], { user: this });
+  authoredGames: function () {
+    if (!this._authoredGames) {
+      this._authoredGames = new QuestStarter.Collections.Games();
     }
 
-    return this._games;
+    return this._authoredGames;
   },
 
-  followed_games: function () {
-    if (!this._followed_games) {
-      this._followed_games = new QuestStarter.Collections.games([], { user: this });
+  followedGames: function () {
+    if (!this._followedGames) {
+      this._followedGames = new QuestStarter.Collections.Games();
     }
 
-    return this._games;
+    return this._followedGames;
   },
 
   parse: function (response) {
     if (response.authored_games) {
-      this.authored_games().set(response.authored_games, { parse: true });
+      this.authoredGames().set(response.authored_games, { parse: true });
       delete response.authored_games;
     }
 
     if (response.followed_games) {
-      this.followed_games().set(response.followed_games, { parse: true });
+      this.followedGames().set(response.followed_games, { parse: true });
       delete response.followed_games;
     }
 

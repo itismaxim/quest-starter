@@ -21,4 +21,4 @@ QuestStarter.Collections.Users = Backbone.Collection.extend({
   }
 });
 
-QuestStarter.Collections.users = new QuestStarter.Collections.Users
+QuestStarter.Collections.users = new QuestStarter.Collections.Users();

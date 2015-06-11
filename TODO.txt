@@ -1,17 +1,1 @@
-Okay, game plan time.
-
-Make Users Model
-Make Games Model
-
-Link the two up with a has_many in BACKBONE: figure out how to do that.
-DISPLAY THIS
-
-Do this for both users and for gms?
-A my games screen?
-This is users show.
-
-User show page for player side:
-Has all the games you are in.
-You click them? That's a good minimum.
-
-Wait: So, you are telling me, that I need TWO user controllers?
+Just Game Show! WOOOOOH ON SCHEDULE BITCHES.
