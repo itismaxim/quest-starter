@@ -13,3 +13,5 @@ This is users show.
 User show page for player side:
 Has all the games you are in.
 You click them? That's a good minimum.
+
+Wait: So, you are telling me, that I need TWO user controllers?

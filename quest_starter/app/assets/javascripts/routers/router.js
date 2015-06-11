@@ -4,8 +4,8 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
   },
 
   // initialize: function() {
-  //   var dropDownView = new TrelloClone.Views.DropDownView({
-  //     collection: TrelloClone.Collections.games
+  //   var dropDownView = new QuestStarter.Views.DropDownView({
+  //     collection: QuestStarter.Collections.games
   //   });
   //   $('#add-dropdown').append(dropDownView.render().$el);
   //   this.$rootEl = $('#main');
@@ -13,10 +13,10 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'splash',
-    // 'users/:id': 'userShow',
-    // 'games/:id': 'gameShow',
-    // 'games/:id/edit': 'gameEdit',
-    // 'games/new': 'gamesNew',
+    'api/users/:id': 'usersShow',
+    // 'api/games/:id': 'gamesShow',
+    // 'api/games/:id/edit': 'gamesEdit',
+    // 'api/games/new': 'gamesNew',
     // // '': 'splash',
     // // '': 'splash',
   },
@@ -26,20 +26,26 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  usersShow: function (id) {
+    var user = QuestStarter.Collections.games.getOrFetch(id);
+    console.log(user);
+    debugger;
+  },
+
   // gamesIndex: function () {
-  //   TrelloClone.Collections.games.fetch();
+  //   QuestStarter.Collections.games.fetch();
   //
-  //   var view = new TrelloClone.Views.gamesIndex({
-  //     collection: TrelloClone.Collections.games
+  //   var view = new QuestStarter.Views.gamesIndex({
+  //     collection: QuestStarter.Collections.games
   //   });
   //
   //   this._swapView(view);
   // },
   //
   // gameShow: function (id) {
-  //   var game = TrelloClone.Collections.games.getOrFetch(id);
+  //   var game = QuestStarter.Collections.games.getOrFetch(id);
   //
-  //   var view = new TrelloClone.Views.gameShow({
+  //   var view = new QuestStarter.Views.gameShow({
   //     model: game
   //   });
   //

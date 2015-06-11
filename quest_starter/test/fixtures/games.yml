@@ -2,15 +2,16 @@
 #
 # Table name: games
 #
-#  id                 :integer          not null, primary key
-#  user_id            :integer          not null
-#  summary            :string
-#  description        :text
-#  image_url          :string
-#  status             :string           not null
-#  interested_players :integer          not null
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
+#  id                :integer          not null, primary key
+#  author_id         :integer          not null
+#  title             :string           not null
+#  summary           :string
+#  description       :text
+#  image_url         :string
+#  active            :boolean          default(FALSE), not null
+#  following_players :integer          default(0), not null
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
