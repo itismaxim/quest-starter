@@ -17,7 +17,9 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  has_many :games, class_name: 'Game', foreign_key: :author_id
+  has_many :authored_games, class_name: 'Game', foreign_key: :author_id
+  has_many :follows
+  has_many :followed_games, through: :follows, source: :game
   # has_many :surveys, through: :surveys
   # I think I won't need this at all. When do you call ALL the surveys?
   # You always sort them by board don't you?

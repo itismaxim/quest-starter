@@ -19,6 +19,8 @@ class Game < ActiveRecord::Base
   # I'll let the database handle it? No reason to set them every time.
   # Maybe a custom setter meathod?
   belongs_to :author, class_name: 'User', foreign_key: :author_id
+  has_many :follows
+  has_many :followers, through: :follows, source: :user
 
 
 end
