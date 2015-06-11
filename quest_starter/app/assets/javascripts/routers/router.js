@@ -28,8 +28,12 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
 
   usersShow: function (id) {
     var user = QuestStarter.Collections.games.getOrFetch(id);
-    console.log(user);
-    debugger;
+
+    var view = new QuestStarter.Views.UserShow({
+      model: user
+    });
+
+    this._swapView(view);
   },
 
   // gamesIndex: function () {

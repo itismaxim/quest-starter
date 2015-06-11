@@ -2,7 +2,14 @@ module Api
   class UsersController < ApiController
     def show
       @user = User.find(params[:id])
-      render :show
+
+      if @user.id == current_user.id
+        # I don't think that the current user HAS an id.
+        # I should add that.
+        render :show
+      else
+        render :show_less
+      end
     end
 
     # def index
