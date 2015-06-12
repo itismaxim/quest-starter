@@ -1,12 +1,8 @@
 Just Game Show!
 WOOOOOH ON SCHEDULE BITCHES.
 
-User Show Renders AUTHORED GAMES TWICE
-
-Game Show View Doesn't render
-Why?
-Router comes online, but the method does not fire.
-What.
+Game Show doesn't render a link to
+activate the game if it belongs to you
 
 Read All Of CompositeView
 
@@ -15,16 +11,14 @@ Game Show View has the following Views
 V GameShow: Template
   El: Title
   El: MiniNav Bar: Template
-    V Home
-      V Image: Template
-        El: Image
-      V Sidebox: Template
+    V Home: Template
+      El: Image
+      El: Side Bar
         El: Active Display (Button If Your Game)
         El: Summary
         El: Followers
         El: Follow Button!
-      V Description
-        El: Description
+      El: Description
     V Updates: Template
       V Update (one for each): Template
     V Comments
@@ -33,3 +27,10 @@ V GameShow: Template
       ??? (This is next week)
 
 Do Nav Bar
+
+
+<% if() { %>
+
+<% } else { %>
+
+<% } %>

@@ -1,3 +1,9 @@
 Welcome to Quest Starter!
 <br>
-Go to <a href=<%= "#users/" + QuestStarter.currentUser.id %>>your games</a> or <a href="#">search</a> for one!
+
+<% if(QuestStarter.currentUser) { %>
+  Go to <a href=<%= "#users/" + QuestStarter.currentUser.id %>>your games</a>
+  or <a href="#">search</a> for one!
+<% } else { %>
+  <a href="#">Search</a> for a game!
+<% } %>

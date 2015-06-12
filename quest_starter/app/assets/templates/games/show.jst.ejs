@@ -1,19 +1,51 @@
 <h4><%= game.escape('title') %></h4>
 
-<img src="<%= game.get('image_url') %>", width="200px", height="100px"/>
+<div class="game-show-image">
+  <img src="<%= game.get('image_url') %>", width="200px", height="100px"/>
+</div>
 
-<p>
-  <%= game.escape('summary') %>
-</p>
+<div class="game-show-side-bar">
+<% debugger; %>
+<% if(QuestStarter.currentUser && QuestStarter.currentUser.id == game.escape('author_id')) { %>
+  <!-- not super happy about having to use == here -->
+  <!-- maybe save currentUser.id as a string? Do that in app html -->
 
-<p>
-  <%= game.escape('description') %>
-<p>
+  <a href="#" class="game-show-active-button active">
+    <% if(game.escape('active') === true) { %>
+      Deactivate This Game
+    <% } else { %>
+      Activate This Game
+    <% } %>
+  </a>
 
-<p>
-  <%= game.escape('following_players') %>
-</p>
+<% } else { %>
 
-<p>
-  <%= game.escape('active') %>
-</p>
+  <p class="game-show-active-button">
+    <% if(game.escape('active') === true) { %>
+      Active
+    <% } else { %>
+      Inactive
+    <% } %>
+  </p>
+
+<% } %>
+
+  <p>
+    <%= game.escape('summary') %>
+  </p>
+
+  <p>
+    <%= game.escape('following_players') %>
+  </p>
+<!-- like the first if, this should display Follow/Unfollow depending -->
+<!-- on whether the current user is following this game -->
+  <a href="#" class="game-show-follow-button follow">
+    Follow This Game
+  </a>
+</div>
+
+<div class="game-show-description">
+  <p>
+    <%= game.escape('description') %>
+  <p>
+</div>
