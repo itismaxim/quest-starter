@@ -4,10 +4,9 @@
   </h4>
 
   <p>
-    by <%= game.get('author_name') %>
+    by <a href="<%= '#/users/' + game.get('author_id') %>"><%= game.get('author_name') %></a>
   </p>
 </div>
-
 
 <div class="game-show-image">
   <img src="<%= game.escape('image_url') %>", width="200px", height="100px"/>
@@ -15,29 +14,29 @@
 
 <div class="game-show-side-bar">
   <% if(game.get('authored') === 'true') { %>
-    <a href="#" class="game-show-active-button active">
+    <div class="game-show-active-button active">
       <% if(game.get('active') === 'true') { %>
         Deactivate This Game
       <% } else { %>
         Activate This Game
       <% } %>
-    </a>
+    </div>
   <% } else { %>
-    <p class="game-show-active-button">
+    <div class="game-show-active-button">
       <% if(game.get('active') === 'true') { %>
         Active
       <% } else { %>
         Inactive
       <% } %>
-    </p>
+    </div>
   <% } %>
 
-  <p>
+  <div class="game-show-summary">
     <%= game.escape('summary') %>
-  </p>
+  </div>
 
-  <p>
-    <% var followNum = game.get('following_players') %>
+  <div class="game-show-followers">
+    <% var followNum = game.get('followers') %>
     <% if (followNum === '0'){ %>
       0 Followers :c
     <% } else if (followNum === '1') { %>
@@ -45,22 +44,34 @@
     <% } else { %>
       <%= followNum %> Followers
     <% } %>
-  </p>
+  </div>
 
   <% if(game.get('authored') === 'true') { %>
-    This Is Your Game
+    <div class="game-show-following follow-your-game">
+      This Is Your Game
+    </div>
   <% } else if(game.get('following') === 'false') { %>
-    Follow
+    <div class="game-show-following unfollow">
+      Follow
+    </div>
   <% } else if(game.get('following') === 'true') { %>
-    Unfollow
+    <div class="game-show-following unfollow">
+      Unfollow
+    </div>
   <% } else { %>
-    Log In To Follow Games
+    <div class="game-show-following follow-login">
+      Log In To Follow Games
+    </div>
   <% } %>
-
 </div>
 
-<div class="game-show-description">
-  <p>
-    <%= game.escape('description') %>
-  <p>
-</div>
+<ul class="game-show-nav">
+  <li>Description</li>
+  <li>Updates</li>
+  <li>Comments</li>
+  <li>Surveys</li>
+</ul>
+
+<hr>
+
+<div id="game-show-view"></div>

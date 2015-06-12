@@ -2,7 +2,11 @@
   <%= game.escape('title') %>
 </a></h4>
 
-<img src="<%= game.get('image_url') %>", width="200px", height="100px"/>
+<p>
+  by <%= game.get('author_name') %>
+</p>
+
+<img src="<%= game.escape('image_url') %>", width="200px", height="100px"/>
 
 <p>
   <%= game.escape('summary') %>

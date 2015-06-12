@@ -40,7 +40,7 @@ module Api
     end
 
     def game_params
-      params.require(:game).permit(:author_id, :summary, :description, :image_url, :status, :interested_players)
+      params.require(:game).permit(:title, :summary, :description, :image_url)
     end
   end
 end

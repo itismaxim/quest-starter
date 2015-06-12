@@ -20,6 +20,8 @@ V GameShow: Template
     V Surveys
       ??? (This is next week)
 
+Game New Will Need Help for Cloud picture thing
+
 Do Nav Bar
 
 Read All Of CompositeView

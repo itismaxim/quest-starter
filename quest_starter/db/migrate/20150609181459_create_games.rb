@@ -8,7 +8,6 @@ class CreateGames < ActiveRecord::Migration
       t.text :description
       t.string :image_url
       t.boolean :active, null: false, default: :false #, index: true
-      t.integer :following_players, null: false, default: 0
 
       t.timestamps null: false
     end
