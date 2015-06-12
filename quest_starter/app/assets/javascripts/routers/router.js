@@ -13,8 +13,8 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'splash',
-    'users/:id': 'usersShow',
-    'games/:id': 'gamesShow',
+    'users/:id': 'userShow',
+    'games/:id': 'gameShow',
     // 'api/games/:id/edit': 'gamesEdit',
     // 'api/games/new': 'gamesNew',
     // // '': 'splash',
@@ -26,7 +26,7 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  usersShow: function (id) {
+  userShow: function (id) {
     var user = QuestStarter.Collections.users.getOrFetch(id);
     var view = new QuestStarter.Views.UserShow({
       model: user
@@ -36,9 +36,8 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
   },
 
   gameShow: function (id) {
-    debugger;
     var game = QuestStarter.Collections.games.getOrFetch(id);
-    var view = new QuestStarter.Views.gameShow({
+    var view = new QuestStarter.Views.GameShow({
       model: game
     });
 
