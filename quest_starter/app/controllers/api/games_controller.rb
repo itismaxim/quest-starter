@@ -1,7 +1,7 @@
 module Api
   class GamesController < ApiController
     def show
-      @game = game.find(params[:id])
+      @game = Game.find(params[:id])
       render json: @game
       # render :show
       # that goes to views/api/games/show.json.jbuilder
@@ -26,7 +26,7 @@ module Api
 
     def edit
       require_signed_in!
-      @game = game.find(params[:id])
+      @game = Game.find(params[:id])
 
       if @game && @game.update(game_params)
         render json: @game

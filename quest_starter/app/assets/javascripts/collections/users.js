@@ -1,4 +1,3 @@
-
 QuestStarter.Collections.Users = Backbone.Collection.extend({
   model: QuestStarter.Models.User,
   url: 'api/users',

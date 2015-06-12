@@ -1,1 +1,35 @@
-Just Game Show! WOOOOOH ON SCHEDULE BITCHES.
+Just Game Show!
+WOOOOOH ON SCHEDULE BITCHES.
+
+User Show Renders AUTHORED GAMES TWICE
+
+Game Show View Doesn't render
+Why?
+Router comes online, but the method does not fire.
+What.
+
+Read All Of CompositeView
+
+Game Show View has the following Views
+
+V GameShow: Template
+  El: Title
+  El: MiniNav Bar: Template
+    V Home
+      V Image: Template
+        El: Image
+      V Sidebox: Template
+        El: Active Display (Button If Your Game)
+        El: Summary
+        El: Followers
+        El: Follow Button!
+      V Description
+        El: Description
+    V Updates: Template
+      V Update (one for each): Template
+    V Comments
+      V Comment (one for each): Template
+    V Surveys
+      ??? (This is next week)
+
+Do Nav Bar
