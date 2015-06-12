@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150610221826) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "author_id",                         null: false
+    t.string   "author_name",                       null: false
     t.string   "title",                             null: false
     t.string   "summary"
     t.text     "description"

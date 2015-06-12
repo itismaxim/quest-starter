@@ -3,6 +3,7 @@ User.create(name: "daniel", email: "itisdannyg@gmail.com", password: "password")
 
 Game.create(
   author_id: 1,
+  author_name: 'maxim',
   title: "Vampire Game",
   summary: "Stuck in Dracula's Castle!",
   description: "So it's Castlevania! You're all stuck in Drac's Shack and trying to get out. Big ol' mega dungeon, lot's of demon slaying, and prolly more then a few mysteries. It's gonna be a heap of fun!",
@@ -12,6 +13,7 @@ Game.create(
 )
 Game.create(
   author_id: 1,
+  author_name: 'maxim',
   title: "Jedi Game",
   summary: "You're all Jedis. Lightsabers and hunting down the Sith!",
   description: "Honsetly I don't know yet. But lightsabers! And aliens. And shapeships!",
@@ -20,6 +22,7 @@ Game.create(
 )
 Game.create(
   author_id: 2,
+  author_name: 'daniel',
   title: "Dragons On Black Mountain",
   summary: "It's like monster hunter, but for dragons.",
   description: "Maxim don't ruin this for me. You are not invited. As for everyone else, bring your impractical weapons and skimpy armor, because there are giant lizards to slay and fley.",

@@ -1,10 +1,4 @@
-Just Game Show!
-WOOOOOH ON SCHEDULE BITCHES.
-
-Game Show doesn't render a link to
-activate the game if it belongs to you
-
-Read All Of CompositeView
+Make The Buttons Work
 
 Game Show View has the following Views
 
@@ -28,6 +22,14 @@ V GameShow: Template
 
 Do Nav Bar
 
+Read All Of CompositeView
+
+This Problem Has Been Currently Solved
+    SHould I Make The Current User Fetched When You Log IN?
+    INstead of having the name and the ID, get the ID, then fetch it
+    So:
+    QuestStarter.currentUser
+    QuestStarter.currentUserID
 
 <% if() { %>
 

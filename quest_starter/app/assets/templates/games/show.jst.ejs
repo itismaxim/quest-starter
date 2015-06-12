@@ -1,47 +1,62 @@
-<h4><%= game.escape('title') %></h4>
+<div class="game-show-header">
+  <h4>
+    <%= game.escape('title') %>
+  </h4>
+
+  <p>
+    by <%= game.get('author_name') %>
+  </p>
+</div>
+
 
 <div class="game-show-image">
-  <img src="<%= game.get('image_url') %>", width="200px", height="100px"/>
+  <img src="<%= game.escape('image_url') %>", width="200px", height="100px"/>
 </div>
 
 <div class="game-show-side-bar">
-<% debugger; %>
-<% if(QuestStarter.currentUser && QuestStarter.currentUser.id == game.escape('author_id')) { %>
-  <!-- not super happy about having to use == here -->
-  <!-- maybe save currentUser.id as a string? Do that in app html -->
-
-  <a href="#" class="game-show-active-button active">
-    <% if(game.escape('active') === true) { %>
-      Deactivate This Game
-    <% } else { %>
-      Activate This Game
-    <% } %>
-  </a>
-
-<% } else { %>
-
-  <p class="game-show-active-button">
-    <% if(game.escape('active') === true) { %>
-      Active
-    <% } else { %>
-      Inactive
-    <% } %>
-  </p>
-
-<% } %>
+  <% if(game.get('authored') === 'true') { %>
+    <a href="#" class="game-show-active-button active">
+      <% if(game.get('active') === 'true') { %>
+        Deactivate This Game
+      <% } else { %>
+        Activate This Game
+      <% } %>
+    </a>
+  <% } else { %>
+    <p class="game-show-active-button">
+      <% if(game.get('active') === 'true') { %>
+        Active
+      <% } else { %>
+        Inactive
+      <% } %>
+    </p>
+  <% } %>
 
   <p>
     <%= game.escape('summary') %>
   </p>
 
   <p>
-    <%= game.escape('following_players') %>
+    <% var followNum = game.get('following_players') %>
+    <% if (followNum === '0'){ %>
+      0 Followers :c
+    <% } else if (followNum === '1') { %>
+      1 Follower
+    <% } else { %>
+      <%= followNum %> Followers
+    <% } %>
   </p>
-<!-- like the first if, this should display Follow/Unfollow depending -->
-<!-- on whether the current user is following this game -->
-  <a href="#" class="game-show-follow-button follow">
-    Follow This Game
-  </a>
+
+  <% if(game.get('authored') === 'true') { %>
+    This Is Your Game
+  <% } else if(game.get('following') === 'false') { %>
+    Follow
+  <% } else if(game.get('following') === 'true') { %>
+    Unfollow
+  <% } else { %>
+    Log In To Follow Games
+  <% } %>
+
 </div>
 
 <div class="game-show-description">

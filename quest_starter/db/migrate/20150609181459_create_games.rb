@@ -2,6 +2,7 @@ class CreateGames < ActiveRecord::Migration
   def change
     create_table :games do |t|
       t.integer :author_id, null: false, index: true
+      t.string :author_name, null: false
       t.string :title, null: false, index: true
       t.string :summary
       t.text :description

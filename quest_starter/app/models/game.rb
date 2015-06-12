@@ -4,6 +4,7 @@
 #
 #  id                :integer          not null, primary key
 #  author_id         :integer          not null
+#  author_name       :string           not null
 #  title             :string           not null
 #  summary           :string
 #  description       :text
@@ -15,7 +16,7 @@
 #
 
 class Game < ActiveRecord::Base
-  validates :author_id, :title, presence: true # :status, :interested_players,
+  validates :author_id, :author_name, :title, presence: true # :status, :interested_players,
   # I'll let the database handle it? No reason to set them every time.
   # Maybe a custom setter meathod?
   belongs_to :author, class_name: 'User', foreign_key: :author_id

@@ -1,4 +1,6 @@
-<h4><%= game.escape('title') %></h4>
+<h4><a href="<%='#games/' + game.id %>">
+  <%= game.escape('title') %>
+</a></h4>
 
 <img src="<%= game.get('image_url') %>", width="200px", height="100px"/>
 

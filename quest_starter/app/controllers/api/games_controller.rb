@@ -2,10 +2,7 @@ module Api
   class GamesController < ApiController
     def show
       @game = Game.find(params[:id])
-      render json: @game
-      # render :show
-      # that goes to views/api/games/show.json.jbuilder
-      # I don't think I need any of those nested resources, though.
+      render :show
     end
 
     def index

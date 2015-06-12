@@ -4,6 +4,7 @@
 #
 #  id                :integer          not null, primary key
 #  author_id         :integer          not null
+#  author_name       :string           not null
 #  title             :string           not null
 #  summary           :string
 #  description       :text
