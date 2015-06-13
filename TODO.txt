@@ -28,15 +28,13 @@ Make The User and Session AALLLL Backbone.
 
 Read All Of CompositeView
 
+TA QUESTION: User Show Refresh.
+If you follow a game, it refreshes.
+If you UNFOLLOW a game, it doesn't. What?
+
 This Problem Has Been Currently Solved
     SHould I Make The Current User Fetched When You Log IN?
     INstead of having the name and the ID, get the ID, then fetch it
     So:
     QuestStarter.currentUser
     QuestStarter.currentUserID
-
-<% if() { %>
-
-<% } else { %>
-
-<% } %>
