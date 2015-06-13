@@ -1,5 +1,3 @@
-Make The Buttons Work
-
 Game Show View has the following Views
 
 V GameShow: Template
@@ -23,6 +21,10 @@ V GameShow: Template
 Game New Will Need Help for Cloud picture thing
 
 Do Nav Bar
+
+Make A 404 Page. Well, two.
+
+Make The User and Session AALLLL Backbone.
 
 Read All Of CompositeView
 

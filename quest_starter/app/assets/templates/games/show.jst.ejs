@@ -12,57 +12,8 @@
   <img src="<%= game.escape('image_url') %>", width="200px", height="100px"/>
 </div>
 
-<div class="game-show-side-bar">
-  <% if(game.get('authored') === 'true') { %>
-    <div class="game-show-active-button active">
-      <% if(game.get('active') === 'true') { %>
-        Deactivate This Game
-      <% } else { %>
-        Activate This Game
-      <% } %>
-    </div>
-  <% } else { %>
-    <div class="game-show-active-button">
-      <% if(game.get('active') === 'true') { %>
-        Active
-      <% } else { %>
-        Inactive
-      <% } %>
-    </div>
-  <% } %>
+<div class="game-show-sidebar">
 
-  <div class="game-show-summary">
-    <%= game.escape('summary') %>
-  </div>
-
-  <div class="game-show-followers">
-    <% var followNum = game.get('followers') %>
-    <% if (followNum === '0'){ %>
-      0 Followers :c
-    <% } else if (followNum === '1') { %>
-      1 Follower
-    <% } else { %>
-      <%= followNum %> Followers
-    <% } %>
-  </div>
-
-  <% if(game.get('authored') === 'true') { %>
-    <div class="game-show-following follow-your-game">
-      This Is Your Game
-    </div>
-  <% } else if(game.get('following') === 'false') { %>
-    <div class="game-show-following unfollow">
-      Follow
-    </div>
-  <% } else if(game.get('following') === 'true') { %>
-    <div class="game-show-following unfollow">
-      Unfollow
-    </div>
-  <% } else { %>
-    <div class="game-show-following follow-login">
-      Log In To Follow Games
-    </div>
-  <% } %>
 </div>
 
 <ul class="game-show-nav">

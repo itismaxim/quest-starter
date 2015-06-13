@@ -10,7 +10,7 @@ module Api
       render json: @games
     end
 
-    def new
+    def create
       require_signed_in!
       @game = current_user.games.new(game_params)
 
@@ -21,7 +21,7 @@ module Api
       end
     end
 
-    def edit
+    def update
       require_signed_in!
       @game = Game.find(params[:id])
 
@@ -40,7 +40,7 @@ module Api
     end
 
     def game_params
-      params.require(:game).permit(:title, :summary, :description, :image_url)
+      params.require(:game).permit(:title, :summary, :description, :image_url, :active)
     end
   end
 end
