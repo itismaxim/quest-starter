@@ -22,19 +22,40 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     // 'click ': '',
     // 'click ': '',
     // 'click ': '',
-    'click .follow': 'followGame',
-    'click .unfollow': 'unfollowGame',
+    'click .followGame': 'followGame',
+    'click .unfollowGame': 'unfollowGame',
     'click .activate': 'activateGame',
     'click .deactivate': 'deactivateGame',
     // 'sortstop': 'saveOrds'
   },
 
   followGame: function () {
-    // var newFollow = new QuestStarter.Models.Follow
+    var newFollow = new QuestStarter.Models.Follow({
+      user_id: QuestStarter.currentUser.id,
+      game_id: this.model.id
+    });
+
+    var currrentFollowers = this.model.get('followers')
+
+    newFollow.save({}, {
+      success: function () {
+        this.model.set({follow_id: newFollow.id, followers: currrentFollowers + 1});
+        this.render();
+      }.bind(this)
+    });
   },
 
   unfollowGame: function () {
+    var killThis = new QuestStarter.Models.Follow({id: this.model.get('follow_id')})
 
+    var currrentFollowers = this.model.get('followers')
+
+    killThis.destroy({
+      success: function () {
+        this.model.set({follow_id: null, followers: currrentFollowers - 1});
+        this.render();
+      }.bind(this)
+    });
   },
 
   activateGame: function () {
@@ -51,7 +72,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     var active = this.model.get('active');
     var authored = this.model.get('authored');
     var followers = this.model.get('followers');
-    var following = this.model.get('following');
+    var follow_id = this.model.get('follow_id');
 
     var $summary = $('<div>', { class: '.summary game-show-sidebar-el' });
     $summary.text(this.model.escape('summary'));
@@ -85,14 +106,14 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     }
     $sidebar.append($followers);
 
-    if (authored === false) {
+    if (!authored) {
       var $following = $('<div>', { class: '.following game-show-sidebar-el' });
-      if (following === null) {
+      if (!QuestStarter.currentUser) {
         $following.text('Log In To Follow');
-      } else if (following === true) {
-        $following.text('Follow').addClass('followGame');
-      } else {
+      } else if (follow_id) {
         $following.text('Unfollow').addClass('unfollowGame');
+      } else {
+        $following.text('Follow').addClass('followGame');
       }
       $sidebar.append($following);
     }

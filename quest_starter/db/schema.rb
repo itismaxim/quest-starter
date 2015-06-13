@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150612195214) do
   end
 
   add_index "follows", ["game_id"], name: "index_follows_on_game_id", using: :btree
+  add_index "follows", ["user_id", "game_id"], name: "index_follows_on_user_id_and_game_id", unique: true, using: :btree
   add_index "follows", ["user_id"], name: "index_follows_on_user_id", using: :btree
 
   create_table "games", force: :cascade do |t|

@@ -22,8 +22,4 @@ QuestStarter.Views.UserShow = Backbone.CompositeView.extend({
   }
 
   // className: 'boards-index',
-
-  // events: {
-  //   'sortstop': 'saveOrds'
-  // },
 });

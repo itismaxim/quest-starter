@@ -10,7 +10,7 @@ module Api
       render json: @comments
     end
 
-    def new
+    def create
       require_signed_in!
       @comment = current_user.comments.new(comment_params)
 
@@ -21,7 +21,7 @@ module Api
       end
     end
 
-    def edit
+    def update
       require_signed_in!
       @comment = Comment.find(params[:id])
 

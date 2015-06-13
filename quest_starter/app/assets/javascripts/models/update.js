@@ -1,3 +1,3 @@
 QuestStarter.Models.Update = Backbone.Model.extend({
-  urlRoot: 'api/update',
+  urlRoot: 'api/updates',
 });

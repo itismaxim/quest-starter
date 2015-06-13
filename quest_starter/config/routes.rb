@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :games
     resources :updates
     resources :users
+    resources :follows
   end
 end

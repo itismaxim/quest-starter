@@ -10,7 +10,7 @@ module Api
       render json: @updates
     end
 
-    def new
+    def create
       require_signed_in!
       @update = current_user.updates.new(update_params)
 
@@ -21,7 +21,7 @@ module Api
       end
     end
 
-    def edit
+    def update
       require_signed_in!
       @update = Update.find(params[:id])
 
