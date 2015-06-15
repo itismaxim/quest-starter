@@ -18,12 +18,12 @@ QuestStarter.Models.Game = Backbone.Model.extend({
   },
 
   parse: function (response) {
-    if (response.authored_games) {
+    if (response.updates) {
       this.updates().set(response.updates, { parse: true });
       delete response.updates;
     }
 
-    if (response.followed_games) {
+    if (response.comments) {
       this.comments().set(response.comments, { parse: true });
       delete response.comments;
     }

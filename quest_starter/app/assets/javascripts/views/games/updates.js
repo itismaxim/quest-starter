@@ -17,8 +17,6 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    // debugger
-    // This collection is ALWAYS EMPTY
     var view = this.template();
     this.$el.html(view);
     this.attachSubviews();

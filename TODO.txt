@@ -1,13 +1,3 @@
-So I initialize the updates and the comments with
-EMPTY collections. And I never RE-INITIALIZE THEM.
-The obvious answer is to make them on the fly instead of
-in initialize. This feels wasteful.
-
-THAT DOESN'T MAKE ANY SENSE. AUTHORED HAS THE SAME EXACT PROBLEMS.
-It inits once, it renders once, and yet it FUCKING WORKS.
-
-AGGGGHHHHH
-
 Game New Will Need Help for Cloud picture thing
 
 Make Game New and Edit Like Twitter
