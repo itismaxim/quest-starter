@@ -3,30 +3,28 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    // this.description = new QuestStarter.Views.Description({
-    //   model: this.model
-    // });
-    // this.updates = new QuestStarter.Views.Updates({
-    //   model: this.model
-    // });
+    this.description = new QuestStarter.Views.Description({
+      model: this.model
+    });
+    this.updates = new QuestStarter.Views.Updates({
+      collection: this.model.updates()
+    });
     // this.comments = new QuestStarter.Views.Comments({
-    //   model: this.model
+    //   collection: this.model.comments()
     // });
-    // this.surveys = new QuestStarter.Views.Surveys({
-    //   model: this.model
-    // });
+    this.surveys = new QuestStarter.Views.Surveys({
+      model: this.model
+      // CHange this to be collection: this.model.surveys
+    });
+    this.currentView = this.updates;
   },
 
   events: {
-    // 'click ': '',
-    // 'click ': '',
-    // 'click ': '',
-    // 'click ': '',
-    'click .followGame': 'followGame',
-    'click .unfollowGame': 'unfollowGame',
+    'click .nav-option': 'switchView',
+    'click .follow': 'followGame',
+    'click .unfollow': 'unfollowGame',
     'click .activate': 'activateGame',
     'click .deactivate': 'deactivateGame',
-    // 'sortstop': 'saveOrds'
   },
 
   followGame: function () {
@@ -67,16 +65,20 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
   },
 
   buildSideBar: function () {
-    var $sidebar = $('.game-show-sidebar');
+    this.addSummary();
+    this.addActive();
+    this.addFollowers();
+  },
 
-    var active = this.model.get('active');
-    var authored = this.model.get('authored');
-    var followers = this.model.get('followers');
-    var follow_id = this.model.get('follow_id');
-
+  addSummary: function () {
     var $summary = $('<div>', { class: '.summary game-show-sidebar-el' });
     $summary.text(this.model.escape('summary'));
-    $sidebar.append($summary);
+    this.$sidebar.append($summary);
+  },
+
+  addActive: function () {
+    var active = this.model.get('active');
+    var authored = this.model.get('authored');
 
     var $active = $('<div>', { class: '.active game-show-sidebar-el' });
     if (active === true) {
@@ -84,7 +86,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     } else {
       $active.text('Inactive');
     }
-    $sidebar.append($active);
+    this.$sidebar.append($active);
 
     if (authored === true) {
       var $activeButton = $('<div>', { class: '.active-button game-show-sidebar-el' });
@@ -93,8 +95,14 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
       } else {
         $activeButton.text('Activate This Game').addClass('activate');
       }
-      $sidebar.append($activeButton);
+      this.$sidebar.append($activeButton);
     }
+  },
+
+  addFollowers: function () {
+    var authored = this.model.get('authored');
+    var followers = this.model.get('followers');
+    var follow_id = this.model.get('follow_id');
 
     var $followers = $('<div>', { class: '.followers game-show-sidebar-el' });
     if (followers === 0) {
@@ -104,18 +112,18 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     } else {
       $followers.text(followers +' Followers');
     }
-    $sidebar.append($followers);
+    this.$sidebar.append($followers);
 
     if (!authored) {
       var $following = $('<div>', { class: '.following game-show-sidebar-el' });
       if (!QuestStarter.currentUser) {
         $following.text('Log In To Follow');
       } else if (follow_id) {
-        $following.text('Unfollow').addClass('unfollowGame');
+        $following.text('Unfollow').addClass('unfollow');
       } else {
-        $following.text('Follow').addClass('followGame');
+        $following.text('Follow').addClass('follow');
       }
-      $sidebar.append($following);
+      this.$sidebar.append($following);
     }
   },
 
@@ -123,20 +131,32 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     var view = this.template({
       game: this.model
     });
-    this.renderCurrentView();
     this.$el.html(view);
+    this.$sidebar = $('.game-show-sidebar');
     this.buildSideBar();
+    this.renderCurrentView();
     return this;
   },
 
   renderCurrentView: function () {
-
+    $('.game-show-tab').html(this.currentView.render().$el);
+    // $('.game-show-tab').html('QUACK');
   },
 
-  swapView: function (view) {
-    // this.currentView ||= descritpion actually. How I do that?
+  switchView: function (event) {
     this.currentView && this.currentView.remove();
-    this.currentView = view;
+    var newTabName = event.currentTarget.getAttribute('name');
+    if (newTabName === 'description') {
+      this.currentView = this.description;
+    } else if (newTabName === 'updates') {
+      this.currentView = this.updates;
+    } else if (newTabName === 'comments') {
+      this.currentView = this.comments;
+    } else if (newTabName === 'surveys') {
+      this.currentView = this.surveys;
+    } else {
+      return;
+    }
     this.renderCurrentView();
   }
 });

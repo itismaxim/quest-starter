@@ -1,24 +1,20 @@
-Game Show View has the following Views
+So I initialize the updates and the comments with
+EMPTY collections. And I never RE-INITIALIZE THEM.
+The obvious answer is to make them on the fly instead of
+in initialize. This feels wasteful.
 
-V GameShow: Template
-  El: Title
-  El: MiniNav Bar: Template
-    V Home: Template
-      El: Image
-      El: Side Bar
-        El: Active Display (Button If Your Game)
-        El: Summary
-        El: Followers
-        El: Follow Button!
-      El: Description
-    V Updates: Template
-      V Update (one for each): Template
-    V Comments
-      V Comment (one for each): Template
-    V Surveys
-      ??? (This is next week)
+THAT DOESN'T MAKE ANY SENSE. AUTHORED HAS THE SAME EXACT PROBLEMS.
+It inits once, it renders once, and yet it FUCKING WORKS.
+
+AGGGGHHHHH
 
 Game New Will Need Help for Cloud picture thing
+
+Make Game New and Edit Like Twitter
+
+Game New, Edit, Delete
+Update New, Edit, Delete
+Comment New, Delete
 
 Do Nav Bar
 
@@ -27,10 +23,6 @@ Make A 404 Page. Well, two.
 Make The User and Session AALLLL Backbone.
 
 Read All Of CompositeView
-
-TA QUESTION: User Show Refresh.
-If you follow a game, it refreshes.
-If you UNFOLLOW a game, it doesn't. What?
 
 This Problem Has Been Currently Solved
     SHould I Make The Current User Fetched When You Log IN?

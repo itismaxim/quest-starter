@@ -1,4 +1,4 @@
-QuestStarter.Views.Survey = Backbone.CompositeView.extend({
+QuestStarter.Views.Surveys = Backbone.CompositeView.extend({
   template: JST['games/surveys'],
 
   render: function () {

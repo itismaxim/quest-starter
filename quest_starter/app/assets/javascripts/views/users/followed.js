@@ -2,7 +2,7 @@ QuestStarter.Views.Followed = Backbone.CompositeView.extend({
   template: JST['users/followed'],
 
   initialize: function () {
-    // this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addGame);
     this.collection.each(function(game) {
       this.addGame(game);
