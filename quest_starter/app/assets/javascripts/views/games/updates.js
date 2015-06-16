@@ -8,6 +8,7 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addUpdate);
+    this.listenTo(this.collection, 'destroy', this.removeComment);
     this.collection.each(function(update) {
       this.addUpdate(update);
     }, this);
@@ -22,6 +23,7 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
 
   addNewUpdate: function (event) {
     event.preventDefault();
+    // If you make it a div you press, you won't need this.
     var title = $('#update-title').val();
     var text = $('#update-text').val();
 
@@ -31,6 +33,10 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
       user_id: this.model.get('user_id'),
       game_id: this.model.id
     });
+  },
+
+  removeComment: function(model) {
+    this.removeModelSubview('#game-show-updates', model);
   },
 
   render: function () {

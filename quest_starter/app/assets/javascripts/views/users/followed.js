@@ -1,6 +1,10 @@
 QuestStarter.Views.Followed = Backbone.CompositeView.extend({
   template: JST['users/followed'],
 
+  tagName: 'section',
+
+  className: 'followed-games',
+
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addGame);
@@ -13,7 +17,7 @@ QuestStarter.Views.Followed = Backbone.CompositeView.extend({
     var view = new QuestStarter.Views.GameMiniShow({
       model: game
     });
-    this.addSubview('#followed-games', view);
+    this.addSubview('#all-followed-games', view);
   },
 
   render: function () {

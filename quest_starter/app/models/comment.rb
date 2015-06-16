@@ -16,4 +16,6 @@ class Comment < ActiveRecord::Base
 
   # belongs_to :user
   belongs_to :game
+
+  # anon comments should be user id 0, belonging to LORD NULL
 end

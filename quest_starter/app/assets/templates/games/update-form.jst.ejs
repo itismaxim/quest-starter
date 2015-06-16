@@ -1,0 +1,11 @@
+<form>
+  <label>Title
+    <input type="text" value="<%= update.escape('title') %>" class="update-title">
+  </label>
+
+  <br>
+  <textarea rows="4" cols="40" class="update-text"><%= update.escape('text') %></textarea>
+
+  <br>
+  <div class="edit-update">✗ Edit This Update ✗</div>
+</form>

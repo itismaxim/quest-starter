@@ -1,10 +1,8 @@
-<div class="game-show-update">
   <h5><%= update.escape('title') %></h5>
   <br>
-  <p><%= update.escape('text') %></p>
+  <pre><%= update.escape('text') %></pre>
   <br>
   <% if(QuestStarter.currentUser && QuestStarter.currentUser.id == update.get('user_id')) {%>
     <div class="edit-update">✗ Edit This Update ✗</div>
     <div class="delete-update">✗ Delete This Update ✗</div>
   <% } %>
-</div>

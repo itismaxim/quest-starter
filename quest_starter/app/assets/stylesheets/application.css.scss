@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+
+//  body { background-color: #f0f0f0; }
+//
+// #authored-games {
+//   list-style-type: none;
+//   .user-mini-show {
+//     float: left;
+//     margin: 5px;
+//     padding: 15px;
+//     border: 1px solid #acf;
+//     background-color: white;
+//     width: 200px;
+//     min-height: 300px;
+//   }
+// }
+
+.backdrop {}
+
+#main {}
+
+.user-show {}
+//article
+
+.authored-games {}
+//section
+#all-authored-games {}
+
+.followed-games {}
+//section
+#all-followed-games {}
+
+.user-mini-show {}
+//figure
+
+
+
+
+
+
+// .group:after {
+//   content: "";
+//   clear: both;
+//   display: block;
+// }

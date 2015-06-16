@@ -1,13 +1,23 @@
-<h4><a href="<%='#games/' + game.id %>">
-  <%= game.escape('title') %>
-</a></h4>
+<a href="<%='#games/' + game.id %>">
+  <h3>
+    <%= game.escape('title') %>
+  </h3>
 
-<p>
-  by <%= game.get('author_name') %>
-</p>
+  <div>
+    by <%= game.get('author_name') %>
+  </div>
 
-<img src="<%= game.escape('image_url') %>", width="200px", height="150px"/>
+  <img src="<%= game.escape('image_url') %>", width="200px", height="150px"/>
 
-<p>
-  <%= game.escape('summary') %>
-</p>
+  <div>
+    <%= game.escape('summary') %>
+  </div>
+
+  <div>
+    <% if (game.get('active')) { %>
+      Running
+    <% } else { %>
+      Dormant
+    <% } %>
+  </div>
+</a>

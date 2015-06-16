@@ -1,33 +1,47 @@
 QuestStarter.Views.Update = Backbone.View.extend({
   template: JST['games/update'],
+  editTemplate: JST['games/update-form'],
+
+  tagName: 'li',
+
+  className: 'game-show-update',
 
   events: {
-    'click .edit-update': 'changeIntoEditForm',
+    'click .edit-update': 'toggleEditForm',
     'click .delete-update': 'deleteUpdate'
   },
 
   initialize: function (options) {
     this.listenTo(this.model, 'sync', this.render);
+    this.editing = false;
   },
 
-  changeIntoEditForm: function () {
-    // do that as a once
-    // 'click .submit-edit': 'editUpdate',
-    // do that as a once
-    // 'click .edit-update': 'closeEditForm',
-    // You could make them the same thing!
-  },
+  toggleEditForm: function () {
+    if (this.editing) {
+      this.editing = false;
 
-  editUpdate: function () {
-
+      var title = $('.update-title').val();
+      var text = $('.update-text').val();
+      this.model.save({
+        title: title,
+        text: text,
+      });
+    } else {
+      this.editing = true;
+      this.render();
+    }
   },
 
   deleteUpdate: function () {
-    this.model.destroy({data: {update: {game_id: this.model.get('game_id')}}, processData: true});
+    this.model.destroy({
+      data: {
+        update: {game_id: this.model.get('game_id')}
+      }, processData: true});
   },
 
   render: function () {
-    var view = this.template({
+    var template = this.editing ? this.editTemplate : this.template;
+    var view = template({
       update: this.model
     });
     console.log(view);

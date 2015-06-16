@@ -24,9 +24,9 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
 
   events: {
     'click .nav-option': 'switchView',
-    'click .follow': 'followGame',
-    'click .unfollow': 'unfollowGame',
-    'click .activate': 'activateGame',
+    'click .follow':     'followGame',
+    'click .unfollow':   'unfollowGame',
+    'click .activate':   'activateGame',
     'click .deactivate': 'deactivateGame',
   },
 
@@ -85,9 +85,9 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
 
     var $active = $('<div>', { class: '.active game-show-sidebar-el' });
     if (active === true) {
-      $active.text('Active');
+      $active.text('Running');
     } else {
-      $active.text('Inactive');
+      $active.text('Dormant');
     }
     this.$sidebar.append($active);
 

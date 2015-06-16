@@ -1,9 +1,12 @@
-Game New Will Need Help for Cloud picture thing
-
-Make Game New and Edit Like Twitter
+Go through all your views.
+Use tagName and className to remove empty divs.
+Rename all divs to short, sensible things.
+Begin styling.
 
 Game New, Edit, Delete
-Update New, Edit, Delete
+
+Make Game New and Edit Like Twitter
+Game New Will Need Help for Cloud picture thing
 
 Do Nav Bar
 
