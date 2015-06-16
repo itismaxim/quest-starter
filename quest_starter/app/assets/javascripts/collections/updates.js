@@ -1,5 +1,5 @@
 QuestStarter.Collections.Updates = Backbone.Collection.extend({
-  model: QuestStarter.Models.Game,
+  model: QuestStarter.Models.Update,
   url: 'api/updates',
 
   getOrFetch: function (id) {

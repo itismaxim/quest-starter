@@ -1,6 +1,6 @@
 QuestStarter.Collections.Comments = Backbone.Collection.extend({
-  model: QuestStarter.Models.Game,
-  url: 'api/updates',
+  model: QuestStarter.Models.Comment,
+  url: 'api/comments',
 
   getOrFetch: function (id) {
     var comment = this.get(id);

@@ -1,18 +1,13 @@
 module Api
   class CommentsController < ApiController
-    def show
-      @comment = Comment.find(params[:id])
-      render json: @comment
-    end
-
-    def index
-      @comments = current_user.comments
-      render json: @comments
-    end
+    # before_action :require_signed_in!, only: [:index]
 
     def create
-      require_signed_in!
-      @comment = current_user.comments.new(comment_params)
+      if current_user
+        @comment = current_user.comments.new(comment_params)
+      else
+        @comment = Comment.new(comment_params)
+      end
 
       if @comment.save
         render json: @comment
@@ -22,7 +17,6 @@ module Api
     end
 
     def update
-      require_signed_in!
       @comment = Comment.find(params[:id])
 
       if @comment && @comment.update(comment_params)
@@ -33,14 +27,13 @@ module Api
     end
 
     def destroy
-      require_signed_in!
-      @comment = current_user.comments.find(params[:id])
+      @comment = Comment.find(params[:id])
       @comment.destroy
       render json: {}
     end
 
     def comment_params
-      params.require(:comment).permit(:poster_name, :text)
+      params.require(:comment).permit(:poster_name, :text, :game_id)
     end
   end
 end

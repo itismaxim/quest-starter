@@ -1,17 +1,9 @@
 module Api
   class UpdatesController < ApiController
-    def show
-      @update = Update.find(params[:id])
-      render json: @update
-    end
-
-    def index
-      @updates = current_user.updates
-      render json: @updates
-    end
+    before_action :require_signed_in!
+    before_action :user_authored_game
 
     def create
-      require_signed_in!
       @update = current_user.updates.new(update_params)
 
       if @update.save
@@ -22,7 +14,6 @@ module Api
     end
 
     def update
-      require_signed_in!
       @update = Update.find(params[:id])
 
       if @update && @update.update(update_params)
@@ -33,14 +24,20 @@ module Api
     end
 
     def destroy
-      require_signed_in!
       @update = current_user.updates.find(params[:id])
       @update.destroy
       render json: {}
     end
 
     def update_params
-      params.require(:update).permit(:title, :text)
+      params.require(:update).permit(:game_id, :title, :text)
+    end
+
+    def user_authored_game
+      game = Game.find(update_params[:game_id])
+      unless current_user.authored_games.includes(game)
+        render json: ["This game doesn't belong to you."], status: :unauthorized
+      end
     end
   end
 end

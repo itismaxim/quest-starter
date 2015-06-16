@@ -4,19 +4,34 @@ Make Game New and Edit Like Twitter
 
 Game New, Edit, Delete
 Update New, Edit, Delete
-Comment New, Delete
 
 Do Nav Bar
 
 Make A 404 Page. Well, two.
 
-Make The User and Session AALLLL Backbone.
+// Make The User and Session AALLLL Backbone.
 
-Read All Of CompositeView
+// Read All Of CompositeView
 
-This Problem Has Been Currently Solved
-    SHould I Make The Current User Fetched When You Log IN?
-    INstead of having the name and the ID, get the ID, then fetch it
+// This Problem Has Been Currently Solved
+    Should I Make The Current User Fetched When You Log IN?
+    Instead of having the name and the ID, get the ID, then fetch it
     So:
     QuestStarter.currentUser
     QuestStarter.currentUserID
+
+From Line 15 in api/comments_controller
+    # this expects a current_user to exist.
+    # when an anon posts, it does not
+    # I don't want to put user_id into the comment_params
+    # maybe I can save it without it?
+    # I can. For Anons. But for actual users, I need to input the user ID.
+    # Darn it.
+    # Easy Solution: Welp, no anon posters.
+    # Good Solution: ???
+    # Insane Solution: If no one is logged in
+    # make the current user NULL who has user_id NULL
+    # ALL ANON COMMENTS BELONG TO LORD NULL
+    # ALL HAIL LORD NULL
+
+  Lord Null is best user.

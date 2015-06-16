@@ -1,7 +1,7 @@
 QuestStarter.Views.Update = Backbone.View.extend({
   template: JST['games/update'],
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -9,6 +9,7 @@ QuestStarter.Views.Update = Backbone.View.extend({
     var view = this.template({
       update: this.model
     });
+    console.log(view);
     this.$el.html(view);
     return this;
   }

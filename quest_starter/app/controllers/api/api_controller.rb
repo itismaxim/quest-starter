@@ -1,15 +1,15 @@
 module Api
 
   class ApiController < ApplicationController
-    # before_action :require_signed_in!
-
-    # def require_board_member!
-    #   redirect_to new_session_url unless current_board.is_member?(current_user)
-    # end
-    #
     def require_signed_in!
       unless signed_in?
         render json: ["You must be signed in to perform that action!"], status: :unauthorized
+        # when you rewrtie this
+        # listen to the ... fetch?
+        # and have an error callback?
+        # and in there pop up an alert or something.
+        # YOU GOTTA BE SIGNED IN
+        # because ajax and redirects are funny
       end
     end
   end

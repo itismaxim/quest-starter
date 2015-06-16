@@ -14,7 +14,6 @@ QuestStarter.Views.Authored = Backbone.CompositeView.extend({
       model: game
     });
     this.addSubview('#authored-games', view);
-    debugger;
   },
 
   render: function () {

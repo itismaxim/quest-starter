@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150612195214) do
   add_index "games", ["title"], name: "index_games_on_title", using: :btree
 
   create_table "updates", force: :cascade do |t|
+    t.integer  "user_id",    null: false
     t.integer  "game_id",    null: false
     t.string   "title",      null: false
     t.text     "text",       null: false
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150612195214) do
   end
 
   add_index "updates", ["game_id"], name: "index_updates_on_game_id", using: :btree
+  add_index "updates", ["user_id"], name: "index_updates_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",          null: false

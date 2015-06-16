@@ -1,3 +1,16 @@
 <div class="game-show-comment">
-<%= comment.escape('poster_name') %> says: <%= comment.escape('text') %>
+  <div class="comment-author">
+    <%= comment.escape('poster_name') %>
+  </div>
+
+  <pre class="comment-body">
+    <%= comment.escape('text') %>
+  </pre>
+
+  <% if (QuestStarter.currentUser &&
+     (  (QuestStarter.currentUser.id === comment.get('user_id'))
+     || (QuestStarter.currentUser.id == gameId)
+     )) { %>
+    <div class="delete-comment">✗ Delete This Comment ✗</div>
+  <% } %>
 </div>

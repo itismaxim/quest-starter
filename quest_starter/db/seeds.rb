@@ -36,5 +36,5 @@ Comment.create(game_id: 1, user_id: 1, poster_name: 'maxim', text: 'Bra, shut yo
 Comment.create(game_id: 1, poster_name: 'Alex', text: "For a couple of Bra's, you guy aren't very supportive ;)")
 Comment.create(game_id: 1, user_id: 1, poster_name: 'maxim', text: 'I hate you so much. Also, wanna join the Vampire Game?')
 
-Update.create(game_id: 1, title: 'WOOH FIRST UPDATE', text: "Well look at me, borderline competent, capable of making games and updates.")
-Update.create(game_id: 1, title: 'Shitty Second Update', text: "Not really though. Only in the fantasy dimension this update was written in.")
+Update.create(user_id: 1, game_id: 1, title: 'WOOH FIRST UPDATE', text: "Well look at me, borderline competent, capable of making games and updates.")
+Update.create(user_id: 1, game_id: 1, title: 'Shitty Second Update', text: "Not really though. Only in the fantasy dimension this update was written in.")

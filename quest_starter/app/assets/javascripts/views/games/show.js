@@ -7,16 +7,19 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
       model: this.model
     });
     this.updates = new QuestStarter.Views.Updates({
-      collection: this.model.updates()
+      collection: this.model.updates(),
+      model: this.model
     });
     this.comments = new QuestStarter.Views.Comments({
-      collection: this.model.comments()
+      collection: this.model.comments(),
+      gameId: this.model.id
     });
     this.surveys = new QuestStarter.Views.Surveys({
       model: this.model
       // CHange this to be collection: this.model.surveys
     });
-    this.currentView = this.description;
+    // this.currentView = this.description;
+    this.currentView = this.updates;
   },
 
   events: {
