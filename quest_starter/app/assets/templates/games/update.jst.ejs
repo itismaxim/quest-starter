@@ -4,6 +4,7 @@
   <p><%= update.escape('text') %></p>
   <br>
   <% if(QuestStarter.currentUser && QuestStarter.currentUser.id == update.get('user_id')) {%>
+    <div class="edit-update">✗ Edit This Update ✗</div>
     <div class="delete-update">✗ Delete This Update ✗</div>
   <% } %>
 </div>

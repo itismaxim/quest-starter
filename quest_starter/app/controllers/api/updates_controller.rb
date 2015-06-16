@@ -34,7 +34,7 @@ module Api
     end
 
     def user_authored_game
-      game = Game.find(update_params[:game_id])
+      game = Game.find(params[:update][:game_id])
       unless current_user.authored_games.includes(game)
         render json: ["This game doesn't belong to you."], status: :unauthorized
       end
