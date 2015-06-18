@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
-//= require backbone
 //= require quest_starter
+//= require backbone
+//= require underscore
 //= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models
