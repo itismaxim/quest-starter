@@ -14,6 +14,7 @@ module Api
 
     def create
       @game = current_user.authored_games.new(game_params)
+      @game.author_name = current_user.name
 
       if @game.save
         render json: @game

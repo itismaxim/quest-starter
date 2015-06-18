@@ -51,6 +51,15 @@ nav input {
   color: $dark_tan;
   // Not Sure About These Colors
   border-radius: 17px;
+
+  // after you put back the clear fix, remove these
+  font-size: 24px;
+  border: 0;
+  outline: 0;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
 }
 
 .dropdown > a:hover {

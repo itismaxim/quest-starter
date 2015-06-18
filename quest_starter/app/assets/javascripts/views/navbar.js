@@ -6,7 +6,8 @@ QuestStarter.Views.Nav = Backbone.View.extend({
   className: 'group',
 
   events : {
-    'click .log-out': 'logOut'
+    'click .log-out': 'logOut',
+    'submit input' : 'fuckoff'
   },
 
   logOut: function (event) {
@@ -18,6 +19,10 @@ QuestStarter.Views.Nav = Backbone.View.extend({
         location.href = '/session/new';
       }
     });
+  },
+
+  fuckoff: function () {
+    Backbone.history.navigate('#fuckoff')
   },
 
   render: function () {
