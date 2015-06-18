@@ -1,0 +1,70 @@
+$tan: #FFFBD8;
+$dark_tan: #5D5C4F;
+$dark_grey: #4E4E4E;
+$light_purple: #D51079;
+$dark_purple: #5D3148;
+$darker_purple: #432434;
+$dark_cyan: #016B79;
+$light_cyan: #48D7E8;
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: $dark_purple;
+  color: $tan;
+  font-size: 24px;
+  z-index: 2;
+  height: 61px;
+  // font: something nice
+  // and not on the rest of my site?
+  padding: 0px 50px;
+  box-sizing: border-box;
+}
+
+nav a {
+  float: left;
+  padding: 15px;
+  cursor: pointer;
+}
+
+nav a:hover {
+  background-color: $darker_purple;
+}
+
+nav li > a {
+  display: none;
+  background-color: $dark_purple;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar-right {
+ float: right;
+}
+
+nav input {
+  // still thinking make this smaller
+  padding: 5px 15px;
+  margin: 10px;
+  float: left;
+  background-color: white;
+  color: $dark_tan;
+  // Not Sure About These Colors
+  border-radius: 17px;
+}
+
+.dropdown > a:hover {
+  background-color: $dark_purple;
+}
+
+nav .dropdown {
+  float: left;
+}
+
+.dropdown:hover a {
+  display: block;
+}
+
+nav ul:hover a {
+  display: block;
+}

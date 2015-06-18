@@ -1,9 +1,11 @@
-Welcome to Quest Starter!
-<br>
+<h1>
+  Welcome to Quest Starter!
+</h1>
 
-<% if(QuestStarter.currentUser) { %>
-  Go to <a href=<%= "#users/" + QuestStarter.currentUser.id %>>your games</a>
-  or <a href="#">search</a> for one!
-<% } else { %>
-  <a href="#">Search</a> for a game!
-<% } %>
+<div class="all-buttons">
+  <% if(QuestStarter.currentUser) { %>
+    <a class="big-button" href="#games/new">Make A Game</a><a class="big-button" href="#">Find A Game</a>
+  <% } else { %>
+    <a class="big-button" href="#search">Find Out How It Works!</a>
+  <% } %>
+</div>

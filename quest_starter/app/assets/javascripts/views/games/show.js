@@ -18,8 +18,8 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
       model: this.model
       // CHange this to be collection: this.model.surveys
     });
-    // this.currentView = this.description;
-    this.currentView = this.updates;
+    this.currentView = this.description;
+    // this.currentView = this.comments;
   },
 
   events: {

@@ -1,12 +1,9 @@
 QuestStarter.Views.Splash = Backbone.View.extend({
   template: JST['splash'],
 
-  // className: 'boards-index',
+  tagName: 'article',
 
-  // initialize: function () {
-  //   this.listenTo(this.collection, 'sync', this.render);
-  //   $('body').css('background-color', 'rgb(255, 255, 255)')
-  // },
+  className: 'splash',
 
   render: function () {
     this.$el.html(this.template);

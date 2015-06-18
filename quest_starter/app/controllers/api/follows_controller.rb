@@ -1,6 +1,6 @@
 module Api
   class FollowsController < ApiController
-    # before_action :require_signed_in!, only: [:index]
+    before_action :require_signed_in!
 
     def create
       @follow = current_user.follows.new(follow_params)

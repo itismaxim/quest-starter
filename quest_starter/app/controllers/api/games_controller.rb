@@ -1,5 +1,7 @@
 module Api
   class GamesController < ApiController
+    before_action :require_signed_in!, only: [:create, :update, :destroy]
+
     def show
       @game = Game.find(params[:id])
       render :show
@@ -11,8 +13,7 @@ module Api
     end
 
     def create
-      require_signed_in!
-      @game = current_user.games.new(game_params)
+      @game = current_user.authored_games.new(game_params)
 
       if @game.save
         render json: @game
@@ -22,8 +23,7 @@ module Api
     end
 
     def update
-      require_signed_in!
-      @game = Game.find(params[:id])
+      @game = current_user.authored_games.find(params[:id])
 
       if @game && @game.update(game_params)
         render json: @game
@@ -33,8 +33,7 @@ module Api
     end
 
     def destroy
-      require_signed_in!
-      @game = current_user.games.find(params[:id])
+      @game = current_user.authored_games.find(params[:id])
       @game.destroy
       render json: {}
     end

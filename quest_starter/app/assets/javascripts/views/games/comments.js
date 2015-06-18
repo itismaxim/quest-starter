@@ -28,13 +28,16 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
     var name;
     if (QuestStarter.currentUser) {
       name = QuestStarter.currentUser.name;
+      id = QuestStarter.currentUser.id;
     } else {
       name = $('#anon-name').val();
+      id = 0;
     }
     var body = $('#comment-body').val();
 
     this.collection.create({
       poster_name: name,
+      user_id: id,
       game_id: this.gameId,
       text: body
     });

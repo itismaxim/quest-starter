@@ -1,6 +1,6 @@
 module Api
   class CommentsController < ApiController
-    # before_action :require_signed_in!, only: [:index]
+    before_action :require_signed_in!, only: [:update, :destroy]
 
     def create
       if current_user
@@ -17,7 +17,7 @@ module Api
     end
 
     def update
-      @comment = Comment.find(params[:id])
+      @comment = current_user.comments.find(params[:id])
 
       if @comment && @comment.update(comment_params)
         render json: @comment
@@ -27,7 +27,7 @@ module Api
     end
 
     def destroy
-      @comment = Comment.find(params[:id])
+      @comment = current_user.comments.find(params[:id])
       @comment.destroy
       render json: {}
     end

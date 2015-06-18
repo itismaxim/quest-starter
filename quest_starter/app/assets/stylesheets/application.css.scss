@@ -1,59 +1,9 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
+ *= require reset
+ *= require navbar
+ *= require splash
+ *= require user_show
+ *= require game_show
+ ** require_tree .
  *= require_self
  */
-
-//  body { background-color: #f0f0f0; }
-//
-// #authored-games {
-//   list-style-type: none;
-//   .user-mini-show {
-//     float: left;
-//     margin: 5px;
-//     padding: 15px;
-//     border: 1px solid #acf;
-//     background-color: white;
-//     width: 200px;
-//     min-height: 300px;
-//   }
-// }
-
-.backdrop {}
-
-#main {}
-
-.user-show {}
-//article
-
-.authored-games {}
-//section
-#all-authored-games {}
-
-.followed-games {}
-//section
-#all-followed-games {}
-
-.user-mini-show {}
-//figure
-
-
-
-
-
-
-// .group:after {
-//   content: "";
-//   clear: both;
-//   display: block;
-// }

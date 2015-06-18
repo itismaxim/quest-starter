@@ -14,7 +14,7 @@
 class Comment < ActiveRecord::Base
   validates :game_id, :poster_name, :text, presence: true
 
-  # belongs_to :user
+  belongs_to :user
   belongs_to :game
 
   # anon comments should be user id 0, belonging to LORD NULL
