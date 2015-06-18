@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-google'
+gem 'backbone-on-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -33,5 +34,4 @@ group :development, :test do
   # gem 'pry-byebug'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'backbone-on-rails'
 end
