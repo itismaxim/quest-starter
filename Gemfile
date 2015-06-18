@@ -15,6 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-google'
 gem 'backbone-on-rails'
+gem 'newrelic_rpm'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
