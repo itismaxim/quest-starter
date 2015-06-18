@@ -1,0 +1,1 @@
+I"ïfunction(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<h2>',  user.escape('name') ,'\'s Games</h2>\n\n<div id="authored-games"></div>\n\n<div id="followed-games"></div>\n');}return __p.join('');}:ET

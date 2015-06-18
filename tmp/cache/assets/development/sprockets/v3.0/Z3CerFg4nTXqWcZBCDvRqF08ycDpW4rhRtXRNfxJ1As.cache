@@ -1,0 +1,4 @@
+I"�function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div class="game-show-comment">\n  <div class="comment-author">\n    ',  comment.escape('poster_name') ,'\n  </div>\n\n  <pre class="comment-body">\n    ',  comment.escape('text') ,'\n  </pre>\n\n  ');  if (QuestStarter.currentUser &&
+     (  (QuestStarter.currentUser.id === comment.get('user_id'))
+     || (QuestStarter.currentUser.id == gameId)
+     )) { ; __p.push('\n    <div class="delete-comment">✗ Delete This Comment ✗</div>\n  ');  } ; __p.push('\n</div>\n\n\n <!-- IF YOU CAN CHANGE THE ID YOU CAN... DELETE OTHER\'S PEOPLE COMMENTS? -->\n\n \n');}return __p.join('');}:ET

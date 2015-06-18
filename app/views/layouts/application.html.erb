@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuestStarter</title>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if current_user %>
+  <script>
+    QuestStarter.currentUser = {
+      showName: "<%= current_user.name.capitalize %>",
+      name: "<%= current_user.name %>",
+      id: <%= current_user.id %>
+    }
+  </script>
+<% end %>
+
+<p>
+<%= render "layouts/errors" %>
+</p>
+
+<%= yield %>
+
+</body>
+</html>

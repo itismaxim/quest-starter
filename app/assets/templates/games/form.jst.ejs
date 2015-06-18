@@ -1,0 +1,43 @@
+<label>
+Title
+<p>
+What's Your Game Called?
+</p>
+<input type="text" value="<% game.get('title') %>" id="title">
+</label>
+
+<hr>
+
+<label>
+Summary
+<p>
+Something short and pithy, sure to interest a player!
+</p>
+<input type="text" value="<% game.get('summary') %>" id="summary">
+</label>
+
+<hr>
+
+
+<label>
+Image Url
+<p>
+A 3:4 Aspect Ratio will provide the best results.
+</p>
+<input type="text" value="<% game.get('image_url') %>" id="imageUrl">
+</label>
+
+<hr>
+
+
+<label>
+Description
+<p>
+Give me all the details! When, what, where, everything your players need to know.
+</p>
+<textarea rows="8" cols="40" id="description"><% game.get('description') %></textarea>
+</label>
+
+<hr>
+
+<div class="submit big-button">Submit</div>
