@@ -17,7 +17,8 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     'games/new': 'gameForm',
     'games/:id/edit': 'gameForm',
     'games/:id': 'gameShow',
-    'fuckoff' : 'fuckoff'
+    'fuckoff' : 'fuckoff',
+    'search' : 'search'
   },
 
   splash: function () {
@@ -54,6 +55,14 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
       model: game
     });
 
+    this._swapView(view);
+  },
+
+  search: function () {
+    var view = new QuestStarter.Views.Search({
+      users: QuestStarter.Collections.users,
+      games: QuestStarter.Collections.games
+    });
     this._swapView(view);
   },
 
