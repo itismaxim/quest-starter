@@ -4,7 +4,6 @@
 #
 #  id            :integer          not null, primary key
 #  name          :string           not null
-#  email         :string
 #  session_token :string           not null
 #  pass_hash     :string           not null
 #  created_at    :datetime         not null

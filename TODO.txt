@@ -7,16 +7,14 @@ Game Add Use Cloudinary
 //Maaaaaybe I should take the router init in ROOT and transfer it
 //to the app general template? Get my nav bar on the log in page!
 
-!!!Make Search Work.!!!
+!!!Make Search Work!!!
 
-Display Errors
-<div class="display-errors"></div>
-    Hint: Most Functions take error callbacks.
-      Shunt the regular functionality to a success callback instead.
-    Super Hint: It should basically be
-      the same bloody call back for all of them.
-    GIGA HINT: If it doesn't, you can write one,
-      and make all the views inherit from that.
+//OPtional: Make A Second Error CallBack Method That Just SPits Out
+// Derpy Hooves and I JUST DON'T KNOW WHAT WENT WRONG
+
+// Default Input text should be light grey and when you click it vanishes.
+
+// Make A Mark Up Thing For The Input, only for comments, updates, and descriptions.
 
 Got free time? Give games an ord. That way you can display them by that.
 THen use JQuery UI to make them drag and dropable.
