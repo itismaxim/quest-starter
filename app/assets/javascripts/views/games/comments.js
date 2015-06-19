@@ -25,21 +25,24 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
 
   addNewComment: function (event) {
     event.preventDefault();
-    var name;
-    if (QuestStarter.currentUser) {
-      name = QuestStarter.currentUser.name;
-      id = QuestStarter.currentUser.id;
-    } else {
+    // Don't need this if this is a div.
+    var name = 'NAME DEFAULT SOMETHING IS WRONG';
+    if (!QuestStarter.currentUser) {
       name = $('#anon-name').val();
-      id = 0;
     }
     var body = $('#comment-body').val();
+    var that = this;
 
-    this.collection.create({
+    var comment = new QuestStarter.Models.Comment({
       poster_name: name,
-      user_id: id,
       game_id: this.gameId,
       text: body
+    });
+
+    comment.save({},
+      {success: function (model) {
+        that.collection.add(model);
+      }, error: that.error
     });
   },
 

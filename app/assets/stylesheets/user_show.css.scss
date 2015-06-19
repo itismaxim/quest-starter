@@ -1,5 +1,15 @@
-//  body { background-color: #f0f0f0; }
-//
+$tan: #FFFBD8;
+$light_green: #A5AB85;
+$green: #73844D;
+$dark_tan: #5D5C4F;
+$dark_grey: #4E4E4E;
+$other_grey: #636363;
+$light_purple: #D51079;
+$dark_purple: #5D3148;
+$darker_purple: #432434;
+$dark_cyan: #016B79;
+$light_cyan: #48D7E8;
+
 // #authored-games {
 //   list-style-type: none;
 //   .user-mini-show {
@@ -13,12 +23,39 @@
 //   }
 // }
 
+// you replace the margins with percents
+// and boom, it becomes responsive
+
+h2 {
+  text-align: center;
+  font-size: 60px;
+  padding: 50px;
+  // why this push navbar down?
+}
+
+h3 {
+  padding: 20px;
+  font-size: 40px;
+}
+
 #main {}
 
-.user-show {}
+.user-show {
+
+}
 //article
 
-.authored-games {}
+section {
+  background-color: $light_green;
+  // in the middle
+  margin: 0px 50px 100px;
+  // make this margin sides and bottom only
+  border-radius: 17px;
+}
+
+.authored-games {
+
+}
 //section
 #all-authored-games {}
 
@@ -26,5 +63,13 @@
 //section
 #all-followed-games {}
 
-.user-mini-show {}
+.user-mini-show {
+  float: left;
+  margin: 0px 20px 20px;
+  background-color: $green;
+  border-radius: 17px;
+  height: 330px;
+  width: 220px;
+
+}
 //figure

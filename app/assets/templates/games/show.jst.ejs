@@ -12,7 +12,7 @@
   <img src="<%= game.escape('image_url') %>", width="400px", height="300px"/>
 </div>
 
-<% if (QuestStarter.currentUser.id === game.get('author_id')) { %>
+<% if (QuestStarter.currentUser && QuestStarter.currentUser.id === game.get('author_id')) { %>
   <div class="edit">Edit This Game</div>
   <div class="delete">Delete This Game</div>
 <% } %>

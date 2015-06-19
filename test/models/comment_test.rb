@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  game_id     :integer          not null
-#  user_id     :integer
+#  user_id     :integer          not null
 #  poster_name :string           not null
 #  text        :text             not null
 #  created_at  :datetime         not null

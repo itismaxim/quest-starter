@@ -26,6 +26,7 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
     // If you make it a div you press, you won't need this.
     var title = $('#update-title').val();
     var text = $('#update-text').val();
+    // var text
 
     this.collection.create({
       title: title,
@@ -33,6 +34,7 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
       user_id: this.model.get('user_id'),
       game_id: this.model.id
     });
+    //Aaaand Error Callback. The Last?
   },
 
   removeComment: function(model) {

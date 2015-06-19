@@ -5,8 +5,11 @@ module Api
     def create
       if current_user
         @comment = current_user.comments.new(comment_params)
+        @comment.poster_name = current_user.name
+        @comment.user_id = current_user.id
       else
         @comment = Comment.new(comment_params)
+        @comment.user_id = 0
       end
 
       if @comment.save

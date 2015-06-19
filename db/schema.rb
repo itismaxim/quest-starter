@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150612195214) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "game_id",     null: false
-    t.integer  "user_id"
+    t.integer  "user_id",     null: false
     t.string   "poster_name", null: false
     t.text     "text",        null: false
     t.datetime "created_at",  null: false

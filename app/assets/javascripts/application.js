@@ -15,6 +15,8 @@
 //= require underscore
 //= require backbone
 //= require quest_starter
+//= require utils/error_view
+//= require utils/composite_view
 //= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models

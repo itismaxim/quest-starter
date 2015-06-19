@@ -1,3 +1,15 @@
+$tan: #FFFBD8;
+$light_green: #A5AB85;
+$green: #73844D;
+$dark_tan: #5D5C4F;
+$dark_grey: #4E4E4E;
+$other_grey: #636363;
+$light_purple: #D51079;
+$dark_purple: #5D3148;
+$darker_purple: #432434;
+$dark_cyan: #016B79;
+$light_cyan: #48D7E8;
+
 html, body, header, nav, a, ul, li,
 strong, main, button, i, section, img,
 div, p, form, fieldset, label, span,
@@ -8,7 +20,7 @@ input, textarea, h1, h2, h3, h4, h5 {
   border: 0;
   outline: 0;
   font: inherit;
-  color: inherit;
+  color: $dark_grey;
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
@@ -20,6 +32,7 @@ input, textarea, h1, h2, h3, h4, h5 {
 body {
   position: relative;
   top: 61px;
+  background-color: $tan;
 }
 
 ul {

@@ -38,6 +38,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         Backbone.history.navigate('users/' + QuestStarter.currentUser.id, {trigger: true});
       }
     });
+    // HO HO ALMOST MISSED THIS.
   },
 
   editGame: function () {
@@ -58,6 +59,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         this.render();
       }.bind(this)
     });
+    // TAQ: Do I need the error callbacks here? It's possible that... what?
   },
 
   unfollowGame: function () {
@@ -71,14 +73,19 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         this.render();
       }.bind(this)
     });
+
+    // Same as above.
   },
 
   activateGame: function () {
     this.model.save({active: true}, {patch: true});
+    // Same as above.
   },
 
   deactivateGame: function () {
     this.model.save({active: false}, {patch: true});
+    // Okay: this error callback should be generic. You should write it for ALL Views
+    // Wait, does that mean Backbone already has one?
   },
 
   buildSideBar: function () {

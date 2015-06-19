@@ -1,18 +1,47 @@
 Game Add Use Cloudinary
   make it pick a 3:4 aspect ration thing as a transformation.
-
-  MWAHAHAHAHA JUST DO THIS RIGHT NOW YESSSS
-  upload your own files onto cloudinary so you don't need to hotlink them
+    MWAHAHAHAHA JUST DO THIS RIGHT NOW YESSSS
+    upload your own files onto cloudinary so you don't need to hotlink them
+      - regular images first, then do the aspect ratio, then example pics.
 
 //Maaaaaybe I should take the router init in ROOT and transfer it
-//to the app general template?
+//to the app general template? Get my nav bar on the log in page!
 
-Make Search Work.
+!!!Make Search Work.!!!
 
-Display Errors (Hint: Most Functions take error callbacks.)
+Display Errors
+<div class="display-errors"></div>
+    Hint: Most Functions take error callbacks.
+      Shunt the regular functionality to a success callback instead.
+    Super Hint: It should basically be
+      the same bloody call back for all of them.
+    GIGA HINT: If it doesn't, you can write one,
+      and make all the views inherit from that.
+
+Got free time? Give games an ord. That way you can display them by that.
+THen use JQuery UI to make them drag and dropable.
+Ooooh nice sorting.
+  Or just by date published. That would be good too.
+  Also think about the proper number of statues.
 
 More Styling.
+Invert the colors: White Nav Bar, Purple text
+Divs stretch all the way across the screen.
+Square corners obvs.
+Oh man Think About Buttons Like This!
+
+          Login
+                Register
+                        Search
+                              Add Game
+
+And Each One Is A Different Colored Bar;
+
+
+
 Navbar Dropdown - Make it slide. Use Jquery ui.
+
+Hey mate: MOAR SEED DATA
 
 Go through all your views.
 Use tagName and className to remove empty divs.

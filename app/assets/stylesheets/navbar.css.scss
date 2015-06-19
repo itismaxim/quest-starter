@@ -1,6 +1,9 @@
 $tan: #FFFBD8;
+$light_green: #A5AB85;
+$green: #73844D;
 $dark_tan: #5D5C4F;
 $dark_grey: #4E4E4E;
+$other_grey: #636363;
 $light_purple: #D51079;
 $dark_purple: #5D3148;
 $darker_purple: #432434;
@@ -11,7 +14,6 @@ nav {
   position: fixed;
   width: 100%;
   background-color: $dark_purple;
-  color: $tan;
   font-size: 24px;
   z-index: 2;
   height: 61px;
@@ -25,6 +27,7 @@ nav a {
   float: left;
   padding: 15px;
   cursor: pointer;
+  color: $tan;
 }
 
 nav a:hover {

@@ -1,5 +1,9 @@
 $tan: #FFFBD8;
+$light_green: #A5AB85;
+$green: #73844D;
 $dark_tan: #5D5C4F;
+$dark_grey: #4E4E4E;
+$other_grey: #636363;
 $light_purple: #D51079;
 $dark_purple: #5D3148;
 $darker_purple: #432434;
@@ -8,7 +12,9 @@ $light_cyan: #48D7E8;
 
 .splash {
   position: fixed;
-  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/20/f6/a5/20f6a5b5104bc52f68e0d3e56f682142.jpg");
+  // background-image: url("https://s-media-cache-ak0.pinimg.com/originals/20/f6/a5/20f6a5b5104bc52f68e0d3e56f682142.jpg");
+  // If I want to hot link like an asshole.
+  background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1434736050/q1js4ppy1ih6sfthkezk.jpg");
   background-size: cover;
   bottom: 0;
   right: 0;

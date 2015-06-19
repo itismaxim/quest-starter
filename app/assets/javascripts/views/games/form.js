@@ -39,6 +39,7 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
     }, {success: function (){
       Backbone.history.navigate("games/" + this.model.id, {trigger: true});
     }.bind(this)});
+    // Error call backs!
   },
 
   render: function () {
