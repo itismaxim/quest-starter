@@ -28,17 +28,20 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     'click .unfollow':   'unfollowGame',
     'click .activate':   'activateGame',
     'click .deactivate': 'deactivateGame',
-    'click .delete':   'deleteGame',
-    'click .edit': 'editGame',
+    'click .delete':     'deleteGame',
+    'click .edit':       'editGame',
   },
 
   deleteGame: function () {
-    this.model.destroy();
-    Backbone.history.navigate('user/' + QuestStarter.currentUser.id);
+    this.model.destroy({
+      success: function() {
+        Backbone.history.navigate('users/' + QuestStarter.currentUser.id, {trigger: true});
+      }
+    });
   },
 
   editGame: function () {
-    Backbone.history.navigate('game/' + this.model.id + '/edit');
+    Backbone.history.navigate('games/' + this.model.id + '/edit', {trigger: true});
   },
 
   followGame: function () {
@@ -86,7 +89,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
 
   addSummary: function () {
     var $summary = $('<div>', { class: '.summary game-show-sidebar-el' });
-    $summary.text(this.model.escape('summary'));
+    $summary.html(this.model.escape('summary'));
     this.$sidebar.append($summary);
   },
 

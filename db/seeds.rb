@@ -33,7 +33,7 @@ Follow.create(user_id: 2, game_id: 2)
 
 Comment.create(game_id: 1, user_id: 2, poster_name: 'daniel', text: 'Bra Nobody Thinks Vampires Are Cool')
 Comment.create(game_id: 1, user_id: 1, poster_name: 'maxim', text: 'Bra, shut your mouth. Vampires are awesome.')
-Comment.create(game_id: 1, poster_name: 'Alex', text: "For a couple of Bra's, you guy aren't very supportive ;)")
+Comment.create(game_id: 1, user_id: 0, poster_name: 'Alex', text: "For a couple of Bra's, you guy aren't very supportive ;)")
 Comment.create(game_id: 1, user_id: 1, poster_name: 'maxim', text: 'I hate you so much. Also, wanna join the Vampire Game?')
 
 Update.create(user_id: 1, game_id: 1, title: 'WOOH FIRST UPDATE', text: "Well look at me, borderline competent, capable of making games and updates.")

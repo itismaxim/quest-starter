@@ -3,7 +3,7 @@ Title
 <p>
 What's Your Game Called?
 </p>
-<input type="text" value="<% game.get('title') %>" id="title">
+<input type="text" value="<%= game.get('title') %>" id="title">
 </label>
 
 <hr>
@@ -13,7 +13,7 @@ Summary
 <p>
 Something short and pithy, sure to interest a player!
 </p>
-<input type="text" value="<% game.get('summary') %>" id="summary">
+<input type="text" value="<%= game.get('summary') %>" id="summary">
 </label>
 
 <hr>
@@ -24,7 +24,8 @@ Image Url
 <p>
 A 3:4 Aspect Ratio will provide the best results.
 </p>
-<input type="text" value="<% game.get('image_url') %>" id="imageUrl">
+
+<a id="cloudinary">Upload Image</a>
 </label>
 
 <hr>
@@ -35,7 +36,7 @@ Description
 <p>
 Give me all the details! When, what, where, everything your players need to know.
 </p>
-<textarea rows="8" cols="40" id="description"><% game.get('description') %></textarea>
+<textarea rows="8" cols="40" id="description"><%= game.get('description') %></textarea>
 </label>
 
 <hr>

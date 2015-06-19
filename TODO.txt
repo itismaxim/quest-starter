@@ -1,42 +1,24 @@
+Game Add Use Cloudinary
+  make it pick a 3:4 aspect ration thing as a transformation.
+
+  MWAHAHAHAHA JUST DO THIS RIGHT NOW YESSSS
+  upload your own files onto cloudinary so you don't need to hotlink them
+
+//Maaaaaybe I should take the router init in ROOT and transfer it
+//to the app general template?
+
+Make Search Work.
+
+Display Errors (Hint: Most Functions take error callbacks.)
+
+More Styling.
+Navbar Dropdown - Make it slide. Use Jquery ui.
+
 Go through all your views.
 Use tagName and className to remove empty divs.
 Rename all divs to short, sensible things.
 Begin styling.
 
-Game Edit, Delete buttons
-
-Get On Heroku
-
-Make Game New and Edit Like Twitter
-Game New Will Need Help for Cloud picture thing
-
-Do Nav Bar
-
 Make A 404 Page. Well, two.
 
 // Make The User and Session AALLLL Backbone.
-
-// Read All Of CompositeView
-
-// This Problem Has Been Currently Solved
-    Should I Make The Current User Fetched When You Log IN?
-    Instead of having the name and the ID, get the ID, then fetch it
-    So:
-    QuestStarter.currentUser
-    QuestStarter.currentUserID
-
-From Line 15 in api/comments_controller
-    # this expects a current_user to exist.
-    # when an anon posts, it does not
-    # I don't want to put user_id into the comment_params
-    # maybe I can save it without it?
-    # I can. For Anons. But for actual users, I need to input the user ID.
-    # Darn it.
-    # Easy Solution: Welp, no anon posters.
-    # Good Solution: ???
-    # Insane Solution: If no one is logged in
-    # make the current user NULL who has user_id NULL
-    # ALL ANON COMMENTS BELONG TO LORD NULL
-    # ALL HAIL LORD NULL
-
-  Lord Null is best user.

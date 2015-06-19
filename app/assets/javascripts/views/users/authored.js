@@ -8,6 +8,7 @@ QuestStarter.Views.Authored = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addGame);
+    this.listenTo(this.collection, 'remove', this.removeGame);
     this.collection.each(function(game) {
       this.addGame(game);
     }, this);
@@ -18,6 +19,10 @@ QuestStarter.Views.Authored = Backbone.CompositeView.extend({
       model: game
     });
     this.addSubview('#all-authored-games', view);
+  },
+
+  removeGame: function (game) {
+    this.removeModelSubview('#all-authored-games', game);
   },
 
   render: function () {

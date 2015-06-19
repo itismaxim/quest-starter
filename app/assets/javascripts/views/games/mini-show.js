@@ -6,7 +6,7 @@ QuestStarter.Views.GameMiniShow = Backbone.View.extend({
   className: 'user-mini-show',
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync change', this.render);
   },
 
   render: function () {

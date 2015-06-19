@@ -22,7 +22,7 @@ QuestStarter.Views.Nav = Backbone.View.extend({
   },
 
   fuckoff: function () {
-    Backbone.history.navigate('#fuckoff')
+    Backbone.history.navigate('#fuckoff', {trigger: true});
   },
 
   render: function () {

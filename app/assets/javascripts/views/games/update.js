@@ -44,7 +44,6 @@ QuestStarter.Views.Update = Backbone.View.extend({
     var view = template({
       update: this.model
     });
-    console.log(view);
     this.$el.html(view);
     return this;
   }

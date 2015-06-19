@@ -16,6 +16,7 @@ gem 'omniauth'
 gem 'omniauth-google'
 gem 'backbone-on-rails'
 gem 'newrelic_rpm'
+gem 'cloudinary'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

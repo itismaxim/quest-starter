@@ -31,11 +31,16 @@ nav a:hover {
   background-color: $darker_purple;
 }
 
-nav li > a {
+.dropdown-link {
   display: none;
   background-color: $dark_purple;
   width: 100%;
   box-sizing: border-box;
+}
+
+.dropdown-link-last {
+  border-bottom-left-radius: 17px;
+  border-bottom-right-radius: 17px;
 }
 
 .navbar-right {
@@ -53,13 +58,13 @@ nav input {
   border-radius: 17px;
 
   // after you put back the clear fix, remove these
-  font-size: 24px;
-  border: 0;
-  outline: 0;
-  text-align: inherit;
-  text-decoration: inherit;
-  vertical-align: inherit;
-  box-sizing: inherit;
+  // font-size: 24px;
+  // border: 0;
+  // outline: 0;
+  // text-align: inherit;
+  // text-decoration: inherit;
+  // vertical-align: inherit;
+  // box-sizing: inherit;
 }
 
 .dropdown > a:hover {

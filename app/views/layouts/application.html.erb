@@ -6,22 +6,28 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script src="http://widget.cloudinary.com/global/all.js"></script>
+  <script>
+    window.CLOUDINARY_OPTIONS = {
+      cloud_name: "dar1oti2e",
+      upload_preset: "bpvmjlrl"
+    };
+  </script>
+  <% if current_user %>
+    <script>
+      QuestStarter.currentUser = {
+        showName: "<%= current_user.name.capitalize %>",
+        name: "<%= current_user.name %>",
+        id: <%= current_user.id %>
+      }
+    </script>
+  <% end %>
 </head>
 <body>
 
-<% if current_user %>
-  <script>
-    QuestStarter.currentUser = {
-      showName: "<%= current_user.name.capitalize %>",
-      name: "<%= current_user.name %>",
-      id: <%= current_user.id %>
-    }
-  </script>
-<% end %>
-
-<p>
-<%= render "layouts/errors" %>
-</p>
+<!-- <p>
+<%#= render "layouts/errors" %>
+</p> -->
 
 <%= yield %>
 
