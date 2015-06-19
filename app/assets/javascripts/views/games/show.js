@@ -20,6 +20,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     });
     this.currentView = this.description;
     // this.currentView = this.comments;
+    // I want this to happen in the router.
   },
 
   events: {
@@ -38,7 +39,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         Backbone.history.navigate('users/' + QuestStarter.currentUser.id, {trigger: true});
       }
     });
-    // HO HO ALMOST MISSED THIS.
+    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   editGame: function () {
@@ -59,7 +60,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         this.render();
       }.bind(this)
     });
-    // TAQ: Do I need the error callbacks here? It's possible that... what?
+    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   unfollowGame: function () {
@@ -73,19 +74,17 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         this.render();
       }.bind(this)
     });
-
-    // Same as above.
+    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   activateGame: function () {
     this.model.save({active: true}, {patch: true});
-    // Same as above.
+    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   deactivateGame: function () {
     this.model.save({active: false}, {patch: true});
-    // Okay: this error callback should be generic. You should write it for ALL Views
-    // Wait, does that mean Backbone already has one?
+    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   buildSideBar: function () {
@@ -164,7 +163,6 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
 
   renderCurrentView: function () {
     $('.game-show-tab').html(this.currentView.render().$el);
-    // $('.game-show-tab').html('QUACK');
   },
 
   switchView: function (event) {

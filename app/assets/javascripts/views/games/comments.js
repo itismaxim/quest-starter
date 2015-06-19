@@ -24,8 +24,6 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
   },
 
   addNewComment: function (event) {
-    event.preventDefault();
-    // Don't need this if this is a div.
     var name = 'NAME DEFAULT SOMETHING IS WRONG';
     if (!QuestStarter.currentUser) {
       name = $('#anon-name').val();

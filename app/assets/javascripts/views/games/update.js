@@ -37,8 +37,7 @@ QuestStarter.Views.Update = Backbone.View.extend({
       data: {
         update: {game_id: this.model.get('game_id')}
       }, processData: true});
-
-    // BOOM ANOTHER ERROR CALLBACK
+    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   render: function () {

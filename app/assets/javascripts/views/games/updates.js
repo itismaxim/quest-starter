@@ -22,19 +22,22 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
   },
 
   addNewUpdate: function (event) {
-    event.preventDefault();
-    // If you make it a div you press, you won't need this.
     var title = $('#update-title').val();
     var text = $('#update-text').val();
-    // var text
+    var that = this;
 
-    this.collection.create({
+    var update = new QuestStarter.Models.Update({
       title: title,
       text: text,
       user_id: this.model.get('user_id'),
       game_id: this.model.id
     });
-    //Aaaand Error Callback. The Last?
+
+    update.save({},
+      {success: function (model) {
+        that.collection.add(model);
+      }, error: that.error
+    });
   },
 
   removeComment: function(model) {
