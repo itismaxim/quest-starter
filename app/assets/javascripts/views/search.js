@@ -1,22 +1,18 @@
 QuestStarter.Views.Search = Backbone.View.extend({
-  template: JST['navbar'],
+  template: JST['search/search'],
 
   tagName: 'nav',
 
   className: 'group',
 
   events : {
-    'keystroke .search-bar': 'search'
-    // 'submit input' : 'fuckoff'
-  },
-
-  initialize: function (options) {
-    this.users = options.users;
-    this.games = options.games;
+    'keypress .search-bar': 'search'
   },
 
   search: function () {
-
+    // send an ajax request?
+    // and in the success call back
+    // turn all the results into views?
   },
 
   render: function () {

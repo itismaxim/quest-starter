@@ -9,11 +9,6 @@ Game Add Use Cloudinary
 
 !!!Make Search Work!!!
 
-//OPtional: Make A Second Error CallBack Method That Just SPits Out
-// Derpy Hooves and I JUST DON'T KNOW WHAT WENT WRONG
-
-// Default Input text should be light grey and when you click it vanishes.
-
 // Make A Mark Up Thing For The Input, only for comments, updates, and descriptions.
 
 Got free time? Give games an ord. That way you can display them by that.
@@ -49,3 +44,6 @@ Begin styling.
 Make A 404 Page. Well, two.
 
 // Make The User and Session AALLLL Backbone.
+
+// Optional: Make A Second Error CallBack Method That Just SPits Out
+// Derpy Hooves and I JUST DON'T KNOW WHAT WENT WRONG

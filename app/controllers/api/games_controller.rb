@@ -39,6 +39,19 @@ module Api
       render json: {}
     end
 
+    def search
+      if params[:query].present?
+        @game = Game.where("title ~ ?", params[:query])
+      else
+        @game = Game.none
+      end
+
+      # This only includes titles.
+      # I'm sure that if you parsed what was in the query string,
+      # you could search by that instead.
+      # Just a thought.
+    end
+
     def game_params
       params.require(:game).permit(:title, :summary, :description, :image_url, :active)
     end
