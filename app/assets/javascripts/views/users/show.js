@@ -7,27 +7,31 @@ QuestStarter.Views.UserShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-
-    var thisMine = false
-    if (QuestStarter.currentUser && QuestStarter.currentUser.id === this.model.id) {
-      thisMine = true
-    }
-
-    this.addSubview('#authored-games', new QuestStarter.Views.Authored({
+    this.addSubview('#authored-games', new QuestStarter.Views.GamesSection({
       collection: this.model.authoredGames(),
-      model: this.model,
-      mine: thisMine
+      className: "authored-games"
     }));
-    this.addSubview('#followed-games', new QuestStarter.Views.Followed({
+    this.addSubview('#followed-games', new QuestStarter.Views.GamesSection({
       collection: this.model.followedGames(),
-      model: this.model,
-      mine: thisMine
+      className: "followed-games"
     }));
   },
 
+  determineNames: function () {
+    this.authoredText = "Games " + this.model.escape("name") + " Runs";
+    this.followingText = "Games " + this.model.escape("name") + " Follows";
+    if (QuestStarter.currentUser && QuestStarter.currentUser.id === this.model.id) {
+      this.authoredText = "Games You Run";
+      this.followingText = "Games You Follow";
+    }
+  },
+
   render: function () {
+    this.determineNames();
     var view = this.template({
-      user: this.model
+      user:           this.model,
+      authoredText:   this.authoredText,
+      followingText:  this.followingText
     });
 
     this.$el.html(view);
