@@ -45,7 +45,8 @@ module Api
       else
         @game = Game.none
       end
-
+      render json: @game
+      
       # This only includes titles.
       # I'm sure that if you parsed what was in the query string,
       # you could search by that instead.

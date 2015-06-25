@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   namespace :api, defaults: {format: :json} do
     resources :comments
+    get 'games/search', to: "games#search"
     resources :games
     resources :updates
     resources :users

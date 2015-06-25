@@ -17,17 +17,26 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     'games/new': 'gameForm',
     'games/:id/edit': 'gameForm',
     'games/:id': 'gameShow',
-    'search' : 'search'
-    'fuckoff' : 'fuckoff',
+    'search' : 'search',
+    // 'fuckoff' : 'fuckoff'
+    // Now that the website is finished,
+    // I don't need anyone to fuck off! c:
   },
+
+  // fuckoff: function () {
+  //   var view = new QuestStarter.Views.FuckOff();
+  //   this._swapView(view);
+  // },
 
   splash: function () {
     var view = new QuestStarter.Views.Splash();
     this._swapView(view);
   },
 
-  fuckoff: function () {
-    var view = new QuestStarter.Views.FuckOff();
+  search: function () {
+    var view = new QuestStarter.Views.Search({
+      collection: QuestStarter.Collections.games
+    });
     this._swapView(view);
   },
 
@@ -55,13 +64,6 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
       model: game
     });
 
-    this._swapView(view);
-  },
-
-  search: function () {
-    var view = new QuestStarter.Views.Search({
-      collection: QuestStarter.Collections.games
-    });
     this._swapView(view);
   },
 

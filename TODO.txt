@@ -7,8 +7,6 @@ Game Add Use Cloudinary
 //Maaaaaybe I should take the router init in ROOT and transfer it
 //to the app general template? Get my nav bar on the log in page!
 
-!!!Make Search Work!!!
-
 // Make A Mark Up Thing For The Input, only for comments, updates, and descriptions.
 
 Got free time? Give games an ord. That way you can display them by that.
@@ -18,7 +16,7 @@ Ooooh nice sorting.
   Also think about the proper number of statues.
 
 More Styling.
-Invert the colors: White Nav Bar, Purple text
+White Text, Colorful backgrounds.
 Divs stretch all the way across the screen.
 Square corners obvs.
 Oh man Think About Buttons Like This!
@@ -30,7 +28,8 @@ Oh man Think About Buttons Like This!
 
 And Each One Is A Different Colored Bar;
 
-
+Make the [Titles Of Games, Search Bar, Title-Input] Display in an ALL CAPS font.
+Make the games controller ALL CAP the query string.
 
 Navbar Dropdown - Make it slide. Use Jquery ui.
 
