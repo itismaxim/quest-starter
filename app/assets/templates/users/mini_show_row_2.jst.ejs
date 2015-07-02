@@ -1,0 +1,18 @@
+<div class="box even-square">
+  <h4 class="mini-show-title"><%= game.escape('title') %></h4>
+  <p class="mini-show-byline">by
+    <a class="author-link" href=<%="#/users/" + game.get('author_id') %>>
+      <%= game.escape('author_name') %>
+    </a>
+    </p>
+  <p class="mini-show-body"><%= game.escape('summary') %></p>
+
+  <% if (game.get('active')) { %>
+    <p class="mini-show-status running">Running</p>
+  <% } else { %>
+    <p class="mini-show-status dormant">Dormant</p>
+  <% } %>
+</div>
+<div class="box odd-square">
+  <img class="mini-show-image" src=<%= game.escape('image_url') %>>
+</div>

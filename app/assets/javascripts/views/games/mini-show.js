@@ -1,30 +1,20 @@
 QuestStarter.Views.GameMiniShow = Backbone.View.extend({
-  template1: JST['users/mini_show_top_left'],
-  template2: JST['users/mini_show_top_right'],
-  template3: JST['users/mini_show_bottom_left'],
-  template4: JST['users/mini_show_bottom_right'],
+  template_row_1: JST['users/mini_show_row_1'],
+  template_row_2: JST['users/mini_show_row_2'],
 
-  tagName: 'figure',
+  tagName: 'a',
 
   initialize: function (options) {
-    this.chooseTemplateAndClassName(options.index)
+    this.chooseTemplate(options.index);
     this.listenTo(this.model, 'sync change', this.render);
   },
 
-  chooseTemplateAndClassName: function (index) {
-    if (index === 1) {
-      this.template = this.template1;
-      this.className = "odd-row";
-    } else if (index === 2) {
-      this.template = this.template2;
-      this.className = "odd-row";
-    } else if (index === 3) {
-      this.template = this.template3;
-      this.className = "even-row";
+  chooseTemplate: function (num) {
+    if (num % 6 < 3) {
+      this.template = this.template_row_1;
     } else {
-      this.template = this.template4;
-      this.className = "even-row";
-    };
+      this.template = this.template_row_2;
+    }
   },
 
   render: function () {

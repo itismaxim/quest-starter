@@ -1,14 +1,13 @@
-$tan: #FFFBD8;
-$light_green: #A5AB85;
-$green: #73844D;
-$dark_tan: #5D5C4F;
-$dark_grey: #4E4E4E;
-$other_grey: #636363;
-$light_purple: #D51079;
-$dark_purple: #5D3148;
-$darker_purple: #432434;
-$dark_cyan: #016B79;
-$light_cyan: #48D7E8;
+$light_tan: #fffbcc;
+$dark_tan: #7d7736;
+$light_grey: #a38f8f;
+$dark_grey: #463939;
+$light_green: #52d411;
+$dark_green: #2a8000;
+$light_cyan: #11d4d4;
+$dark_cyan: #007f80;
+$light_purple: #d41173;
+$dark_purple: #800040;
 
 nav {
   position: fixed;
@@ -21,18 +20,20 @@ nav {
   // and not on the rest of my site?
   padding: 0px 50px;
   box-sizing: border-box;
+  transition:all 0.3s;
+  -webkit-transition:all 0.3s;
+  -moz-transition: all 0.3s;
 }
 
 nav a {
   float: left;
   padding: 15px;
   cursor: pointer;
-  color: white;
   // liked it better as tan
 }
 
 nav a:hover {
-  background-color: $darker_purple;
+  background-color: $light_purple;
 }
 
 .dropdown-link {
@@ -60,15 +61,6 @@ nav input {
   color: $dark_tan;
   // Not Sure About These Colors
   border-radius: 17px;
-
-  // after you put back the clear fix, remove these
-  // font-size: 24px;
-  // border: 0;
-  // outline: 0;
-  // text-align: inherit;
-  // text-decoration: inherit;
-  // vertical-align: inherit;
-  // box-sizing: inherit;
 }
 
 .dropdown > a:hover {
@@ -77,6 +69,7 @@ nav input {
 
 nav .dropdown {
   float: left;
+  min-width: 161px
 }
 
 .dropdown:hover a {

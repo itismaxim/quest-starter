@@ -5,7 +5,7 @@ QuestStarter.Views.GamesSection = Backbone.CompositeView.extend({
   tagName: 'section',
 
   initialize: function (options) {
-    this.index = 1
+    this.index = 0;
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addGame);
     this.listenTo(this.collection, 'remove', this.removeGame);
@@ -14,22 +14,16 @@ QuestStarter.Views.GamesSection = Backbone.CompositeView.extend({
     }, this);
   },
 
-  addGame: function (game, index) {
-    // add these two at a time
-    // the whole index thing will be way diff.
-    // It will be a binary choice.
-
+  addGame: function (game) {
     var view = new QuestStarter.Views.GameMiniShow({
+      index: this.index,
       model: game,
-      index: this.index
+      className: "mini-show index-" + this.index,
+      tagName: 'a',
+      attributes: {'href': "#/games/" + game.id}
     });
     this.addSubview("." + this.className, view);
-
-    if (this.index < 4) {
-      this.index++;
-    } else {
-      this.index = 1
-    }
+    this.index++;
   },
 
   removeGame: function (game) {
@@ -38,8 +32,9 @@ QuestStarter.Views.GamesSection = Backbone.CompositeView.extend({
 
   render: function () {
     // this.index = 1;
+    var classes = this.className + ' group';
     var view = this.template({
-      className: this.className
+      className: classes
     });
     this.$el.html(view);
     this.attachSubviews();

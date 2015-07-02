@@ -1,42 +1,79 @@
-$tan: #FFFBD8;
-$light_green: #A5AB85;
-$green: #73844D;
-$dark_tan: #5D5C4F;
-$dark_grey: #4E4E4E;
-$other_grey: #636363;
-$light_purple: #D51079;
-$dark_purple: #5D3148;
-$darker_purple: #432434;
-$dark_cyan: #016B79;
-$light_cyan: #48D7E8;
+$light_tan: #fffbcc;
+$dark_tan: #7d7736;
+$light_grey: #a38f8f;
+$dark_grey: #463939;
+$light_green: #52d411;
+$dark_green: #2a8000;
+$light_cyan: #11d4d4;
+$dark_cyan: #007f80;
+$light_purple: #d41173;
+$dark_purple: #800040;
 
 // you replace the margins with percents
 // and boom, it becomes responsive
 
-h2 {
-  text-align: center;
-  font-size: 60px;
-  padding: 100px;
+div.followed-games, div.authored-games {
+  background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1435786595/dxbk9lhcaltkvs8acuu0.png");
+  // background-size: cover;
+  height: auto;
 }
 
-// h3 {
-//   padding: 20px;
-//   font-size: 40px;
-// }
+.box {
+  height: 0;
+  width: 16.66666%;
+  padding-bottom: 16.66666%;
+  // width: 14.2857142857%;
+  // padding-bottom: 14.2857142857%;
+  // width: 20%;
+  // padding-bottom: 20%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
 
-#main {}
+.odd-square { background-color: $light_cyan }
+.mini-show:hover > .odd-square { background-color: $light_purple;}
+.even-square { background-color: $dark_cyan }
+.mini-show:hover > .even-square { background-color: $dark_purple; }
 
-#all-authored-games, #all-followed-games {
+.mini-show-image {
+  width: 100%;
+  // height: 100%;
+}
+
+.mini-show-title {
+  padding: 15px 5px 0px;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.mini-show-byline {
+  padding: 5px;
+  font-size: 1vw;
+  text-align: right;
+}
+
+.author-link:hover {
+  text-decoration: underline;
+}
+
+.mini-show-body {
+  padding: 20px 10px 0px;
+  font-size: 1vw;
+}
+
+.mini-show-status {
+  font-size: 1.5vw;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.running {
   background-color: $light_green;
 }
 
-.user-mini-show {
-  float: left;
-  margin: 0px 20px 20px;
-  background-color: $green;
-  border-radius: 17px;
-  height: 330px;
-  width: 220px;
-
+.dormant {
+  background-color: $dark_grey;
 }
-//figure

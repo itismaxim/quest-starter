@@ -20,7 +20,7 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
       model: comment,
       gameId: this.gameId
     });
-    this.addSubview('#game-show-old-comments', view);
+    this.addSubview('#game-old-comments', view);
   },
 
   addNewComment: function (event) {
@@ -45,7 +45,7 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
   },
 
   removeComment: function(model) {
-    this.removeModelSubview('#game-show-old-comments', model);
+    this.removeModelSubview('#game-old-comments', model);
   },
 
   render: function () {

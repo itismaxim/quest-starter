@@ -1,38 +1,52 @@
-$tan: #FFFBD8;
-$light_green: #A5AB85;
-$green: #73844D;
-$dark_tan: #5D5C4F;
-$dark_grey: #4E4E4E;
-$other_grey: #636363;
-$light_purple: #D51079;
-$dark_purple: #5D3148;
-$darker_purple: #432434;
-$dark_cyan: #016B79;
-$light_cyan: #48D7E8;
+$light_tan: #fffbcc;
+$dark_tan: #7d7736;
+$light_grey: #a38f8f;
+$dark_grey: #463939;
+$light_green: #52d411;
+$dark_green: #2a8000;
+$light_cyan: #11d4d4;
+$dark_cyan: #007f80;
+$light_purple: #d41173;
+$dark_purple: #800040;
+
+// HUES     Grey: 0, Tan: 55, Cyan: 180, Green: 100, Purple: 330
+// LIGHT    85 45
+// DARK     100 25
 
 html, body, header, nav, a, ul, li,
 strong, main, button, i, section, img,
 div, p, form, fieldset, label, span,
-article, footer, time, small, pre,
+article, footer, time, small, pre, figure,
 input, textarea, h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
   font: inherit;
-  color: $dark_grey;
+  color: inherit;
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
   font-family: 'Oxygen', sans-serif;
+  transition:all 0.7s;
+  -webkit-transition:all 0.7s;
+  -moz-transition: all 0.7s;
+}
+
+h2 {
+  text-align: center;
+  font-size: 60px;
+  padding: 100px;
+  clear: both;
 }
 
 body {
   position: relative;
   top: 61px;
-  background-color: $tan;
+  background-color: $light_tan;
+  color: white;
 }
 
 ul {
@@ -41,8 +55,6 @@ ul {
 
 img {
   display: block;
-  // width: 100%;
-  // height: auto;
 }
 
 input[type="password"],

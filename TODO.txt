@@ -1,24 +1,18 @@
+Three Important Things Remain:
+  1. Finish Updates, Desctiption, View
+  2. Finish Game Add
+  3. Finish Login/Register
+  4. Search Results
+  5. Get The Pictionary Thing Below
+  6. Oh man oh man if you made the background's stretch the whole page and be overflow hidden it would do the cool thing.
+  7. default: you haven't started games/ you haven't followed any games
+
 Game Add Use Cloudinary
   make it pick a 3:4 aspect ration thing as a transformation.
     MWAHAHAHAHA JUST DO THIS RIGHT NOW YESSSS
     upload your own files onto cloudinary so you don't need to hotlink them
       - regular images first, then do the aspect ratio, then example pics.
 
-//Maaaaaybe I should take the router init in ROOT and transfer it
-//to the app general template? Get my nav bar on the log in page!
-
-// Make A Mark Up Thing For The Input, only for comments, updates, and descriptions.
-
-Got free time? Give games an ord. That way you can display them by that.
-THen use JQuery UI to make them drag and dropable.
-Ooooh nice sorting.
-  Or just by date published. That would be good too.
-  Also think about the proper number of statues.
-
-More Styling.
-White Text, Colorful backgrounds.
-Divs stretch all the way across the screen.
-Square corners obvs.
 Oh man Think About Buttons Like This!
 
           Login
@@ -26,7 +20,7 @@ Oh man Think About Buttons Like This!
                         Search
                               Add Game
 
-And Each One Is A Different Colored Bar;
+And Each One Is A Different Colored Bar, with a opacity 50
 
 Make the [Titles Of Games, Search Bar, Title-Input] Display in an ALL CAPS font.
 Make the games controller ALL CAP the query string.
@@ -35,14 +29,22 @@ Navbar Dropdown - Make it slide. Use Jquery ui.
 
 Hey mate: MOAR SEED DATA
 
-Go through all your views.
-Use tagName and className to remove empty divs.
-Rename all divs to short, sensible things.
-Begin styling.
-
 Make A 404 Page. Well, two.
 
 // Make The User and Session AALLLL Backbone.
 
 // Optional: Make A Second Error CallBack Method That Just SPits Out
 // Derpy Hooves and I JUST DON'T KNOW WHAT WENT WRONG
+
+// Where and When Fields for games?
+
+// Maaaaaybe I should take the router init in ROOT and transfer it
+// to the app general template? Get my nav bar on the log in page!
+
+// Make A Mark Up Thing For The Input, only for comments, updates, and descriptions.
+
+// Got free time? Give games an ord. That way you can display them by that.
+// THen use JQuery UI to make them drag and dropable.
+// Ooooh nice sorting.
+//   Or just by date published. That would be good too.
+//   Also think about the proper number of statuses.

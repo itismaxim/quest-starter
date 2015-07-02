@@ -5,6 +5,10 @@ QuestStarter.Views.Splash = Backbone.View.extend({
 
   className: 'splash',
 
+  events: {
+
+  },
+
   render: function () {
     this.$el.html(this.template);
     return this;

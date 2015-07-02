@@ -1,6 +1,10 @@
 QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
   template: JST['games/show'],
 
+  tagname: 'article',
+
+  className: 'game',
+
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
     this.description = new QuestStarter.Views.Description({
@@ -31,6 +35,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     'click .deactivate': 'deactivateGame',
     'click .delete':     'deleteGame',
     'click .edit':       'editGame',
+    'click .nav-option': 'selectNav',
   },
 
   deleteGame: function () {
@@ -88,38 +93,45 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
   },
 
   buildSideBar: function () {
-    this.addSummary();
     this.addActive();
+    this.addSummary();
     this.addFollowers();
-  },
-
-  addSummary: function () {
-    var $summary = $('<div>', { class: '.summary game-show-sidebar-el' });
-    $summary.html(this.model.escape('summary'));
-    this.$sidebar.append($summary);
   },
 
   addActive: function () {
     var active = this.model.get('active');
     var authored = this.model.get('authored');
 
-    var $active = $('<div>', { class: '.active game-show-sidebar-el' });
-    if (active === true) {
-      $active.text('Running');
-    } else {
-      $active.text('Dormant');
-    }
-    this.$sidebar.append($active);
-
     if (authored === true) {
-      var $activeButton = $('<div>', { class: '.active-button game-show-sidebar-el' });
+      var $activeButton = $('<div>', { class: 'sidebar-el-small active-button game-activate' });
       if (active === true) {
         $activeButton.text('Deactivate This Game').addClass('deactivate');
       } else {
         $activeButton.text('Activate This Game').addClass('activate');
       }
       this.$sidebar.append($activeButton);
+    } else {
+      var $author = $('<div>', { class: 'sidebar-el-small game-author' });
+      $author.html("<a href='#/users/" + this.model.get('author_id') + "'>By " + this.model.escape('author_name') + "</a>");
+
+      // $author.text('By ' + this.model.escape('author_name'));
+      // $author.attr('href', '#/users/' + this.model.get('author_id'))
+      this.$sidebar.append($author);
     }
+
+    var $active = $('<div>', { class: 'sidebar-el-small game-active' });
+    if (active === true) {
+      $active.text('Running').addClass('running');
+    } else {
+      $active.text('Dormant').addClass('dormant');
+    }
+    this.$sidebar.append($active);
+  },
+
+  addSummary: function () {
+    var $summary = $('<p>', { class: 'game-summary' });
+    $summary.html(this.model.escape('summary'));
+    this.$sidebar.append($summary);
   },
 
   addFollowers: function () {
@@ -127,7 +139,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     var followers = this.model.get('followers');
     var follow_id = this.model.get('follow_id');
 
-    var $followers = $('<div>', { class: '.followers game-show-sidebar-el' });
+    var $followers = $('<div>', { class: 'sidebar-el-small game-followers' });
     if (followers === 0) {
       $followers.text('0 Followers :c');
     } else if (followers === 1) {
@@ -137,8 +149,12 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     }
     this.$sidebar.append($followers);
 
-    if (!authored) {
-      var $following = $('<div>', { class: '.following game-show-sidebar-el' });
+    if (authored) {
+      var $edit = $('<div>', { class: 'sidebar-el-small edit' }).text('Edit');
+      var $delete = $('<div>', { class: 'sidebar-el-small delete' }).text('Delete');
+      this.$sidebar.append($edit).append($delete);
+    } else {
+      var $following = $('<div>', { class: 'sidebar-el-small game-following' });
       if (!QuestStarter.currentUser) {
         $following.text('Log In To Follow');
       } else if (follow_id) {
@@ -150,19 +166,24 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     }
   },
 
+  selectNav: function (target) {
+    $('.nav-option').removeClass('selected');
+    $(target.currentTarget).addClass('selected');
+  },
+
   render: function () {
     var view = this.template({
       game: this.model
     });
     this.$el.html(view);
-    this.$sidebar = $('.game-show-sidebar');
+    this.$sidebar = $('.game-sidebar');
     this.buildSideBar();
     this.renderCurrentView();
     return this;
   },
 
   renderCurrentView: function () {
-    $('.game-show-tab').html(this.currentView.render().$el);
+    $('.game-tab').html(this.currentView.render().$el);
   },
 
   switchView: function (event) {

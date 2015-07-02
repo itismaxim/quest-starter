@@ -1,33 +1,22 @@
-<div class="game-show-header">
-  <h4>
+<h2 class="game-header">
+  <div class="header-inside">
     <%= game.escape('title') %>
-  </h4>
+  </div>
+</h2>
 
-  <p>
-    by <a href="<%= '#/users/' + game.get('author_id') %>"><%= game.get('author_name') %></a>
-  </p>
+<div class="game-top-box group">
+    <div class="game-image-container">
+      <img class="game-image" src="<%= game.escape('image_url') %>"/>
+    </div>
+
+    <div class="game-sidebar"></div>
 </div>
 
-<div class="game-show-image">
-  <img src="<%= game.escape('image_url') %>", width="400px", height="300px"/>
-</div>
-
-<% if (QuestStarter.currentUser && QuestStarter.currentUser.id === game.get('author_id')) { %>
-  <div class="edit">Edit This Game</div>
-  <div class="delete">Delete This Game</div>
-<% } %>
-
-<div class="game-show-sidebar">
-
-</div>
-
-<ul class="game-show-nav">
-  <li class="nav-option" name='description'>Description</li>
+<ul class="game-nav">
   <li class="nav-option" name='updates'>Updates</li>
+  <li class="nav-option selected" name='description'>Description</li>
   <li class="nav-option" name='comments'>Comments</li>
   <!-- <li class="nav-option" name='surveys'>Surveys</li> -->
 </ul>
 
-<hr>
-
-<div class="game-show-tab"></div>
+<div class="game-tab"></div>

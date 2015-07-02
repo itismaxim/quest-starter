@@ -4,7 +4,7 @@ QuestStarter.Views.Update = Backbone.View.extend({
 
   tagName: 'li',
 
-  className: 'game-show-update',
+  className: 'game-update',
 
   events: {
     'click .edit-update': 'toggleEditForm',
