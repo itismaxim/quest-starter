@@ -86,13 +86,14 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    var activate = this.model.get('active') ? "activate " : "deactivate";
     var view = this.template({
       game: this.model
     });
     this.$el.html(view);
-    this.$sidebar = $('.game-sidebar');
-    debugger;
-    this.buildSideBar();
+    // debugger;
     return this;
+    this.$sidebar = $('.game-sidebar');
+    this.buildSideBar();
   },
 });
