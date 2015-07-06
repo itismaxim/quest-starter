@@ -11,8 +11,8 @@ $dark_purple: #800040;
 
 .game {
   background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1434736050/q1js4ppy1ih6sfthkezk.jpg");
-  background-size: cover;
-  bottom: 0;
+  // background-size: cover;
+  // bottom: 0;
   right: 0;
   left: 0;
 }
@@ -26,6 +26,11 @@ $dark_purple: #800040;
   margin-right: auto;
   width: 66.66%;
   background-color: $dark_cyan;
+
+  // Get rid of this?
+  // Instead, a bar acros the screen.
+  // Just like on the splash page!
+  // background: rgba(0, 127, 128, 0.75);
 }
 
 .game-top-box {
@@ -63,8 +68,8 @@ $dark_purple: #800040;
 .game-author { background-color: $dark_cyan; }
 .game-author:hover { background-color: $light_cyan; }
 
-.deactivate { background-color: $dark_grey; }
-.deactivate:hover { background-color: $light_grey; }
+.deactivate { background-color: $dark_purple; }
+.deactivate:hover { background-color: $light_purple; }
 .activate { background-color: $dark_green; }
 .activate:hover { background-color: $light_green; }
 .running { background-color: $dark_green; }
@@ -78,7 +83,8 @@ $dark_purple: #800040;
   float: left;
   width: 50%;
   background-color: $dark_green;
-  }
+}
+
 .edit:hover { background-color: $light_green; }
 .delete { background-color: $dark_purple; }
 .delete:hover { background-color: $light_purple; }
@@ -98,21 +104,27 @@ $dark_purple: #800040;
   float: left;
   width: 33.33%;
   padding: 20px 0px;
-  background-color: $dark_purple;
+  background-color: $light_cyan;
   text-align: center;
   font-size: 30px;
 }
 
-.selected {
-  background-color: $light_purple
-}
-
-.nav-option:hover {
-  background-color: $light_purple;
-}
+.selected { background-color: $dark_cyan; }
+.nav-option:hover { background-color: $dark_cyan; }
 
 .game-tab {
   padding: 50px;
-  background-color: $light_purple;
+  background-color: $dark_cyan;
   clear:both;
+}
+
+.game-tab > div {
+  width: 66.66%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-description {
+  font-size: 24px;
+  margin: 30px 0px;
 }

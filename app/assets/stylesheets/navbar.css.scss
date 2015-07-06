@@ -20,9 +20,9 @@ nav {
   // and not on the rest of my site?
   padding: 0px 50px;
   box-sizing: border-box;
-  transition:all 0.3s;
-  -webkit-transition:all 0.3s;
-  -moz-transition: all 0.3s;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
 }
 
 nav a {
@@ -64,7 +64,7 @@ nav input {
 }
 
 .dropdown > a:hover {
-  background-color: $dark_purple;
+  cursor: default;
 }
 
 nav .dropdown {

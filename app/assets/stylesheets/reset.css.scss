@@ -35,6 +35,10 @@ input, textarea, h1, h2, h3, h4, h5 {
   -moz-transition: all 0.7s;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
 h2 {
   text-align: center;
   font-size: 60px;
@@ -86,4 +90,13 @@ input[type="submit"] {
 
 .fuckoff {
   font-size: 80px;
+}
+
+// Test to see if not(:focus) fucks everything up.
+// It doesn't seem to work, at least.
+*[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
+  content: attr(data-placeholder);
+  float: left;
+  margin-left: 2px;
+  color: #b3b3b3;
 }

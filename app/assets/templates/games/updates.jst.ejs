@@ -1,19 +1,20 @@
-<h4>Updates</h4>
-<br>
-<div id="game-updates">Looks like there aren't any updates yet!</div>
-
 <% if(QuestStarter.currentUser && QuestStarter.currentUser.id == authorId) {%>
-  <br>
-  <form id="game-new-update">
-    <label>Title
-      <input type="text" value="" id="update-title">
-    </label>
+  <div class="update">
+    <div class="update-title">Write An Update!</div>
 
-    <br>
-    <textarea rows="4" cols="40" id="update-text" placeholder="What's going on?"></textarea>
+    <form class="update-text">
+      <div contenteditable="true"
+       id="update-title"
+       data-placeholder="Update Title"></div>
 
-    <br>
+      <div contenteditable="true"
+       id="update-text"
+       data-placeholder="Update Text"></div>
+    </form>
+
     <div class="display-errors"></div>
-    <div id="new-update-submit">Post Update</div>
-  </form>
+    <div class="update-title" id="update-form-submit">Post Update</div>
+  </div>
 <% } %>
+
+<div id="game-updates"></div>

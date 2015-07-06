@@ -1,13 +1,13 @@
 <form>
-  <label>Title
-    <input type="text" value="<%= update.escape('title') %>" class="update-title">
-  </label>
+  <div class="edit-update corner-button edit-color">Finish Editing</div>
 
-  <br>
-  <textarea rows="4" cols="40" class="update-text"><%= update.escape('text') %></textarea>
+<div contenteditable="true"
+class="<%= "update-title " + indexClass + "-title"%>">
+<%= update.escape('title') %></div>
 
-  <br>
+<div contenteditable="true"
+class="<%= "update-text " + indexClass + "-text"%>">
+<%= update.escape('text') %></div>
 
   <div class="display-errors"></div>
-  <div class="edit-update">✗ Edit This Update ✗</div>
 </form>

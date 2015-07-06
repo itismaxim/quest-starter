@@ -70,10 +70,10 @@ Follow.create(user_id: 4, game_id: 3)
 Follow.create(user_id: 4, game_id: 4)
 Follow.create(user_id: 4, game_id: 6)
 
-Comment.create(game_id: 1, user_id: 2, poster_name: 'daniel', text: 'Bra Nobody Thinks Vampires Are Cool')
-Comment.create(game_id: 1, user_id: 1, poster_name: 'maxim', text: 'Bra, shut your mouth. Vampires are awesome.')
+Comment.create(game_id: 1, user_id: 2, poster_name: 'Daniel', text: 'Bra Nobody Thinks Vampires Are Cool')
+Comment.create(game_id: 1, user_id: 1, poster_name: 'Maxim', text: 'Bra, shut your mouth. Vampires are awesome.')
 Comment.create(game_id: 1, user_id: 0, poster_name: 'Alex', text: "For a couple of Bra's, you guy aren't very supportive ;)")
-Comment.create(game_id: 1, user_id: 1, poster_name: 'maxim', text: 'I hate you so much. Also, wanna join the Vampire Game?')
+Comment.create(game_id: 1, user_id: 1, poster_name: 'Maxim', text: 'I hate you so much. Also, wanna join the Vampire Game?')
 
 Update.create(user_id: 1, game_id: 1, title: 'WOOH FIRST UPDATE', text: "Well look at me, borderline competent, capable of making games and updates.")
 Update.create(user_id: 1, game_id: 1, title: 'Shitty Second Update', text: "Not really though. Only in the fantasy dimension this update was written in.")

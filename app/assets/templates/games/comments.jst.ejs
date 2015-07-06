@@ -1,28 +1,21 @@
-<h4>Comments</h4>
-<br>
-<div id="game-comments">
-  <div id="game-old-comments">
-    Looks like there aren't any comments yet! Why not leave the first?
-  </div>
+<div class="comment">
+  <div class="comment-author">Leave A Comment</div>
 
-  <div id="game-new-comment">
-    <form>
-      <% if (!QuestStarter.currentUser) { %>
-        <label>
-          Your Name:
-          <input type="text" value="" id="anon-name">
-        </label>
-        <br>
-      <% } %>
-
-      <label>
-        Your Comment:
-        <br>
-        <textarea rows="4" cols="40" id="comment-body"></textarea>
-      </label>
+  <form class="comment-body">
+    <% if (!QuestStarter.currentUser) { %>
+      <input type="text" value="" id="anon-name" placeholder="Your Name">
       <br>
-      <div class="display-errors"></div>
-      <div id="new-comment-submit">Post Comment</div>
-    </form>
-  </div>
+    <% } %>
+
+    <div contenteditable="true"
+     id="comment-body"
+     data-placeholder="Your Comment"></div>
+
+  </form>
+
+  <pre class="display-errors"></pre>
+  <div id="comment-form-submit">Post Comment</div>
+
 </div>
+
+<div id="game-old-comments"></div>

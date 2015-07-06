@@ -1,11 +1,14 @@
 QuestStarter.Views.Updates = Backbone.CompositeView.extend({
   template: JST['games/updates'],
 
+  // className: 'updates',
+
   events: {
-    'click #new-update-submit': 'addNewUpdate',
+    'click #update-form-submit': 'addNewUpdate',
   },
 
   initialize: function (options) {
+    this.lastIndex = 0;
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addUpdate);
     this.listenTo(this.collection, 'destroy', this.removeComment);
@@ -17,13 +20,15 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
   addUpdate: function (update) {
     var view = new QuestStarter.Views.Update({
       model: update,
+      index: this.lastIndex
     });
     this.addSubview('#game-updates', view);
+    this.lastIndex++;
   },
 
   addNewUpdate: function (event) {
-    var title = $('#update-title').val();
-    var text = $('#update-text').val();
+    var title = $('#update-title').text();
+    var text = $('#update-text').text();
     var that = this;
 
     var update = new QuestStarter.Models.Update({
@@ -50,6 +55,7 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
     });
     this.$el.html(view);
     this.attachSubviews();
+    this.lastIndex = 0;
     return this;
   }
 });

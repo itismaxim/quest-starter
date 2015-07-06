@@ -18,10 +18,10 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
       collection: this.model.comments(),
       gameId: this.model.id
     });
-    this.surveys = new QuestStarter.Views.Surveys({
-      model: this.model
-      // CHange this to be collection: this.model.surveys
-    });
+    // this.surveys = new QuestStarter.Views.Surveys({
+    //   model: this.model
+    //   // CHange this to be collection: this.model.surveys
+    // });
     this.currentView = this.description;
     // this.currentView = this.comments;
     // I want this to happen in the router.
@@ -35,7 +35,17 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     'click .deactivate': 'deactivateGame',
     'click .delete':     'deleteGame',
     'click .edit':       'editGame',
-    'click .nav-option': 'selectNav',
+    'input *[data-placeholder]': 'divPlaceholder',
+    'blur *[data-placeholder]': 'divPlaceholder',
+  },
+
+  divPlaceholder: function (event) {
+    if (event.currentTarget.text) {
+			$(event.currentTarget).removeAttribute('data-div-placeholder-content');
+		} else {
+      $(event.currentTarget).attr('data-div-placeholder-content', 'true');
+      // doesn't put it back. Maybe cause you took away not:focus?
+		}
   },
 
   deleteGame: function () {
@@ -113,9 +123,6 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     } else {
       var $author = $('<div>', { class: 'sidebar-el-small game-author' });
       $author.html("<a href='#/users/" + this.model.get('author_id') + "'>By " + this.model.escape('author_name') + "</a>");
-
-      // $author.text('By ' + this.model.escape('author_name'));
-      // $author.attr('href', '#/users/' + this.model.get('author_id'))
       this.$sidebar.append($author);
     }
 
@@ -166,11 +173,6 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     }
   },
 
-  selectNav: function (target) {
-    $('.nav-option').removeClass('selected');
-    $(target.currentTarget).addClass('selected');
-  },
-
   render: function () {
     var view = this.template({
       game: this.model
@@ -187,6 +189,9 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
   },
 
   switchView: function (event) {
+    $('.nav-option').removeClass('selected');
+    $(event.currentTarget).addClass('selected');
+
     this.currentView && this.currentView.remove();
     var newTabName = event.currentTarget.getAttribute('name');
     if (newTabName === 'description') {

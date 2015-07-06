@@ -1,0 +1,70 @@
+$light_tan: #fffbcc;
+$dark_tan: #7d7736;
+$light_grey: #a38f8f;
+$dark_grey: #463939;
+$light_green: #52d411;
+$dark_green: #2a8000;
+$light_cyan: #11d4d4;
+$dark_cyan: #007f80;
+$light_purple: #d41173;
+$dark_purple: #800040;
+
+.comment, .update {
+  margin: 30px;
+  font-size: 18px;
+}
+
+.comment-author, #comment-form-submit, .update-title {
+  color: white;
+  background-color: $light_grey;
+  padding: 7px 15px;
+}
+
+// .update-title {
+//   width: auto;
+//   box-sizing: border-box;
+// }
+
+.posted-at {
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+.corner-button {
+  float: right;
+  color: white;
+  background-color: $dark_purple;
+  padding: 7px 15px;
+  cursor: pointer;
+}
+
+.delete-color { background-color: $dark_purple; }
+.delete-color:hover { background-color: $light_purple; }
+.edit-color { background-color: $dark_green; }
+.edit-color:hover { background-color: $light_green; }
+
+.comment-body, .update-text {
+  color: $dark_grey;
+  background-color: white;
+  padding: 7px 13px;
+}
+
+#anon-name, #comment-body {
+  width: 100%;
+}
+
+.display-errors {
+  background-color: $dark_purple;
+  padding: 0px 15px;
+  color: white;
+  text-align: right;
+}
+
+#comment-form-submit, #update-form-submit {
+  text-align: right;
+  cursor: pointer;
+}
+
+#comment-form-submit:hover, #update-form-submit:hover {
+  background-color: $dark_green;
+}

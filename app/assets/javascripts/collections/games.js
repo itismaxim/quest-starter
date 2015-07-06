@@ -2,6 +2,8 @@ QuestStarter.Collections.Games = Backbone.Collection.extend({
   model: QuestStarter.Models.Game,
   url: 'api/games',
 
+  comparator: 'created_at',
+
   getOrFetch: function (id) {
     var game = this.get(id);
 

@@ -1,31 +1,31 @@
-QuestStarter.Views.Update = Backbone.View.extend({
+QuestStarter.Views.Update = Backbone.ErrorView.extend({
   template: JST['games/update'],
   editTemplate: JST['games/update-form'],
 
-  tagName: 'li',
-
-  className: 'game-update',
+  className: 'update',
 
   events: {
-    'click .edit-update': 'toggleEditForm',
-    'click .delete-update': 'deleteUpdate'
+    'click .edit-color': 'toggleEditForm',
+    'click .delete-color': 'deleteUpdate'
   },
 
   initialize: function (options) {
+    this.indexClass = 'update' + options.index
     this.listenTo(this.model, 'sync', this.render);
     this.editing = false;
   },
 
-  toggleEditForm: function () {
+  toggleEditForm: function (event) {
     if (this.editing) {
+      var that = this;
       this.editing = false;
-
-      var title = $('.update-title').val();
-      var text = $('.update-text').val();
+      debugger;
+      var title = $('.' + this.indexClass + "-title").text();
+      var text = $('.' + this.indexClass + "-text").text();
       this.model.save({
         title: title,
         text: text,
-      });
+      }, {error: that.error});
     } else {
       this.editing = true;
       this.render();
@@ -43,7 +43,8 @@ QuestStarter.Views.Update = Backbone.View.extend({
   render: function () {
     var template = this.editing ? this.editTemplate : this.template;
     var view = template({
-      update: this.model
+      update: this.model,
+      indexClass: this.indexClass
     });
     this.$el.html(view);
     return this;

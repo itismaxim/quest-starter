@@ -1,8 +1,11 @@
 QuestStarter.Views.Comments = Backbone.CompositeView.extend({
   template: JST['games/comments'],
 
+  className: "game-comments group",
+  // these do nothing?
+
   events: {
-    'click #new-comment-submit': 'addNewComment',
+    'click #comment-form-submit': 'addNewComment',
   },
 
   initialize: function (options) {
@@ -28,7 +31,7 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
     if (!QuestStarter.currentUser) {
       name = $('#anon-name').val();
     }
-    var body = $('#comment-body').val();
+    var body = $('#comment-body').text();
     var that = this;
 
     var comment = new QuestStarter.Models.Comment({

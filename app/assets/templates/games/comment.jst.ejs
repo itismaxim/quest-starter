@@ -1,16 +1,15 @@
-<div class="game-comment">
-  <div class="comment-author">
-    <%= comment.escape('poster_name') %>
-  </div>
+<% if (QuestStarter.currentUser &&
+   (  (QuestStarter.currentUser.id === comment.get('user_id'))
+   || (QuestStarter.currentUser.id == gameId)
+   )) { %>
+  <div class="corner-button delete-color"> ✗ </div>
+<% } %>
 
-  <pre class="comment-body">
-    <%= comment.escape('text') %>
-  </pre>
-
-  <% if (QuestStarter.currentUser &&
-     (  (QuestStarter.currentUser.id === comment.get('user_id'))
-     || (QuestStarter.currentUser.id == gameId)
-     )) { %>
-    <div class="delete-comment">✗ Delete This Comment ✗</div>
-  <% } %>
+<div class="comment-author">
+<%= comment.escape('poster_name') %>
+<span class="posted-at">Posted on <%= comment.escape('created_at').slice(0,10) %></span>
 </div>
+
+<pre class="comment-body">
+<%= comment.escape('text') %>
+</pre>

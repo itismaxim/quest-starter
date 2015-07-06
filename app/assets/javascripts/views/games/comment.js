@@ -1,6 +1,9 @@
 QuestStarter.Views.Comment = Backbone.View.extend({
   template: JST['games/comment'],
 
+  // tagName: '',
+  className: 'comment',
+
   events: {
     'click .delete-comment': 'deleteComment'
   },

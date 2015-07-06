@@ -1,26 +1,35 @@
+SUPER IMPORTANT
+STYLE NEW GAME (MINIMUM)
+  -edit: On clicking edit, when you hover over buttons,
+         you get a special element over them:
+         white text, almost opaque black background.
+
+         clicking it adds conenteditable="true"
+         wherever you click.
+
+         Clicking edit again saves all changes.
+
+STYLE SEARCH (MINIMUM)
+
+
+No Error Messages.
+Needs to be orderable.
+Style the new update. Thing.
+
 Three Important Things Remain:
-  1. Finish Updates, Desctiption, View
   2. Finish Game Add
   3. Finish Login/Register
   4. Search Results
   5. Get The Pictionary Thing Below
   6. Oh man oh man if you made the background's stretch the whole page and be overflow hidden it would do the cool thing.
   7. default: you haven't started games/ you haven't followed any games
+  8. Seeds
 
 Game Add Use Cloudinary
   make it pick a 3:4 aspect ration thing as a transformation.
     MWAHAHAHAHA JUST DO THIS RIGHT NOW YESSSS
     upload your own files onto cloudinary so you don't need to hotlink them
       - regular images first, then do the aspect ratio, then example pics.
-
-Oh man Think About Buttons Like This!
-
-          Login
-                Register
-                        Search
-                              Add Game
-
-And Each One Is A Different Colored Bar, with a opacity 50
 
 Make the [Titles Of Games, Search Bar, Title-Input] Display in an ALL CAPS font.
 Make the games controller ALL CAP the query string.
