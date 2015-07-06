@@ -60,11 +60,11 @@ $dark_purple: #800040;
   text-align: right;
 }
 
-#comment-form-submit, #update-form-submit {
+#comment-form-submit, #update-form-submit, .submit {
   text-align: right;
   cursor: pointer;
 }
 
-#comment-form-submit:hover, #update-form-submit:hover {
+#comment-form-submit:hover, #update-form-submit:hover, .submit:hover {
   background-color: $dark_green;
 }

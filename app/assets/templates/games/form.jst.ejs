@@ -1,44 +1,30 @@
-<label>
-Title
-<p>
-What's Your Game Called?
-</p>
-<input type="text" value="<%= game.get('title') %>" id="title">
-</label>
+<div class="game-edit">
+  <div class="form-el" id="explain">Just Click On Any Area To Change It</div>
 
-<hr>
+  <h2 class="vertical-padding-50px" contenteditable="true" id="title">
+      <% if (game.escape('title')) { %>
+        <%= game.escape('title') %>
+      <% } else { %>
+        Click Here To Name Your Game
+      <% } %>
+  </h2>
 
-<label>
-Summary
-<p>
-Something short and pithy, sure to interest a player!
-</p>
-<input type="text" value="<%= game.get('summary') %>" id="summary">
-</label>
+  <p contenteditable="true" id="summary" class="form-el">
+      <% if (game.escape('summary')) { %>
+        <%= game.escape('summary') %>
+      <% } else { %>
+        Give it a summary! Something short and sweet to interest your players!
+      <% } %>
+  </p>
 
-<hr>
+  <a class="form-el" id="cloudinary">Click Here To Upload An Image</a>
 
-<label>
-Image Url
-<p>
-A 3:4 Aspect Ratio will provide the best results.
-</p>
+  <img class="form-el" id="current-image" src="<%= game.get('image_url') %>"/>
 
-<a id="cloudinary">Upload Image</a>
-</label>
+  <pre contenteditable="true" id="description" class="form-el">
+  <% if (game.escape('description')) { %><%= game.escape('description') %><% } else { %>Give me all the details! When, what, where, everything your players need to know.<% } %></pre>
 
-<hr>
+  <div class="display-errors"></div>
 
-<label>
-Description
-<p>
-Give me all the details! When, what, where,
-everything your players need to know.
-</p>
-<textarea rows="8" cols="40" id="description"><%= game.get('description') %></textarea>
-</label>
-
-<hr>
-
-<div class="display-errors"></div>
-<div class="submit big-button">Submit</div>
+  <div class="submit form-el">Submit</div>
+</div>

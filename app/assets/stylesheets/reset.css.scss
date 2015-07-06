@@ -43,7 +43,9 @@ h2 {
   text-align: center;
   font-size: 60px;
   padding: 100px;
+  // color: $dark_grey;
   clear: both;
+  // background: rgba(0, 127, 128, 0.75);
 }
 
 body {
@@ -92,7 +94,7 @@ input[type="submit"] {
   font-size: 80px;
 }
 
-// Test to see if not(:focus) fucks everything up.
+// Test to see if :not(:focus) fucks everything up.
 // It doesn't seem to work, at least.
 *[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
   content: attr(data-placeholder);

@@ -1,0 +1,56 @@
+$light_tan: #fffbcc;
+$dark_tan: #7d7736;
+$light_grey: #a38f8f;
+$dark_grey: #463939;
+$light_green: #52d411;
+$dark_green: #2a8000;
+$light_cyan: #11d4d4;
+$dark_cyan: #007f80;
+$light_purple: #d41173;
+$dark_purple: #800040;
+
+.game-edit {
+  padding: 100px 0px 300px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 66%;
+  font-size: 20px;
+}
+
+#explain {
+    background-color: $light_grey;
+}
+
+#title, #description {
+  background-color: $dark_cyan;
+}
+
+.form-el {
+  padding: 20px;
+}
+
+#summary {
+  background-color: $light_cyan;
+}
+
+#cloudinary {
+  background-color: $dark_cyan;
+  display: block;
+  cursor: pointer;
+}
+
+#current-image {
+  background-color: $light_cyan;
+  min-height: 60px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.submit {
+  background-color: $light_grey;
+}
+//
+// .submit:hover {
+//
+// }

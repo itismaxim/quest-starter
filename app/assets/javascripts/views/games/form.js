@@ -7,10 +7,12 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
 
   events: {
     'click .submit': 'saveGame',
-    'click #cloudinary': 'submitImage'
+    'click #cloudinary': 'submitImage',
+    // 'click h2': 'render',
   },
 
   initialize: function () {
+    this.listenTo(this.model, 'all', this.render);
     this.imageUrl = this.model.get("imageUrl");
   },
 
@@ -70,9 +72,9 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
   },
 
   saveGame: function () {
-    var title = $('#title').val();
-    var summary = $('#summary').val();
-    var description = $('#description').val();
+    var title = $('#title').text();
+    var summary = $('#summary').text();
+    var description = $('#description').text();
     var that = this;
     this.model.save({
       title: title,
@@ -86,14 +88,13 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var activate = this.model.get('active') ? "activate " : "deactivate";
+    // var activate = this.model.get('status') === "active" ? "activate " : "deactivate";
     var view = this.template({
       game: this.model
     });
     this.$el.html(view);
-    // debugger;
-    return this;
     this.$sidebar = $('.game-sidebar');
     this.buildSideBar();
+    return this;
   },
 });
