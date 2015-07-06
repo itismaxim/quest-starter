@@ -1,44 +1,22 @@
-<label>
-Title
-<p>
-What's Your Game Called?
-</p>
-<input type="text" value="<%= game.get('title') %>" id="title">
-</label>
+<h2 class="game-header">
+  <div class="header-inside" contenteditable="true">
+    <%= game.escape('title') %>
+  </div>
+</h2>
 
-<hr>
+<div class="game-top-box group">
+    <div class="game-image-container cloudinary-background">
+      <a id="cloudinary">Upload Image</a>
+    </div>
 
-<label>
-Summary
-<p>
-Something short and pithy, sure to interest a player!
-</p>
-<input type="text" value="<%= game.get('summary') %>" id="summary">
-</label>
+    <div class="game-sidebar"></div>
+</div>
 
-<hr>
+<ul class="game-nav">
+  <li class="nav-option" name='updates'>Updates</li>
+  <li class="nav-option selected" name='description'>Description</li>
+  <li class="nav-option" name='comments'>Comments</li>
+  <!-- <li class="nav-option" name='surveys'>Surveys</li> -->
+</ul>
 
-<label>
-Image Url
-<p>
-A 3:4 Aspect Ratio will provide the best results.
-</p>
-
-<a id="cloudinary">Upload Image</a>
-</label>
-
-<hr>
-
-<label>
-Description
-<p>
-Give me all the details! When, what, where,
-everything your players need to know.
-</p>
-<textarea rows="8" cols="40" id="description"><%= game.get('description') %></textarea>
-</label>
-
-<hr>
-
-<div class="display-errors"></div>
-<div class="submit big-button">Submit</div>
+<div class="game-tab"></div>

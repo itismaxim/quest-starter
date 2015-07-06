@@ -3,7 +3,7 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
 
   tagName: 'form',
 
-  className: 'game-form',
+  className: 'game',
 
   events: {
     'click .submit': 'saveGame',
@@ -12,6 +12,46 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.imageUrl = this.model.get("imageUrl");
+  },
+
+  buildSideBar: function () {
+    var active = this.model.get('active');
+    var followers = this.model.get('followers');
+
+    var $activeButton = $('<div>', { class: 'sidebar-el-small active-button game-activate' });
+    if (active === true) {
+      $activeButton.text('Deactivate This Game').addClass('deactivate');
+    } else {
+      $activeButton.text('Activate This Game').addClass('activate');
+    }
+    this.$sidebar.append($activeButton);
+
+    var $active = $('<div>', { class: 'sidebar-el-small game-active' });
+    if (active === true) {
+      $active.text('Running').addClass('running');
+    } else {
+      $active.text('Dormant').addClass('dormant');
+    }
+    this.$sidebar.append($active);
+
+    var $summary = $('<p>', { class: 'game-summary' });
+    // add content editable
+    $summary.html(this.model.escape('summary'));
+    this.$sidebar.append($summary);
+
+    var $followers = $('<div>', { class: 'sidebar-el-small game-followers' });
+    if (followers === 0) {
+      $followers.text('0 Followers :c');
+    } else if (followers === 1) {
+      $followers.text('1 Follower');
+    } else {
+      $followers.text(followers +' Followers');
+    }
+    this.$sidebar.append($followers);
+
+    var $edit = $('<div>', { class: 'sidebar-el-small edit' }).text('Edit');
+    var $delete = $('<div>', { class: 'sidebar-el-small delete' }).text('Delete');
+    this.$sidebar.append($edit).append($delete);
   },
 
   submitImage: function () {
@@ -49,8 +89,10 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
     var view = this.template({
       game: this.model
     });
-
     this.$el.html(view);
+    this.$sidebar = $('.game-sidebar');
+    debugger;
+    this.buildSideBar();
     return this;
   },
 });

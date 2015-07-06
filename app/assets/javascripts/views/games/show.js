@@ -28,15 +28,15 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    'click .nav-option': 'switchView',
-    'click .follow':     'followGame',
-    'click .unfollow':   'unfollowGame',
-    'click .activate':   'activateGame',
-    'click .deactivate': 'deactivateGame',
-    'click .delete':     'deleteGame',
-    'click .edit':       'editGame',
+    'click .nav-option'        : 'switchView',
+    'click .follow'            : 'followGame',
+    'click .unfollow'          : 'unfollowGame',
+    'click .activate'          : 'activateGame',
+    'click .deactivate'        : 'deactivateGame',
+    'click .delete'            : 'deleteGame',
+    'click .edit'              : 'editGame',
     'input *[data-placeholder]': 'divPlaceholder',
-    'blur *[data-placeholder]': 'divPlaceholder',
+    'blur  *[data-placeholder]': 'divPlaceholder',
   },
 
   divPlaceholder: function (event) {

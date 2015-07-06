@@ -128,3 +128,17 @@ $dark_purple: #800040;
   font-size: 24px;
   margin: 30px 0px;
 }
+
+.cloudinary-background {
+  background-color: $light_cyan;
+  position: relative;
+}
+
+#cloudinary {
+  top: 200px;
+  position: relative;
+  padding: 200px 0px;
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+}
