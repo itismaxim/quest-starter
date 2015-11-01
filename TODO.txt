@@ -1,3 +1,28 @@
+XX Made the little side buttons have hover cursors.
+
+WHen You click Description, it smacks your window up, because your window is now further down then the screen.
+Stop that.
+  Simple way: define the bottom of the screen, on this page,
+  as being one entire screen length below the options.
+  Since you need to scroll up, it will never appear to jump.
+
+Text Boxes don't have their default text re-appear when you mouse away if you didn;t type anything.
+
+New comments don't appear up top.
+
+When you upload a picture, it doesn't appear until you save. Make sure the preview image is there.
+
+
+Fucking Pixel Perfect Tool Bar gaaaaah
+  Button shifts everything left
+  Oh fuck you broke it's thickness
+  Button not quite high enough.
+
+Change all the divs in game form to have spaces,
+and all be the same color.
+
+You click on one, it changes color. On focus I guess.
+
 SUPER IMPORTANT
 STYLE NEW GAME (MINIMUM)
   -edit: On clicking edit, when you hover over buttons,
@@ -16,9 +41,7 @@ No Error Messages.
 Needs to be orderable.
 Style the new update. Thing.
 
-Three Important Things Remain:
-  2. Finish Game Add
-  3. Finish Login/Register
+Three Important Things Remain:s
   4. Search Results
   5. Get The Pictionary Thing Below
   6. Oh man oh man if you made the background's stretch the whole page and be overflow hidden it would do the cool thing.

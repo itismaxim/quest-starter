@@ -35,6 +35,11 @@ input, textarea, h1, h2, h3, h4, h5 {
   -moz-transition: all 0.7s;
 }
 
+input {
+  background-color: white;
+  color: black;
+}
+
 pre {
   white-space: pre-wrap;
 }
@@ -80,6 +85,7 @@ button {
 button,
 input[type="submit"] {
   cursor: pointer;
+  color: white;
 }
 
 /* Clearfix */

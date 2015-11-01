@@ -113,7 +113,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     var authored = this.model.get('authored');
 
     if (authored === true) {
-      var $activeButton = $('<div>', { class: 'sidebar-el-small active-button game-activate' });
+      var $activeButton = $('<div>', { class: 'sidebar-el-small active-button game-activate cursor-hover' });
       if (active === true) {
         $activeButton.text('Deactivate This Game').addClass('deactivate');
       } else {
@@ -121,7 +121,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
       }
       this.$sidebar.append($activeButton);
     } else {
-      var $author = $('<div>', { class: 'sidebar-el-small game-author' });
+      var $author = $('<div>', { class: 'sidebar-el-small game-author cursor-hover' });
       $author.html("<a href='#/users/" + this.model.get('author_id') + "'>By " + this.model.escape('author_name') + "</a>");
       this.$sidebar.append($author);
     }
@@ -157,11 +157,11 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     this.$sidebar.append($followers);
 
     if (authored) {
-      var $edit = $('<div>', { class: 'sidebar-el-small edit' }).text('Edit');
-      var $delete = $('<div>', { class: 'sidebar-el-small delete' }).text('Delete');
+      var $edit = $('<div>', { class: 'sidebar-el-small edit cursor-hover' }).text('Edit');
+      var $delete = $('<div>', { class: 'sidebar-el-small delete cursor-hover' }).text('Delete');
       this.$sidebar.append($edit).append($delete);
     } else {
-      var $following = $('<div>', { class: 'sidebar-el-small game-following' });
+      var $following = $('<div>', { class: 'sidebar-el-small game-following cursor-hover' });
       if (!QuestStarter.currentUser) {
         $following.text('Log In To Follow');
       } else if (follow_id) {

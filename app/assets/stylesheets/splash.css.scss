@@ -19,6 +19,10 @@ $dark_purple: #800040;
   top: 61px;
 }
 
+.fix_top {
+  top: 0px
+}
+
 .splash-container {
   position: absolute;
   top: 20%;
@@ -77,4 +81,49 @@ $dark_purple: #800040;
 
 .how-to {
 
+}
+
+.login-row {
+  background: rgba(0, 127, 128, 0.75);
+  font-size: 30px;
+  font-style: normal;
+  padding: 5px;
+  height: auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+// .font-size-40 {
+//   font-size: 40px;
+// }
+
+.float-left {
+  float: left;
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.width-auto {
+  width: auto;
+  display: inline-block;
+}
+
+.top-margin {
+  margin-top: 60px;
+}
+
+.bottom-margin {
+  margin-bottom: 60px;
+}
+
+.display-login-errors {
+  background-color: $dark_purple;
+  padding: 0px 15px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
 }
