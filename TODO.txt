@@ -1,4 +1,21 @@
-XX Made the little side buttons have hover cursors.
+Todo list 2: Electric Boogaloo
+
+*Fix the readme.*
+
+****Make a guest log in page.****
+On log out, it redirects to home page, NOT login.
+Game View: make the corners rounded.
+No seriously fix the ordering of comments, that's stupid (Maybe make them get INSERTED bottom first?)
+**Yeah, you need to make the new game screen better.**
+  **Image needs to display when you pick one.**
+  The image preview place in new game? Give it a default image. Games w/o an image will use it.
+    Super beyond the pale optional goal: make it select randomly from a bunch of cool D&D pics
+  Optional: make the edit game screen the shit
+***Seed data. Lots of seed date.***
+Prowl the list below and select any nessesary changes.
+
+Put time back in? THat might be a good idea.
+
 
 WHen You click Description, it smacks your window up, because your window is now further down then the screen.
 Stop that.
