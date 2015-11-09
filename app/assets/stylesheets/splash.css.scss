@@ -34,9 +34,9 @@ $dark_purple: #800040;
   font-style: normal;
   padding: 5px;
   height: auto;
-  transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
 }
 
 .splash-title {
@@ -69,18 +69,25 @@ $dark_purple: #800040;
 .fourth{ left: 18%; }
 
 .how-to {
-  margin-top: 60px;
-  padding: 5px 180px;
+  //margin-top: 60px;
+  padding: 10px 0px;
   text-align: center;
-  font-size: 20px;
+  font-size: 26px;
+}
+
+.how-to p {
+  padding: 3px;
 }
 
 .hidden {
-  display: none;
+  //display: none;
+  margin-top: 100vh;
+  //set the poisiton to way below the screen.
 }
 
 .revealed {
-
+  margin-top: 60px;
+  // set the position to higher
 }
 
 .login-row {
