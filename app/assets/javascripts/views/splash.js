@@ -7,8 +7,8 @@ QuestStarter.Views.Splash = Backbone.View.extend({
 
   events: {
     "click .first":  'goToNewGame',
-    "click .second": 'goToSearch',
-    "click .third":  'goToYourGames',
+    "click .second":  'goToYourGames',
+    "click .third": 'loginAsGuest',
     "click .fourth": 'revealHowTo',
   },
 
@@ -24,6 +24,44 @@ QuestStarter.Views.Splash = Backbone.View.extend({
     Backbone.history.navigate('#/search', {trigger: true});
   },
 
+  loginAsGuest: function () {
+    QuestStarter.currentUser = {
+      name: "Hiring Guy",
+      id: 6
+    };
+    //Backbone.history.navigate('#/users/' + QuestStarter.currentUser.id, {trigger: true});
+    $.ajax({
+      type   : "POST",
+      url    : "session",
+      data   : {
+        user: {
+          name: "Hiring Guy",
+          password: "pleasehireme"
+        }
+      },
+      success : function() {
+        window.location.reload();
+        Backbone.history.navigate('#/users/' + QuestStarter.currentUser.id);
+      }
+    });
+  },
+
+  saveGame: function () {
+    var title = $('#title').text();
+    var summary = $('#summary').text();
+    var description = $('#description').text();
+    var that = this;
+    this.model.save({
+      title: title,
+      summary: summary,
+      image_url: this.imageUrl,
+      description: description
+    }, {success: function (){
+      Backbone.history.navigate("games/" + that.model.id, {trigger: true});
+    }, error: that.error
+    });
+  },
+
   goToYourGames: function () {
     if (QuestStarter.currentUser) {
       Backbone.history.navigate('#/users/' + QuestStarter.currentUser.id, {trigger: true});
@@ -33,7 +71,11 @@ QuestStarter.Views.Splash = Backbone.View.extend({
   },
 
   revealHowTo: function () {
-    $('.hidden').removeClass('hidden').addClass('revealed');
+    if ($('.how-to').hasClass("hidden")) {
+      $('.how-to').removeClass('hidden').addClass('revealed');
+    } else {
+      $('.how-to').removeClass('revealed').addClass('hidden');
+    };
   },
 
   render: function () {

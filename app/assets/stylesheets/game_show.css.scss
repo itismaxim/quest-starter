@@ -11,10 +11,10 @@ $dark_purple: #800040;
 
 .game {
   background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1434736050/q1js4ppy1ih6sfthkezk.jpg");
-  // background-size: cover;
+  background-size: cover;
   // bottom: 0;
-  right: 0;
-  left: 0;
+  // right: 0;
+  // left: 0;
 }
 
 .vertical-padding-50px {
@@ -24,13 +24,10 @@ $dark_purple: #800040;
 .header-inside {
   margin-left: auto;
   margin-right: auto;
+  padding: 5px;
   width: 66.66%;
-  background-color: $dark_cyan;
-
-  // Get rid of this?
-  // Instead, a bar acros the screen.
-  // Just like on the splash page!
-  // background: rgba(0, 127, 128, 0.75);
+  border-radius: 17px;
+  background: rgba(0, 127, 128, 0.75);
 }
 
 .game-top-box {
@@ -51,6 +48,8 @@ $dark_purple: #800040;
 .game-image {
   width: 100%;
   height: 500px;
+  border-bottom-left-radius: 17px;
+  border-top-left-radius: 17px;
 }
 
 .game-sidebar {
@@ -65,8 +64,13 @@ $dark_purple: #800040;
   height: 20px;
 }
 
-.game-author { background-color: $dark_cyan; }
+.game-author {
+  background-color: $dark_cyan;
+  border-top-right-radius: 17px;
+ }
 .game-author:hover { background-color: $light_cyan; }
+
+.active-button { border-top-right-radius: 17px; }
 
 .deactivate { background-color: $dark_purple; }
 .deactivate:hover { background-color: $light_purple; }
@@ -76,7 +80,10 @@ $dark_purple: #800040;
 .dormant { background-color: $dark_grey; }
 
 .game-followers { background-color: $dark_grey; }
-.game-following { background-color: $dark_cyan; }
+.game-following {
+  background-color: $dark_cyan;
+    border-bottom-right-radius: 17px;
+}
 .game-following:hover { background-color: $light_cyan; }
 
 .cursor-hover { cursor: pointer;}
@@ -88,7 +95,10 @@ $dark_purple: #800040;
 }
 
 .edit:hover { background-color: $light_green; }
-.delete { background-color: $dark_purple; }
+.delete {
+  background-color: $dark_purple;
+  border-bottom-right-radius: 17px;
+ }
 .delete:hover { background-color: $light_purple; }
 
 .game-summary {
@@ -118,6 +128,7 @@ $dark_purple: #800040;
   padding: 50px;
   background-color: $dark_cyan;
   clear:both;
+  min-height: 80vh;
 }
 
 .game-tab > div {

@@ -3,14 +3,6 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     this.$rootEl = $('#main');
   },
 
-  // initialize: function() {
-  //   var dropDownView = new QuestStarter.Views.DropDownView({
-  //     collection: QuestStarter.Collections.games
-  //   });
-  //   $('#add-dropdown').append(dropDownView.render().$el);
-  //   this.$rootEl = $('#main');
-  // },
-
   routes: {
     '': 'splash',
     'users/:id': 'userShow',

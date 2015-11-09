@@ -1,12 +1,14 @@
 <a href="#">Quest Starter</a>
 
 <div class="navbar-right">
+  <!--
   <a href="#search">Search</a>
   <input type="text" value="">
+  -->
 
   <% if (QuestStarter.currentUser) {%>
     <div class="dropdown">
-      <a>Hello <%= QuestStarter.currentUser.showName %></a>
+      <a>Hello <%= QuestStarter.currentUser.name %></a>
       <ul>
         <li><a class="dropdown-link" href="#games/new">Add Game</a></li>
         <li><a class="dropdown-link" href=<%= "#users/" + QuestStarter.currentUser.id %>>Your Games</a></li>
