@@ -29,7 +29,8 @@ QuestStarter.Views.Splash = Backbone.View.extend({
       name: "Hiring Guy",
       id: 6
     };
-    //Backbone.history.navigate('#/users/' + QuestStarter.currentUser.id, {trigger: true});
+    var nav = new QuestStarter.Views.Nav();
+    $('#navbar').html(nav.render().$el);
     $.ajax({
       type   : "POST",
       url    : "session",
@@ -40,7 +41,6 @@ QuestStarter.Views.Splash = Backbone.View.extend({
         }
       },
       success : function() {
-        window.location.reload();
         Backbone.history.navigate('#/users/' + QuestStarter.currentUser.id);
       }
     });
