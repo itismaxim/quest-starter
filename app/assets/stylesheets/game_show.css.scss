@@ -9,14 +9,6 @@ $dark_cyan: #007f80;
 $light_purple: #d41173;
 $dark_purple: #800040;
 
-.game {
-  background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1434736050/q1js4ppy1ih6sfthkezk.jpg");
-  background-size: cover;
-  // bottom: 0;
-  // right: 0;
-  // left: 0;
-}
-
 .vertical-padding-50px {
   padding: 50px 0px;
 }
@@ -28,6 +20,7 @@ $dark_purple: #800040;
   width: 66.66%;
   border-radius: 17px;
   background: rgba(0, 127, 128, 0.75);
+  margin-top: 90px;
 }
 
 .game-top-box {
@@ -41,7 +34,7 @@ $dark_purple: #800040;
   position: relative;
   height: 0;
   width: 75%;
-  padding-bottom: 500px; //50% YOU CAN DO THIS WHEN ALL THE TEXT is also responsive.
+  padding-bottom: 500px;
   overflow: hidden;
 }
 

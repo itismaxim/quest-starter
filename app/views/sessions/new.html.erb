@@ -1,31 +1,33 @@
-<form action="<%= session_url %>" method="post" class="splash fix_top group">
-  <%= auth_token_input %>
+<div class="static-page-background">
+  <form action="<%= session_url %>" method="post" class="splash static-page-background group">
+    <%= auth_token_input %>
 
-  <h2 class="splash-title row top-margin bottom-margin">Sign In</h2>
+    <h2 class="splash-title row top-margin bottom-margin">Sign In</h2>
 
-  <p class="display-login-errors">
-    <%= render "layouts/errors" %>
-  </p>
+    <p class="display-login-errors">
+      <%= render "layouts/errors" %>
+    </p>
 
-    <label class="login-row">
-      <div class="width-auto">
-        <div class="float-left">
-          Username
+      <label class="login-row">
+        <div class="width-auto">
+          <div class="float-left">
+            Username
+          </div>
+
+          <input type="text" name="user[name]" value="">
         </div>
+      </label>
 
-        <input type="text" name="user[name]" value="">
-      </div>
-    </label>
+      <label class="login-row">
+        <div class="width-auto">
+          <div class="float-left">
+            Password
+          </div>
 
-    <label class="login-row">
-      <div class="width-auto">
-        <div class="float-left">
-          Password
+          <input type="password" name="user[password]" value="">
         </div>
+      </label>
 
-        <input type="password" name="user[password]" value="">
-      </div>
-    </label>
-
-    <input class="login-row top-margin click" type="submit" value="Sign In">
-</form>
+      <input class="login-row top-margin click" type="submit" value="Sign In">
+  </form>
+</div>

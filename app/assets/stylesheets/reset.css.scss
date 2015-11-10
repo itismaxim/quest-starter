@@ -47,10 +47,12 @@ pre {
 h2 {
   text-align: center;
   font-size: 60px;
-  padding: 100px;
-  // color: $dark_grey;
   clear: both;
-  // background: rgba(0, 127, 128, 0.75);
+  padding: 10px;
+}
+
+.round-edges {
+  border-radius: 17px;
 }
 
 body {
@@ -107,4 +109,24 @@ input[type="submit"] {
   float: left;
   margin-left: 2px;
   color: #b3b3b3;
+}
+
+#main {
+  background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1434736050/q1js4ppy1ih6sfthkezk.jpg");
+  background-size: cover;
+  top: -61px;
+  min-height: 100vh;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.static-page-background {
+  background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1434736050/q1js4ppy1ih6sfthkezk.jpg");
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }

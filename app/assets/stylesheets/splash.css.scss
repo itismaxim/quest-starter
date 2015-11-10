@@ -9,22 +9,12 @@ $dark_cyan: #007f80;
 $light_purple: #d41173;
 $dark_purple: #800040;
 
-.splash {
-  background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1434736050/q1js4ppy1ih6sfthkezk.jpg");
-  background-size: cover;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: -61px;
-}
-
 .splash-container {
   position: absolute;
   top: 20%;
   width: 100%;
   text-align: center;
-
+  position: fixed;
   overflow: hidden;
 }
 
