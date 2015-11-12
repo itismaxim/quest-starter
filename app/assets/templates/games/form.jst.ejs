@@ -6,10 +6,52 @@
 
 <div class="game-top-box group">
     <div class="game-image-container shadow">
-        <img class="game-image" src="<%= game.escape('image_url') %>"/>
+        <img class="game-image change-this-image" src="<%= game.escape('image_url') %>"/>
     </div>
 
-    <div class="game-sidebar"></div>
+    <div class="game-sidebar">
+      <% if (game.active === true) { %>
+        <div class="sidebar-el-small active-button game-activate cursor-hover deactivate">
+          Deactivate This Game
+        </div>
+      <% } else { %>
+        <div class="sidebar-el-small active-button game-activate cursor-hover activate">
+          Activate This Game
+        </div>
+      <% } %>
+
+      <% if (game.active === true) { %>
+        <div class="sidebar-el-small game-active running">
+          Running
+        </div>
+      <% } else { %>
+        <div class="sidebar-el-small game-active dormant">
+          Dormant
+        </div>
+      <% } %>
+
+      <p class="game-summary editing" id= "summary" contenteditable="true">
+        <%= game.escape('summary') %>
+      </p>
+
+      <% if (game.followers === 0) { %>
+        <div class="sidebar-el-small game-followers">
+          0 Followers
+        </div>
+      <% } else if (game.followers === 1) { %>
+        <div class="sidebar-el-small game-followers">
+          1 Follower
+        </div>
+      <% } else { %>
+        <div class="sidebar-el-small game-followers">
+          <%= game.followers %> Followers
+        </div>
+      <% } %>
+
+      <div class="sidebar-el-small save cursor-hover">
+        Save Game
+      </div>
+    </div>
 </div>
 
 <div class="game-nav description-box">
