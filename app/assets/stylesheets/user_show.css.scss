@@ -50,9 +50,20 @@ div.followed-games, div.authored-games {
 .even-square { background-color: $dark_cyan }
 .mini-show:hover > .even-square { background-color: $dark_purple; }
 
+p, h4, .mini-show-image {
+  position: relative;  transition:all 0.0s;
+  -webkit-transition:all 0.0s;
+  -moz-transition: all 0.0s;
+}
+
 .mini-show-image {
-  width: 100%;
+  // width: 140%;
   // height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  height: 16.66vw;
 }
 
 .mini-show-title {

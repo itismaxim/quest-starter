@@ -1,23 +1,14 @@
 Todo list 2: Electric Boogaloo
 
-User Show, My Games, Your Games, Give em the round tabs light blue treatment.
-Change all the divs in game form to have spaces,
-and all be the same color.
-  You click on one, it changes color. On focus I guess.
-
 YOU MADE IT SHOW THE POSTED DATE! YES!
   Now add that to updates,
   and make it right justified
 
-On log out, it redirects to home page, NOT login.
-
 No seriously fix the ordering of comments, that's stupid (Maybe make them get INSERTED bottom first?)
-**Yeah, you need to make the new game screen better.**
-  **Image needs to display when you pick one.**
+  When you upload a picture, it doesn't appear until you save. Make sure the preview image is there.
   The image preview place in new game? Give it a default image. Games w/o an image will use it.
     Super beyond the pale optional goal: make it select randomly from a bunch of cool D&D pics
 ***Seed data. Lots of seed date.***
-Prowl the list below and select any nessesary changes.
 
 // Where and When Fields for games?
 
@@ -25,8 +16,6 @@ Prowl the list below and select any nessesary changes.
 // to the app general template? Get my nav bar on the log in page!
 
 Text Boxes don't have their default text re-appear when you mouse away if you didn;t type anything.
-
-When you upload a picture, it doesn't appear until you save. Make sure the preview image is there.
 
 Default: you haven't started games/ you haven't followed any games
 

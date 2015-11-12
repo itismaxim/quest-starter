@@ -51,7 +51,13 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
   },
 
   gameForm: function (id) {
-    var game = id ? QuestStarter.Collections.games.getOrFetch(id) : new QuestStarter.Models.Game();
+    var game = id ? QuestStarter.Collections.games.getOrFetch(id) : new QuestStarter.Models.Game ({
+      title: 'My Cool Game',
+      summary: 'Summarize your game here. Make is short but sweet!',
+      description: 'Describe your game here. This is where you can get in depth and describe what system you want to run, what the setting will be, and what kind of characters the players will have. Feel free to add anything else!',
+      image_url: 'http://res.cloudinary.com/dar1oti2e/image/upload/w_700,h_500,c_fill/v1447300087/kpzpw79z8k4lq6e7a52o.jpg',
+      active: false,
+    });
     var view = new QuestStarter.Views.GameForm({
       model: game
     });

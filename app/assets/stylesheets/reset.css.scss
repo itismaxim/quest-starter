@@ -35,6 +35,10 @@ input, textarea, h1, h2, h3, h4, h5 {
   -moz-transition: all 0.7s;
 }
 
+textarea {
+    resize: none;
+}
+
 input {
   background-color: white;
   color: black;

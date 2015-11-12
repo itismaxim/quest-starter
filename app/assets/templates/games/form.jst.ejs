@@ -1,30 +1,20 @@
-<div class="game-edit">
-  <div class="form-el" id="explain">Just Click On Any Area To Change It</div>
+<h2 class="vertical-padding-50px">
+  <div class="header-inside editing" contenteditable="true" id="title">
+    <%= game.escape('title') %>
+  </div>
+</h2>
 
-  <h2 class="vertical-padding-50px" contenteditable="true" id="title">
-      <% if (game.escape('title')) { %>
-        <%= game.escape('title') %>
-      <% } else { %>
-        Click Here To Name Your Game
-      <% } %>
-  </h2>
+<div class="game-top-box group">
+    <div class="game-image-container shadow">
+        <img class="game-image" src="<%= game.escape('image_url') %>"/>
+    </div>
 
-  <p contenteditable="true" id="summary" class="form-el">
-      <% if (game.escape('summary')) { %>
-        <%= game.escape('summary') %>
-      <% } else { %>
-        Give it a summary! Something short and sweet to interest your players!
-      <% } %>
-  </p>
+    <div class="game-sidebar"></div>
+</div>
 
-  <a class="form-el" id="cloudinary">Click Here To Upload An Image</a>
-
-  <img class="form-el" id="current-image" src="<%= game.get('image_url') %>"/>
-
-  <pre contenteditable="true" id="description" class="form-el">
-  <% if (game.escape('description')) { %><%= game.escape('description') %><% } else { %>Give me all the details! When, what, where, everything your players need to know.<% } %></pre>
-
-  <div class="display-errors"></div>
-
-  <div class="submit form-el">Submit</div>
+<div class="game-nav description-box">
+  <div id="description-title">Description</div>
+  <div id="description" class="editing" contenteditable="true">
+    <%= game.escape('description') %>
+  </div>
 </div>

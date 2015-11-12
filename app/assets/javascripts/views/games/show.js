@@ -18,10 +18,6 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
       collection: this.model.comments(),
       gameId: this.model.id
     });
-    // this.surveys = new QuestStarter.Views.Surveys({
-    //   model: this.model
-    //   // CHange this to be collection: this.model.surveys
-    // });
     this.currentView = this.description;
     // this.currentView = this.comments;
     // I want this to happen in the router.
@@ -54,7 +50,6 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         Backbone.history.navigate('users/' + QuestStarter.currentUser.id, {trigger: true});
       }
     });
-    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   editGame: function () {
@@ -75,7 +70,6 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         this.render();
       }.bind(this)
     });
-    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   unfollowGame: function () {
@@ -89,17 +83,14 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
         this.render();
       }.bind(this)
     });
-    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   activateGame: function () {
     this.model.save({active: true}, {patch: true});
-    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   deactivateGame: function () {
     this.model.save({active: false}, {patch: true});
-    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   buildSideBar: function () {
@@ -109,6 +100,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
   },
 
   addActive: function () {
+    debugger;
     var active = this.model.get('active');
     var authored = this.model.get('authored');
 
