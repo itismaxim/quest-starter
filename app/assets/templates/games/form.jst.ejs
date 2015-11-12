@@ -5,8 +5,12 @@
 </h2>
 
 <div class="game-top-box group">
-    <div class="game-image-container shadow">
-        <img class="game-image change-this-image" src="<%= game.escape('image_url') %>"/>
+    <div class="game-image-container outer">
+      <img class="game-image" src="<%= game.escape('image_url') %>"/>
+
+      <div class="overlay">
+          <p class="text">Upload New Image</p>
+      </div>
     </div>
 
     <div class="game-sidebar">
