@@ -140,7 +140,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
 
     var $followers = $('<div>', { class: 'sidebar-el-small game-followers' });
     if (followers === 0) {
-      $followers.text('0 Followers :c');
+      $followers.text('0 Followers');
     } else if (followers === 1) {
       $followers.text('1 Follower');
     } else {

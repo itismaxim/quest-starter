@@ -25,13 +25,13 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
   },
 
   submitImage: function () {
-    var that = this
+    var that = this;
     cloudinary.openUploadWidget(
       CLOUDINARY_OPTIONS,
       function (error, result) {
         var uncutImageArray = result[0].url.split("upload/");
-        var cutImage = uncutImageArray[0].concat('upload/w_700,h_500,c_fill/').concat(uncutImageArray[1]);
-        this.imageUrl = cutImage;
+        var cutImageUrl = uncutImageArray[0].concat('upload/w_700,h_500,c_fill/').concat(uncutImageArray[1]);
+        this.imageUrl = cutImageUrl;
         // only uncomment then next line if you want to ignore all
         // uploaded images in favor of a photo of Nick Cage
         // this.imageUrl = "http://holdupnow.com/wp-content/uploads/2014/10/cage1.jpg";
