@@ -100,7 +100,6 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
   },
 
   addActive: function () {
-    debugger;
     var active = this.model.get('active');
     var authored = this.model.get('authored');
 
@@ -139,9 +138,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     var follow_id = this.model.get('follow_id');
 
     var $followers = $('<div>', { class: 'sidebar-el-small game-followers' });
-    if (followers === 0) {
-      $followers.text('0 Followers');
-    } else if (followers === 1) {
+    if (followers === 1) {
       $followers.text('1 Follower');
     } else {
       $followers.text(followers +' Followers');

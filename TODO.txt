@@ -1,25 +1,23 @@
 Todo list 2: Electric Boogaloo
 
-YOU MADE IT SHOW THE POSTED DATE! YES!
-  Now add that to updates,
-  and make it right justified
+1. Reset the Database
+2. Seed Data
 
-No seriously fix the ordering of comments, that's stupid (Maybe make them get INSERTED bottom first?)
-  When you upload a picture, it doesn't appear until you save. Make sure the preview image is there.
-  The image preview place in new game? Give it a default image. Games w/o an image will use it.
-    Super beyond the pale optional goal: make it select randomly from a bunch of cool D&D pics
-***Seed data. Lots of seed date.***
+BARE MINIMUM
 
-// Where and When Fields for games?
+3. Posted Date on Updates (copy code from comments)
+4. Use divs to make the posted date appear on the right.
+5. Fix the Tab issue
+6. Insert the comments and updates FROM THE TOP, instead of from the bottom.
+      Gods I hope editing a comment won't fuck that up. Maybe post by date edited then?
 
-// Maaaaaybe I should take the router init in ROOT and transfer it
-// to the app general template? Get my nav bar on the log in page!
+DONE
 
-Text Boxes don't have their default text re-appear when you mouse away if you didn;t type anything.
-
-Default: you haven't started games/ you haven't followed any games
-
-Game Add Use Cloudinary
-  make it pick a 3:4 aspect ration thing as a transformation.
-    MWAHAHAHAHA JUST DO THIS RIGHT NOW YESSSS
-      do the aspect ratio, then example pics.
+7. When and where tabs.
+      Play with models.
+      Migration.
+      REDO game show and game mini show (and game form too!)
+8. Make it ALL screen size responsive.
+        All font sizes will be in terms of vh or vw
+        Most space filling divs should have their heights also scale.
+9. Make more things transparent. It looks nice.

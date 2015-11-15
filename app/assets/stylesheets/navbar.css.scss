@@ -16,8 +16,6 @@ nav {
   font-size: 24px;
   z-index: 2;
   height: 61px;
-  // font: something nice
-  // and not on the rest of my site?
   padding: 0px 50px;
   box-sizing: border-box;
   transition: all 0.2s;
@@ -29,7 +27,6 @@ nav a {
   float: left;
   padding: 15px;
   cursor: pointer;
-  // liked it better as tan
 }
 
 nav a:hover {
@@ -53,13 +50,11 @@ nav a:hover {
 }
 
 nav input {
-  // still thinking make this smaller
   padding: 5px 15px;
   margin: 10px;
   float: left;
   background-color: white;
   color: $dark_tan;
-  // Not Sure About These Colors
   border-radius: 17px;
 }
 

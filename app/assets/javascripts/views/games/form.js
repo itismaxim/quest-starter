@@ -25,7 +25,6 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
   },
 
   submitImage: function () {
-    var that = this;
     cloudinary.openUploadWidget(
       CLOUDINARY_OPTIONS,
       function (error, result) {
@@ -35,8 +34,7 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
         // only uncomment then next line if you want to ignore all
         // uploaded images in favor of a photo of Nick Cage
         // this.imageUrl = "http://holdupnow.com/wp-content/uploads/2014/10/cage1.jpg";
-        var $image = $('<img>', { class: 'game-image', src: this.imageUrl });
-        that.$gameImage.html($image);
+        $('.game-image').attr( "src", this.imageUrl );
       }.bind(this)
     );
   },
@@ -62,7 +60,6 @@ QuestStarter.Views.GameForm = Backbone.CompositeView.extend({
       game: this.model
     });
     this.$el.html(view);
-    this.$gameImage = $('.game-image-container');
     return this;
   },
 });

@@ -11,9 +11,11 @@ $dark_purple: #800040;
 
 div.followed-games, div.authored-games {
   background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1435786595/dxbk9lhcaltkvs8acuu0.png");
-  // background-size: cover;
   background-size: 100%;
   height: auto;
+  margin: 90px;
+  border-radius: 17px;
+  overflow: hidden;
 }
 
 .heading {
@@ -28,6 +30,16 @@ div.followed-games, div.authored-games {
   margin-top: 90px;
 }
 
+.no-games {
+  text-align: center;
+  font-size: 45px;
+  padding: 30px;
+  border-radius: 17px;
+  // margin: 90px;
+  background: rgba(212, 17, 115, 0.75);
+  background-image: none;
+}
+
 .push-down {
   margin-top: 151px;
 }
@@ -36,10 +48,6 @@ div.followed-games, div.authored-games {
   height: 0;
   width: 16.66666%;
   padding-bottom: 16.66666%;
-  // width: 14.2857142857%;
-  // padding-bottom: 14.2857142857%;
-  // width: 20%;
-  // padding-bottom: 20%;
   float: left;
   overflow: hidden;
   position: relative;
@@ -50,15 +58,13 @@ div.followed-games, div.authored-games {
 .even-square { background-color: $dark_cyan }
 .mini-show:hover > .even-square { background-color: $dark_purple; }
 
-p, h4, .mini-show-image {
+p, h4, .mini-show-image, author-link {
   position: relative;  transition:all 0.0s;
   -webkit-transition:all 0.0s;
   -moz-transition: all 0.0s;
 }
 
 .mini-show-image {
-  // width: 140%;
-  // height: 100%;
   position: absolute;
   left: 50%;
   top: 50%;

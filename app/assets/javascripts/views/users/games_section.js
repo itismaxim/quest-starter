@@ -9,7 +9,7 @@ QuestStarter.Views.GamesSection = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addGame);
     this.listenTo(this.collection, 'remove', this.removeGame);
-    this.collection.each(function(game) {
+    this.collection.each( function (game) {
       this.addGame(game);
     }, this);
   },

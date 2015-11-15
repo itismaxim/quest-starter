@@ -15,7 +15,6 @@ QuestStarter.Views.Comment = Backbone.View.extend({
 
   deleteComment: function () {
     this.model.destroy();
-    // TAQ: CAN this go wrong? Do I need an error callback?
   },
 
   render: function () {

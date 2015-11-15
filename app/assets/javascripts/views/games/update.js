@@ -19,7 +19,6 @@ QuestStarter.Views.Update = Backbone.ErrorView.extend({
     if (this.editing) {
       var that = this;
       this.editing = false;
-      debugger;
       var title = $('.' + this.indexClass + "-title").text();
       var text = $('.' + this.indexClass + "-text").text();
       this.model.save({
@@ -37,7 +36,6 @@ QuestStarter.Views.Update = Backbone.ErrorView.extend({
       data: {
         update: {game_id: this.model.get('game_id')}
       }, processData: true});
-    // Error Call Back: We're Sorry, Something Went Wrong
   },
 
   render: function () {

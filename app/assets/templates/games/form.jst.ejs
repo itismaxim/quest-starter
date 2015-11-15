@@ -38,11 +38,7 @@
         <%= game.escape('summary') %>
       </p>
 
-      <% if (game.followers === 0) { %>
-        <div class="sidebar-el-small game-followers">
-          0 Followers
-        </div>
-      <% } else if (game.followers === 1) { %>
+      <% if (game.followers === 1) { %>
         <div class="sidebar-el-small game-followers">
           1 Follower
         </div>

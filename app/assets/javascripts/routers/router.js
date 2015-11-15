@@ -9,16 +9,7 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     'games/new': 'gameForm',
     'games/:id/edit': 'gameForm',
     'games/:id': 'gameShow',
-    'search' : 'search',
-    // 'fuckoff' : 'fuckoff'
-    // Now that the website is finished,
-    // I don't need anyone to fuck off! c:
   },
-
-  // fuckoff: function () {
-  //   var view = new QuestStarter.Views.FuckOff();
-  //   this._swapView(view);
-  // },
 
   splash: function () {
     var view = new QuestStarter.Views.Splash();
