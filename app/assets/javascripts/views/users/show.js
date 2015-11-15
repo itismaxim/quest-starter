@@ -9,11 +9,13 @@ QuestStarter.Views.UserShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.render);
     this.addSubview('#authored-games', new QuestStarter.Views.GamesSection({
       collection: this.model.authoredGames(),
-      className: "authored-games"
+      className: "authored-games",
+      model: this.model
     }));
     this.addSubview('#followed-games', new QuestStarter.Views.GamesSection({
       collection: this.model.followedGames(),
-      className: "followed-games"
+      className: "followed-games",
+      model: this.model
     }));
   },
 

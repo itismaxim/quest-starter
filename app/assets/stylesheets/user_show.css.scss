@@ -30,14 +30,16 @@ div.followed-games, div.authored-games {
   margin-top: 90px;
 }
 
+.pretty-background {
+  background-image: url("http://res.cloudinary.com/dar1oti2e/image/upload/v1447597492/nrfbldv73glehedz7hfd.jpg");
+  border-radius: 17px;
+}
+
 .no-games {
   text-align: center;
   font-size: 45px;
   padding: 30px;
-  border-radius: 17px;
-  // margin: 90px;
-  background: rgba(212, 17, 115, 0.75);
-  background-image: none;
+  background: rgba(212, 17, 115, 0.65);
 }
 
 .push-down {
