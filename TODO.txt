@@ -1,23 +1,37 @@
 Todo list 2: Electric Boogaloo
 
-1. Reset the Database
-2. Seed Data
+ 1. Reset the Database
+ 2. Oleg Hasn't Made Any Games instead of You Haven't Made Any Games
+ 3. And it looks pretty with a tinted background
+
+
+ 1. Followers is glitching on the form screen.
+ 2. Seed Data
 
 BARE MINIMUM
 
-3. Posted Date on Updates (copy code from comments)
-4. Use divs to make the posted date appear on the right.
-5. Fix the Tab issue
-6. Insert the comments and updates FROM THE TOP, instead of from the bottom.
+  3. Posted Date on Updates (copy code from comments)
+  4. Use divs to make the posted date appear on the right.
+  5. Editing updates saves with new lines. Fix that.
+  6. Fix the Tab issue
+  7. Insert the comments and updates FROM THE TOP, instead of from the bottom.
       Gods I hope editing a comment won't fuck that up. Maybe post by date edited then?
+  8. Redo the CSS. Round the corners, make the NEW UPDATE POST TITLE thing good looking instead of shit.
+      You can keep content editable on the edit updates, but not on the post updates, k?
 
 DONE
 
-7. When and where tabs.
+  9. When and where tabs.
       Play with models.
       Migration.
       REDO game show and game mini show (and game form too!)
-8. Make it ALL screen size responsive.
+ 10. Copy code, let comments be editable.
+ 11. Make it ALL screen size responsive.
         All font sizes will be in terms of vh or vw
         Most space filling divs should have their heights also scale.
-9. Make more things transparent. It looks nice.
+ 12. Make more things transparent. It looks nice.
+ 13. Make the background not jump.
+ 14. Explain SOMEWHERE that a GM can delete ANYONE's updates, not just theres.
+        Confused explanation in one of the thingies? In a game description?
+          I've had some trolls so I a telling you: as the GM, I can delete ANYONE's comments. SO STOP PISSING ME OFF.
+ 15. Increase Text Size of Summary
