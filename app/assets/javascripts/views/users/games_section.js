@@ -32,16 +32,20 @@ QuestStarter.Views.GamesSection = Backbone.CompositeView.extend({
   },
 
   determineNoGameText: function () {
-    var name = this.model.escape("name") + " Doesn't";
-    if (QuestStarter.currentUser && QuestStarter.currentUser.id === this.model.id) {
-      name = "You Don't";
-    }
-    var verb = " Run ";
-    if (this.className === "followed-games") {
-      verb = " Follow ";
-    }
+    if (this.className === "all-games") {
+      this.noGameText = "No one has made ANY games! Or someone reset the database."
+    } else {
+      var name = this.model.escape("name") + " Doesn't";
+      if (QuestStarter.currentUser && QuestStarter.currentUser.id === this.model.id) {
+        name = "You Don't";
+      }
+      var verb = " Run ";
+      if (this.className === "followed-games") {
+        verb = " Follow ";
+      }
 
-    this.noGameText = name + verb + "Any Games";
+      this.noGameText = name + verb + "Any Games";
+    }
   },
 
   render: function () {

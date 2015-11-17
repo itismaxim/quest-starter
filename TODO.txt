@@ -1,12 +1,14 @@
 Todo list 2: Electric Boogaloo
 
- 1. Reset the Database
- 2. Oleg Hasn't Made Any Games instead of You Haven't Made Any Games
- 3. And it looks pretty with a tinted background
-
+Nav bar
+  Add another link: all games
 
  1. Followers is glitching on the form screen.
+ 1. Following a game makes you switch to the description tab? But only up top? What?
  2. Seed Data
+ 3. If your name is short, top menu tab highlights wrong.
+      Always looked a little ugly. Wanna just turn that off?
+ 3. There are no updates for this game.
 
 BARE MINIMUM
 
@@ -14,6 +16,8 @@ BARE MINIMUM
   4. Use divs to make the posted date appear on the right.
   5. Editing updates saves with new lines. Fix that.
   6. Fix the Tab issue
+        When you switch to something else and then switch back, that page no longer sends anything.
+            Which means I should be safe, really.
   7. Insert the comments and updates FROM THE TOP, instead of from the bottom.
       Gods I hope editing a comment won't fuck that up. Maybe post by date edited then?
   8. Redo the CSS. Round the corners, make the NEW UPDATE POST TITLE thing good looking instead of shit.
@@ -31,7 +35,4 @@ DONE
         Most space filling divs should have their heights also scale.
  12. Make more things transparent. It looks nice.
  13. Make the background not jump.
- 14. Explain SOMEWHERE that a GM can delete ANYONE's updates, not just theres.
-        Confused explanation in one of the thingies? In a game description?
-          I've had some trolls so I a telling you: as the GM, I can delete ANYONE's comments. SO STOP PISSING ME OFF.
- 15. Increase Text Size of Summary
+ 14. On Log out, zero out the logged in user ID

@@ -10,8 +10,9 @@
     <div class="dropdown">
       <a>Hello <%= QuestStarter.currentUser.name %></a>
       <ul>
-        <li><a class="dropdown-link" href="#games/new">Add Game</a></li>
+        <li><a class="dropdown-link" href="#games/new">Add A Game</a></li>
         <li><a class="dropdown-link" href=<%= "#users/" + QuestStarter.currentUser.id %>>Your Games</a></li>
+        <li><a class="dropdown-link" href="#games/">All Games</a></li>
         <li><a class="dropdown-link dropdown-link-last log-out">Log Out</a></li>
       </ul>
     </div>

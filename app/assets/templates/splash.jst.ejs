@@ -1,11 +1,15 @@
 <div class="splash-container">
   <h1 class="row splash-title">Welcome to Quest Starter!</h1>
   <div class="secret">You found a secret!</div>
-  <div class="row click group"><div class="button first">Make A Game</div></div>
-  <div class="row click group"><div class="button second">See Your Games</div></div>
-  <div class="row click group"><div class="button third">Login As A Guest</div></div>
-  <form></form>
-  <div class="row click group"><div class="button fourth">Find Out How It Works</div></div>
+  <div class="row click group"><div class="button makeAGame">Make A Game</div></div>
+  <div class="row click group"><div class="button seeYourGames">See Your Games</div></div>
+  <% if (QuestStarter.currentUser) { %>
+    <div class="row click group"><div class="button goToAllGames">Find A Game</div></div>
+  <% } else { %>
+    <div class="row click group"><div class="button loginAsGuest">Login As A Guest</div></div>
+    <form></form>
+  <% } %>
+  <div class="row click group"><div class="button howItWorks">Find Out How It Works</div></div>
   <div class="row how-to hidden">
     <p>With Quest Starter, sharing your RPG campaign ideas just became a lot easier!</p>
     <p>Click 'See Your Games' to show the games you follow and the games you've made.</p>

@@ -7,10 +7,13 @@ QuestStarter.Views.Nav = Backbone.View.extend({
 
   events : {
     'click .log-out': 'logOut',
-    'submit input' : 'fuckoff'
   },
 
   logOut: function (event) {
+    //Set the stuff to nothin
+    // QuestStarter.currentUser.name = undefined;
+    // QuestStarter.currentUser.id = undefined;
+    // QuestStarter.currentUser = undefined;
     event.preventDefault();
     $.ajax({
       method: "DELETE",
@@ -19,10 +22,6 @@ QuestStarter.Views.Nav = Backbone.View.extend({
         location.href = '/session/new';
       }
     });
-  },
-
-  fuckoff: function () {
-    Backbone.history.navigate('#fuckoff', {trigger: true});
   },
 
   render: function () {

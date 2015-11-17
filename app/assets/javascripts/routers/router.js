@@ -9,6 +9,7 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     'games/new': 'gameForm',
     'games/:id/edit': 'gameForm',
     'games/:id': 'gameShow',
+    'games': 'allGames',
   },
 
   splash: function () {
@@ -48,9 +49,19 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
       description: 'Describe your game here. This is where you can get in depth and describe what system you want to run, what the setting will be, and what kind of characters the players will have. Feel free to add anything else!',
       image_url: 'http://res.cloudinary.com/dar1oti2e/image/upload/w_700,h_500,c_fill/v1447300087/kpzpw79z8k4lq6e7a52o.jpg',
       active: false,
+      followers: 0,
     });
     var view = new QuestStarter.Views.GameForm({
       model: game
+    });
+
+    this._swapView(view);
+  },
+
+  allGames: function () {
+    var games = QuestStarter.Collections.games;
+    var view = new QuestStarter.Views.AllGames({
+      collection: games
     });
 
     this._swapView(view);

@@ -6,10 +6,11 @@ QuestStarter.Views.Splash = Backbone.View.extend({
   className: 'splash group',
 
   events: {
-    "click .first":  'goToNewGame',
-    "click .second":  'goToYourGames',
-    "click .third": 'loginAsGuest',
-    "click .fourth": 'revealHowTo',
+    "click .makeAGame":  'goToNewGame',
+    "click .seeYourGames":  'goToYourGames',
+    "click .loginAsGuest": 'loginAsGuest',
+    "click .howItWorks": 'revealHowTo',
+    "click .goToAllGames": 'goToAllGames',
   },
 
   goToNewGame: function () {
@@ -20,8 +21,28 @@ QuestStarter.Views.Splash = Backbone.View.extend({
     };
   },
 
-  goToSearch: function () {
-    Backbone.history.navigate('#/search', {trigger: true});
+  // goToSearch: function () {
+  //   Backbone.history.navigate('#/search', {trigger: true});
+  // },
+
+  goToYourGames: function () {
+    if (QuestStarter.currentUser) {
+      Backbone.history.navigate('#/users/' + QuestStarter.currentUser.id, {trigger: true});
+    } else {
+      window.location.href="/session/new";
+    };
+  },
+
+  goToAllGames: function () {
+    Backbone.history.navigate('#/games', {trigger: true});
+  },
+
+  revealHowTo: function () {
+    if ($('.how-to').hasClass("hidden")) {
+      $('.how-to').removeClass('hidden').addClass('revealed');
+    } else {
+      $('.how-to').removeClass('revealed').addClass('hidden');
+    };
   },
 
   loginAsGuest: function () {
@@ -44,38 +65,6 @@ QuestStarter.Views.Splash = Backbone.View.extend({
         Backbone.history.navigate('#/users/' + QuestStarter.currentUser.id);
       }
     });
-  },
-
-  saveGame: function () {
-    var title = $('#title').text();
-    var summary = $('#summary').text();
-    var description = $('#description').text();
-    var that = this;
-    this.model.save({
-      title: title,
-      summary: summary,
-      image_url: this.imageUrl,
-      description: description
-    }, {success: function (){
-      Backbone.history.navigate("games/" + that.model.id, {trigger: true});
-    }, error: that.error
-    });
-  },
-
-  goToYourGames: function () {
-    if (QuestStarter.currentUser) {
-      Backbone.history.navigate('#/users/' + QuestStarter.currentUser.id, {trigger: true});
-    } else {
-      window.location.href="/session/new";
-    };
-  },
-
-  revealHowTo: function () {
-    if ($('.how-to').hasClass("hidden")) {
-      $('.how-to').removeClass('hidden').addClass('revealed');
-    } else {
-      $('.how-to').removeClass('revealed').addClass('hidden');
-    };
   },
 
   render: function () {
