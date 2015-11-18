@@ -8,8 +8,8 @@ module Api
     end
 
     def index
-      @games = current_user.games
-      render json: @games
+      @games = Game.all
+      render :index
     end
 
     def create
