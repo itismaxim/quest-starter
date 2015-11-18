@@ -1,7 +1,11 @@
 Todo list 2: Electric Boogaloo
 
-Nav bar
-  Add another link: all games
+Nav bar Add another link: all games
+Splash add link
+Router
+View
+template
+API  
 
  1. Followers is glitching on the form screen.
  1. Following a game makes you switch to the description tab? But only up top? What?
