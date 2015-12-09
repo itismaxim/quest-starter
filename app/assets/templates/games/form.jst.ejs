@@ -1,7 +1,5 @@
 <h2 class="vertical-padding-50px">
-  <div class="header-inside editing" contenteditable="true" id="title">
-    <%= game.escape('title') %>
-  </div>
+  <div class="header-inside editing" contenteditable="true" id="title"><%= game.escape('title') %></div>
 </h2>
 
 <div class="game-top-box group">
@@ -34,9 +32,7 @@
         </div>
       <% } %>
 
-      <p class="game-summary editing" id= "summary" contenteditable="true">
-        <%= game.escape('summary') %>
-      </p>
+      <p class="game-summary editing" id= "summary" contenteditable="true"><%= game.escape('summary') %></p>
 
       <% if (game.followers === 1) { %>
         <div class="sidebar-el-small game-followers">
@@ -56,7 +52,5 @@
 
 <div class="game-nav group description-box">
   <div id="description-title">Description</div>
-  <div id="description" class="editing" contenteditable="true">
-    <%= game.escape('description') %>
-  </div>
+  <div id="description" class="editing" contenteditable="true"><%= game.escape('description') %></div>
 </div>
