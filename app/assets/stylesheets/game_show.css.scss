@@ -136,7 +136,12 @@ $dark_purple: #800040;
   margin-right: auto;
 }
 
-.game-description {
+.game-tab-text-box {
+  background-color: white;
+  color: $dark_grey;
   font-size: 24px;
   margin: 30px 0px;
+  border-radius: 17px;
+  padding: 25px;
+  text-align: center;
 }

@@ -1,4 +1,4 @@
-<% if(QuestStarter.currentUser && QuestStarter.currentUser.id == authorId) {%>
+<% if(QuestStarter.currentUser && QuestStarter.currentUser.id === authorId) {%>
   <div class="update">
     <div contenteditable="true"
     class="update-title"
@@ -12,6 +12,10 @@
 
     <div class="display-errors"></div>
     <div class="update-title" id="update-form-submit">Post Update</div>
+  </div>
+<% } else if (numberOfUpdates === 0) {%>
+  <div class="game-tab-text-box">
+    <p>All clear Captain! There are no updates to worry about.</p>
   </div>
 <% } %>
 

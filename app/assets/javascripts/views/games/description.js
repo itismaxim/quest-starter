@@ -1,7 +1,7 @@
 QuestStarter.Views.Description = Backbone.View.extend({
   template: JST['games/description'],
 
-  className: 'game-description',
+  className: 'game-tab-text-box',
 
   render: function () {
     var view = this.template({

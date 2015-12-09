@@ -51,7 +51,8 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
 
   render: function () {
     var view = this.template({
-      authorId: this.model.get('author_id')
+      authorId: this.model.get('author_id'),
+      numberOfUpdates: this.collection.length
     });
     this.$el.html(view);
     this.attachSubviews();
