@@ -12,18 +12,16 @@ $dark_purple: #800040;
 .comment, .update {
   margin: 30px;
   font-size: 18px;
+  overflow: hidden;
+  border-radius: 17px;
 }
 
 .comment-author, #comment-form-submit, .update-title {
   color: white;
   background-color: $light_grey;
   padding: 7px 15px;
+  display: block;
 }
-
-// .update-title {
-//   width: auto;
-//   box-sizing: border-box;
-// }
 
 .posted-at {
   padding-left: 20px;
@@ -68,5 +66,5 @@ $dark_purple: #800040;
 }
 
 #comment-form-submit:hover, #update-form-submit:hover, .submit:hover {
-  background-color: $dark_green;
+  background-color: $light_green;
 }

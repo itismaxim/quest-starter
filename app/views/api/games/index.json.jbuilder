@@ -1,9 +1,6 @@
 json.games @games do |game|
-  json.active game.active
-  json.author_id game.author_id
-  json.author_name game.author_name
-  json.image_url game.image_url
-  json.summary game.summary
-  json.title game.title
+  json.extract! game, :id, :author_id, :author_name, :title, :summary, :image_url
+  json.extract! game, :description, :active, :followers, :updates, :comments
 end
-# uh maybe I need to name these authorId, javascript style?
+
+# active author_id author_name image_url summary title 

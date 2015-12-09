@@ -1,14 +1,19 @@
 QuestStarter.Views.AllGames = Backbone.CompositeView.extend({
-  template: JST['games/games'],
+  template: JST['games/all'],
 
   tagName: 'article',
 
   className: 'all-games',
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    // this.listenTo(this.model, 'sync', this.render);
+    //
     debugger;
+    this.listenTo(this.collection, 'update', this.render)
+    // !!!!!!!!!!!!!!
+    // Maybe both?
     this.addSubview('#all-games', new QuestStarter.Views.GamesSection({
+      //collection: this.collection.responseText,
       collection: this.collection,
       className: "all-games",
       model: this.model

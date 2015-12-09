@@ -109,13 +109,19 @@ $dark_purple: #800040;
   float: left;
   width: 33.33%;
   padding: 20px 0px;
-  background-color: $light_cyan;
+  background: rgba(0, 127, 128, 0.75);
   text-align: center;
   font-size: 30px;
 }
 
-.selected { background-color: $dark_cyan; }
-.nav-option:hover { background-color: $dark_cyan; }
+.selected, .nav-option:hover { background-color: $dark_cyan; }
+
+.nav-option-left { border-top-right-radius: 17px; }
+.nav-option-center {
+  border-top-right-radius: 17px;
+  border-top-left-radius: 17px;
+}
+.nav-option-right { border-top-left-radius: 17px; }
 
 .game-tab {
   padding: 50px;

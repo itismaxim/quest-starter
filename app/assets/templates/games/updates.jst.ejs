@@ -1,16 +1,14 @@
 <% if(QuestStarter.currentUser && QuestStarter.currentUser.id == authorId) {%>
   <div class="update">
-    <div class="update-title">Write An Update!</div>
+    <div contenteditable="true"
+    class="update-title"
+    id="update-title"
+    data-placeholder="Your Update's Title"></div>
 
-    <form class="update-text">
-      <div contenteditable="true"
-       id="update-title"
-       data-placeholder="Update Title"></div>
-
-      <div contenteditable="true"
-       id="update-text"
-       data-placeholder="Update Text"></div>
-    </form>
+    <div contenteditable="true"
+    class="update-text"
+    id="update-text"
+    data-placeholder="What's new pussycat?"></div>
 
     <div class="display-errors"></div>
     <div class="update-title" id="update-form-submit">Post Update</div>

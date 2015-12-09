@@ -5,7 +5,7 @@ QuestStarter.Views.Comment = Backbone.View.extend({
   className: 'comment',
 
   events: {
-    'click .delete-comment': 'deleteComment'
+    'click .delete-color': 'deleteComment'
   },
 
   initialize: function (options) {

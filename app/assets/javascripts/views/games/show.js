@@ -5,26 +5,33 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
 
   className: 'game',
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.model, 'sync', this.render);
-    this.description = new QuestStarter.Views.Description({
-      model: this.model
-    });
-    this.updates = new QuestStarter.Views.Updates({
-      collection: this.model.updates(),
-      model: this.model
-    });
-    this.comments = new QuestStarter.Views.Comments({
-      collection: this.model.comments(),
-      gameId: this.model.id
-    });
-    this.currentView = this.description;
-    // this.currentView = this.comments;
-    // I want this to happen in the router.
+    this.page = options.page;
+    this.currentView;
+    this.createCurrentView(options.page);
+  },
+
+  createCurrentView: function (newPage) {
+    if (newPage === 'comments') {
+      this.currentView = new QuestStarter.Views.Comments({
+        collection: this.model.comments(),
+        gameId: this.model.id
+      });
+    } else if (newPage === 'updates') {
+      this.currentView = new QuestStarter.Views.Updates({
+        collection: this.model.updates(),
+        model: this.model
+      });
+    } else {
+      this.currentView = new QuestStarter.Views.Description({
+        model: this.model
+      });
+    }
   },
 
   events: {
-    'click .nav-option'        : 'switchView',
+    'click .unselected'        : 'switchView',
     'click .follow'            : 'followGame',
     'click .unfollow'          : 'unfollowGame',
     'click .activate'          : 'activateGame',
@@ -170,6 +177,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     this.$sidebar = $('.game-sidebar');
     this.buildSideBar();
     this.renderCurrentView();
+    $( "[name='" + this.page + "']" ).addClass('selected').removeClass('unselected');
     return this;
   },
 
@@ -178,22 +186,11 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
   },
 
   switchView: function (event) {
-    $('.nav-option').removeClass('selected');
-    $(event.currentTarget).addClass('selected');
-
-    this.currentView && this.currentView.remove();
-    var newTabName = event.currentTarget.getAttribute('name');
-    if (newTabName === 'description') {
-      this.currentView = this.description;
-    } else if (newTabName === 'updates') {
-      this.currentView = this.updates;
-    } else if (newTabName === 'comments') {
-      this.currentView = this.comments;
-    } else if (newTabName === 'surveys') {
-      this.currentView = this.surveys;
-    } else {
-      return;
-    }
+    $('.nav-option').removeClass('selected').addClass('unselected');
+    $(event.currentTarget).addClass('selected').removeClass('unselected');
+    var destination = $(event.currentTarget).attr('name')
+    window.history.pushState('These Defaults are Silly', 'Game Show', '#games/' + this.model.id + '/' + destination);
+    this.createCurrentView(destination);
     this.renderCurrentView();
   }
 });

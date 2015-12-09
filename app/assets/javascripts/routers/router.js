@@ -8,6 +8,7 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     'users/:id': 'userShow',
     'games/new': 'gameForm',
     'games/:id/edit': 'gameForm',
+    'games/:id/:page': 'gameShow',
     'games/:id': 'gameShow',
     'games': 'allGames',
   },
@@ -33,10 +34,15 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  gameShow: function (id) {
+  gameShow: function (id, page) {
+    if (page !== 'comments' && page !== 'updates') {
+      page = 'description'
+    }
+
     var game = QuestStarter.Collections.games.getOrFetch(id);
     var view = new QuestStarter.Views.GameShow({
-      model: game
+      model: game,
+      page: page
     });
 
     this._swapView(view);
@@ -58,13 +64,16 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  allGames: function () {
+  allGamesOld: function () {
     var games = QuestStarter.Collections.games;
-    var view = new QuestStarter.Views.AllGames({
-      collection: games
-    });
+    var that = this;
+    games = QuestStarter.Collections.games.fetch({success: function () {
+      var view = new QuestStarter.Views.AllGames({
+        collection: games
+      });
 
-    this._swapView(view);
+      that._swapView(view);
+    }});
   },
 
   _swapView: function (view) {

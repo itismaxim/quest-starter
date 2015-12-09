@@ -11,7 +11,7 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
     this.lastIndex = 0;
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addUpdate);
-    this.listenTo(this.collection, 'destroy', this.removeComment);
+    this.listenTo(this.collection, 'destroy', this.removeUpdate);
     this.collection.each(function(update) {
       this.addUpdate(update);
     }, this);
@@ -45,7 +45,7 @@ QuestStarter.Views.Updates = Backbone.CompositeView.extend({
     });
   },
 
-  removeComment: function(model) {
+  removeUpdate: function(model) {
     this.removeModelSubview('#game-updates', model);
   },
 
