@@ -19,8 +19,7 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
 
   addComment: function (comment) {
     var view = new QuestStarter.Views.Comment({
-      model: comment,
-      gameId: this.gameId,
+      model: comment
     });
     this.addSubview('#game-old-comments', view);
   },

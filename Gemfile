@@ -17,6 +17,7 @@ gem 'omniauth-google'
 gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'cloudinary'
+gem 'seed_dump'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

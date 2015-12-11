@@ -41,8 +41,8 @@ nav a:hover {
 }
 
 .dropdown-link-last {
-  border-bottom-left-radius: 17px;
-  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .navbar-right {
@@ -55,7 +55,7 @@ nav input {
   float: left;
   background-color: white;
   color: $dark_tan;
-  border-radius: 17px;
+  border-radius: 20px;
 }
 
 .dropdown > a:hover {

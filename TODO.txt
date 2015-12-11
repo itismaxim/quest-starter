@@ -8,11 +8,9 @@ I unshift, but it adds comments at the bottom.
   When I refresh the page, the collection gets remade, apparently in order.
 So just put them in backwards. Clearly these things always come in the right order, so fuck it.
 
-
  3. Posted Date on Updates (copy code from comments)
  4. Use divs to make the posted date appear on the right.
 10. Copy code, let comments be editable.
-11. You can delete anon comments
 
 {"games":[
   {
@@ -60,7 +58,6 @@ DONE
   8. Get rid of FORM, and consolidate it into show. You click edit and jquery switches the tags
       the show listener just takes car of everything.
   9. When and where tabs.
-      For comments: add the gameId and the AuthorId as fields, or at least, use the belongs to thing.
       Play with models.
       Migration.
       REDO game show and game mini show (and game form too!)
@@ -71,5 +68,7 @@ DONE
  13. Make the background not jump.
  14. On Log out, zero out the logged in user ID
  15. If your name is short, top menu tab highlights wrong.
+ 16. Get everything as smooth as my loads on the tabs. Accomplished by adding a callback to get or fetch
+      i think
 
 http://queststarter.herokuapp.com/api/users/1

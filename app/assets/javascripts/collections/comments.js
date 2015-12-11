@@ -2,6 +2,8 @@ QuestStarter.Collections.Comments = Backbone.Collection.extend({
   model: QuestStarter.Models.Comment,
   url: 'api/comments',
 
+    comparator: -'created_at',
+
   // comparator: function(model) {
   //     debugger;
   //     return -model.get('createdAt').getTime();

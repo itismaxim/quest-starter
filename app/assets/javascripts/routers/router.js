@@ -64,16 +64,12 @@ QuestStarter.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  allGamesOld: function () {
-    var games = QuestStarter.Collections.games;
-    var that = this;
-    games = QuestStarter.Collections.games.fetch({success: function () {
-      var view = new QuestStarter.Views.AllGames({
-        collection: games
-      });
+  allGames: function (id) {
+    var view = new QuestStarter.Views.AllGames({
+      collection: QuestStarter.Collections.games
+    });
 
-      that._swapView(view);
-    }});
+    this._swapView(view);
   },
 
   _swapView: function (view) {

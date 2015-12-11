@@ -1,82 +1,38 @@
-User.create(name: "Maxim", password: "password")
-User.create(name: "Daniel", password: "password")
-User.create(name: "Von", password: "password")
-User.create(name: "Levy", password: "password")
-User.create(name: "Oleg", password: "password")
-User.create(name: "Hiring Guy", password: "pleasehireme")
-User.create(name: "360noscopeMLGPRO", password: "password")
-
-# Game.create(
-#   author_id: 1,
-#   author_name: 'Maxim',
-#   title: "Vampire Game",
-#   summary: "Stuck in Dracula's Castle!",
-#   description: "So it's Castlevania! You're all stuck in Drac's Shack and trying to get out. Big ol' mega dungeon, lot's of demon slaying, and prolly more then a few mysteries. It's gonna be a heap of fun!",
-#   image_url: 'http://images.pocketgamer.co.uk/FCKEditorFiles//gaming-monarchs-count-dracula.jpg',
-#   active: true
-# )
-# Game.create(
-#   author_id: 1,
-#   author_name: 'Maxim',
-#   title: "Jedi Game",
-#   summary: "You're all Jedis. Lightsabers and hunting down the Sith!",
-#   description: "Honsetly I don't know yet. But lightsabers! And aliens. And shapeships!",
-#   image_url: 'http://hdwallpapersfit.com/wp-content/uploads/2015/03/jedi-hd-wallpaper.jpg',
-# )
-# Game.create(
-#   author_id: 1,
-#   author_name: 'Maxim',
-#   title: "CAGE MATCH",
-#   summary: "D&D Fistacuffs Meets Wrestling Meets Luchadors",
-#   description: "I like Muscle Wizards. No: I LOVE Muscle Wizards. THis isn't about that though. This about one on one pvp D&D wrestling.",
-#   image_url: 'http://holdupnow.com/wp-content/uploads/2014/10/cage1.jpg',
-# )
-# Game.create(
-#   author_id: 2,
-#   author_name: 'Daniel',
-#   title: "Dragons On Black Mountain",
-#   summary: "It's like monster hunter, but for dragons.",
-#   description: "Maxim don't ruin this for me. You are not invited. As for everyone else, bring your impractical weapons and skimpy armor, because there are giant lizards to slay and fley.",
-#   image_url: 'http://www.dailydesigninspiration.com/diverse/di/kekaikotaki/Black-Dragon.jpg',
-# )
-# Game.create(
-#   author_id: 2,
-#   author_name: 'Daniel',
-#   title: "Journey To Carcosa",
-#   summary: "Hooray for Cthullu!",
-#   description: "It's Dinosaurs and Cthullu and Lasers and Skeletor. And it's your job to deliver the mail.",
-#   image_url: 'http://www.wired.com/wp-content/uploads/2014/12/9-credit-1.jpg',
-# )
-# Game.create(
-#   author_id: 3,
-#   author_name: 'Von',
-#   title: "Lacuna",
-#   summary: "You're all Mystery Agents! And you're going to Blue City",
-#   description: "Honestly I can't tell you any more. It would violate your security clearence.",
-#   image_url: 'http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg',
-# )
-# Game.create(
-#   author_id: 3,
-#   author_name: 'Von',
-#   title: "Shadow Run 3rd Edition Game",
-#   summary: "Let's all roll a lot of d10s",
-#   description: "Mr. Johnson just called. He says its a Chicago just dissapeared. Are you ready to make some money?",
-#   image_url: 'http://wowslider.com/sliders/demo-7/data/images/ny.jpg',
-# )
-#
-# Follow.create(user_id: 1, game_id: 4)
-# Follow.create(user_id: 2, game_id: 1)
-# Follow.create(user_id: 2, game_id: 2)
-# Follow.create(user_id: 4, game_id: 1)
-# Follow.create(user_id: 4, game_id: 2)
-# Follow.create(user_id: 4, game_id: 3)
-# Follow.create(user_id: 4, game_id: 4)
-# Follow.create(user_id: 4, game_id: 6)
-#
-# Comment.create(game_id: 1, user_id: 2, poster_name: 'Daniel', text: 'Bra Nobody Thinks Vampires Are Cool')
-# Comment.create(game_id: 1, user_id: 1, poster_name: 'Maxim', text: 'Bra, shut your mouth. Vampires are awesome.')
-# Comment.create(game_id: 1, user_id: 0, poster_name: 'Alex', text: "For a couple of Bra's, you guy aren't very supportive ;)")
-# Comment.create(game_id: 1, user_id: 1, poster_name: 'Maxim', text: 'I hate you so much. Also, wanna join the Vampire Game?')
-#
-# Update.create(user_id: 1, game_id: 1, title: 'WOOH FIRST UPDATE', text: "Well look at me, borderline competent, capable of making games and updates.")
-# Update.create(user_id: 1, game_id: 1, title: 'Shitty Second Update', text: "Not really though. Only in the fantasy dimension this update was written in.")
+Comment.create!([
+  {game_id: 6, user_id: 6, poster_name: "Hiring Guy", text: "Are you really going to run Lacuna?"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "Third"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "Fourth"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "fifth"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "Sixth"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "Seventh"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "Eight"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "Post a comment"},
+  {game_id: 3, user_id: 0, poster_name: "I am Ultron", text: "Hello Hello"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "Tenth comment pops in at the top?"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "11"},
+  {game_id: 6, user_id: 1, poster_name: "Maxim", text: "Hello there."},
+  {game_id: 1, user_id: 1, poster_name: "Maxim", text: "Hallo"},
+  {game_id: 1, user_id: 1, poster_name: "Maxim", text: "Hello again"},
+  {game_id: 1, user_id: 0, poster_name: "Giant Jerk", text: "Your broccoli sucks"},
+  {game_id: 1, user_id: 6, poster_name: "Hiring Guy", text: "Hello there"}
+])
+Game.create!([
+  {author_id: 6, author_name: "Hiring Guy", title: "888888888", summary: "\n        jjjjjj", description: "\n    jhjhgjhgjhjhjh", image_url: "http://res.cloudinary.com/dar1oti2e/image/upload/w_700,h_500,c_fill/v1447300087/kpzpw79z8k4lq6e7a52o.jpg", active: false},
+  {author_id: 6, author_name: "Hiring Guy", title: "My Cool Game", summary: "Summarize your game here. Make is short but sweet!", description: "Describe your game here. This is where you can get in depth and describe what system you want to run, what the setting will be, and what kind of characters the players will have. Feel free to add anything else!", image_url: "http://res.cloudinary.com/dar1oti2e/image/upload/w_700,h_500,c_fill/v1449855822/egx3ryi2adrirtwuvqzh.png", active: false},
+  {author_id: 6, author_name: "Hiring Guy", title: "\n    \n    \n    \n    \n    My Cool Game\n  \n  \n  \n  \n  ", summary: "\n        \n        \n        \n        \n        Summarize your game here. Make is short but sweet!\n      \n      \n      \n      \n      ", description: "\n    \n    \n    \n    \n    Describe your game here. This is where you can get in depth and describe what system you want to run, what the setting will be, and what kind of characters the players will have. Feel free to add anything else!\n  \n  \n  \n  \n  ", image_url: "http://res.cloudinary.com/dar1oti2e/image/upload/w_700,h_500,c_fill/v1449855862/lupzybz9coztmcs5opvv.jpg", active: false},
+  {author_id: 6, author_name: "Hiring Guy", title: "YES YES YES", summary: "YESSSSSSS", description: "Did I mention YES?", image_url: "http://res.cloudinary.com/dar1oti2e/image/upload/w_700,h_500,c_fill/v1449855885/cf8muu8srnyoiyekmwoe.jpg", active: false}
+])
+Update.create!([
+  {user_id: 6, game_id: 1, title: "Hello there?", text: "Does it migrate down?"},
+  {user_id: 6, game_id: 1, title: "Hello There", text: "Gosh I am attractive. This line was edited in after a tab switch. Wow, everything is pretty and it works too. Hello there."},
+  {user_id: 6, game_id: 1, title: "THE LONGEST TITLE THE LONGEST TITLE THE LONGEST TITLE THE LONGEST TITLE THE LONGEST TITLE THE LONGEST TITLE THE LONGEST TITLE THE LONGEST TITLE THE LONGEST TITLE ", text: "New"}
+])
+User.create!([
+  {name: "Daniel", session_token: "p06odntQCs0PogbnTELruA", pass_hash: "$2a$10$w80DsPZSGn.45bE0oFRC0OLa420tf68zW2ADy1g.JHHZi3ksN.MHG"},
+  {name: "Levy", session_token: "wXZvpv7hEgTrKrmYwe9QVg", pass_hash: "$2a$10$S6VGESqKqfo8Y4kHgiX8Ueuy16OHlcPkTJFlEC81kR7eotQA2Psh6"},
+  {name: "Oleg", session_token: "MyCh0KZbOtYs0VJ1Q1_c-A", pass_hash: "$2a$10$WbjSoMmTycCqaXsoF3TDm.UZDlxeG/E3ylXWyiL68.GslpOFB6PcK"},
+  {name: "360noscopeMLGPRO", session_token: "So15d5Qw24bohAmcHi9Zqw", pass_hash: "$2a$10$PKUkt2BzzKtkZx6w04cjpu25uSwvWR9Po7vDvWoqGxL55daIdPH1q"},
+  {name: "Von", session_token: "T-BhU87znYM7sefMvpQ-7w", pass_hash: "$2a$10$iUYJQYR5ZCA68chLLdLMAeLtGtYNQC.BnyYLg/iUzO/ko2IaS5EVS"},
+  {name: "Maxim", session_token: "7yeOv4tik0EuyEKu6W2VuA", pass_hash: "$2a$10$IiY0poh4ckgn77NYHy34i.U68pp3mDcIPXzUtRM5q7vMwl9P/OeEy"},
+  {name: "Hiring Guy", session_token: "AINOwcb09hQQFFODvTKUMg", pass_hash: "$2a$10$iUfGs0/uI5vI6Jv5Yk0wXOgTFjpR47c1hDLCsB/gHIvjxPyVfUmrS"}
+])

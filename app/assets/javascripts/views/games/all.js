@@ -8,7 +8,7 @@ QuestStarter.Views.AllGames = Backbone.CompositeView.extend({
   initialize: function () {
     // this.listenTo(this.model, 'sync', this.render);
     //
-    debugger;
+    // debugger;
     this.listenTo(this.collection, 'update', this.render)
     // !!!!!!!!!!!!!!
     // Maybe both?

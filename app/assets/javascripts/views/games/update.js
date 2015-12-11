@@ -5,8 +5,8 @@ QuestStarter.Views.Update = Backbone.ErrorView.extend({
   className: 'update',
 
   events: {
-    'click .edit-color': 'toggleEditForm',
-    'click .delete-color': 'deleteUpdate'
+    'click .edit-button': 'toggleEditForm',
+    'click .delete-button': 'deleteUpdate'
   },
 
   initialize: function (options) {

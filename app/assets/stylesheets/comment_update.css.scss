@@ -13,10 +13,12 @@ $dark_purple: #800040;
   margin: 30px;
   font-size: 18px;
   overflow: hidden;
-  border-radius: 17px;
+  border-radius: 20px;
+  background: white;
+  padding: 25px;
 }
 
-.comment-author, #comment-form-submit, .update-title {
+.comment-author, #comment-form-submit {
   color: white;
   background-color: $light_grey;
   padding: 7px 15px;
@@ -33,20 +35,46 @@ $dark_purple: #800040;
 .corner-button {
   float: right;
   color: white;
-  background-color: $dark_purple;
-  padding: 7px 15px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
-.delete-color { background-color: $dark_purple; }
-.delete-color:hover { background-color: $light_purple; }
-.edit-color { background-color: $dark_green; }
-.edit-color:hover { background-color: $light_green; }
+.delete-button {
+  background-color: $dark_purple;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align:center;
+}
+.delete-button:hover { background-color: $light_purple; }
+.edit-button {
+  background-color: $dark_green;
+  margin-right: 7px;
+  padding: 9px 18px;
+}
+.edit-button:hover { background-color: $light_green; }
 
-.comment-body, .update-text {
+.comment-body, .update-text { color: $dark_grey; }
+
+.update-title {
   color: $dark_grey;
-  background-color: white;
-  padding: 7px 13px;
+  font-size: 32px;
+  display: block;
+}
+
+.update-br {
+  color: $light_grey;
+  background-color: $light_grey;
+  font-size: 15px;
+  border-radius: 3px;
+  margin: 15px 0px;
+}
+
+.update-date {
+  color: $light_grey;
+  font-size: 15px;
+  margin-right: 5px;
+  float: right;
 }
 
 #anon-name, #comment-body {

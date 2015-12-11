@@ -1,7 +1,15 @@
-<% if(QuestStarter.currentUser && QuestStarter.currentUser.id == update.get('user_id')) {%>
-  <div class="corner-button delete-color"> ✗ </div>
-  <div class="corner-button edit-color"> Edit </div>
-<% } %>
+<div class="">
+  <% if(QuestStarter.currentUser && QuestStarter.currentUser.id == update.get('user_id')) {%>
+    <div class="corner-button delete-button"> ✗ </div>
+    <div class="corner-button edit-button"> Edit </div>
+  <% } %>
 
-<div class="update-title"><%= update.escape('title') %></div>
+  <pre class="update-title"><%= update.escape('title') %></pre>
+</div>
+
+<div class="">
+  <div class="update-date"><%= update.escape('created_at').slice(0,10) %></div>
+  <div class="update-br">-  Long Text Block</div>
+</div>
+
 <pre class="update-text"><%= update.escape('text') %></pre>

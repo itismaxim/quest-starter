@@ -4,11 +4,10 @@ QuestStarter.Views.Comment = Backbone.View.extend({
   className: 'comment',
 
   events: {
-    'click .delete-color': 'deleteComment'
+    'click .delete-button': 'deleteComment'
   },
 
   initialize: function (options) {
-    this.gameId = options.gameId;
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -18,10 +17,8 @@ QuestStarter.Views.Comment = Backbone.View.extend({
 
   render: function () {
     var view = this.template({
-      comment: this.model,
-      gameId: this.gameId,
+      comment: this.model
     });
-    debugger;
     this.$el.html(view);
     return this;
   }
