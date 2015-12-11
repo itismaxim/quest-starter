@@ -18,18 +18,10 @@ $dark_purple: #800040;
   padding: 25px;
 }
 
-.comment-author, #comment-form-submit {
-  color: white;
-  background-color: $light_grey;
-  padding: 7px 15px;
+.comment-author {
+  color: $dark_grey;
+  font-size: 22px;
   display: block;
-}
-
-.posted-at {
-  padding-left: 20px;
-  font-size: 12px;
-  //text-align: right;
-  //okay so I will need to make this it's own element.
 }
 
 .corner-button {
@@ -37,6 +29,20 @@ $dark_purple: #800040;
   color: white;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.new-button {
+  background-color: $dark_green;
+  padding: 9px 18px;
+  margin-top: 15px;
+}
+
+.delete-button-smaller {
+  background-color: $dark_purple;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align:center;
 }
 
 .delete-button {
@@ -62,19 +68,37 @@ $dark_purple: #800040;
   display: block;
 }
 
-.update-br {
+.line-break {
   color: $light_grey;
   background-color: $light_grey;
-  font-size: 15px;
+  font-size: 3px;
   border-radius: 3px;
   margin: 15px 0px;
 }
 
-.update-date {
+.mini-line-break {
+  color: $light_grey;
+  background-color: $light_grey;
+  font-size: 3px;
+  border-radius: 3px;
+  margin: 8px 0px;
+  width: 44%;
+  float: left;
+}
+
+.date {
   color: $light_grey;
   font-size: 15px;
-  margin-right: 5px;
-  float: right;
+  margin-bottom: 4px;
+  text-align: center;
+  background-color: white;
+  width: 12%;
+  // display: inline-block;
+  float: left;
+}
+
+.update-spacing {
+  margin: 7px 0px
 }
 
 #anon-name, #comment-body {
@@ -88,7 +112,7 @@ $dark_purple: #800040;
   text-align: right;
 }
 
-#comment-form-submit, #update-form-submit, .submit {
+.submit {
   text-align: right;
   cursor: pointer;
 }

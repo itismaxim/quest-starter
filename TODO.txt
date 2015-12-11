@@ -1,6 +1,14 @@
 Todo list 2: Electric Boogaloo
 
 • Dec 1 Seed Data
+    Delete all the icky extra spaces and stuff
+      You will need to make the title, summary, and description all pre
+        and then afterwards you will need to change it back
+          Game Title
+          Game Summary
+          Title Update
+          Comment Text
+
 All Games Page
 
 I can't make the comparator work.
@@ -11,6 +19,80 @@ So just put them in backwards. Clearly these things always come in the right ord
  3. Posted Date on Updates (copy code from comments)
  4. Use divs to make the posted date appear on the right.
 10. Copy code, let comments be editable.
+
+For every number from 0 or 1 to the length of this collection, get or fetch!
+
+
+BARE MINIMUM
+
+  7. Insert the comments and updates FROM THE TOP, instead of from the bottom.
+      Gods I hope editing a comment won't fuck that up. Maybe post by date edited then?
+  8. Redo the CSS. Round the corners, make the NEW UPDATE POST TITLE thing good looking instead of shit.
+      You can keep content editable on the edit updates, but not on the post updates, k?
+
+DONE
+
+  8. Get rid of FORM, and consolidate it into show. You click edit and jquery switches the tags
+      the show listener just takes car of everything.
+  9. When and where tabs.
+      Play with models.
+      Migration.
+      REDO game show and game mini show (and game form too!)
+ 11. Make it ALL screen size responsive.
+        All font sizes will be in terms of vh or vw
+        Most space filling divs should have their heights also scale.
+ 12. Make more things transparent. It looks nice.
+ 13. Make the background not jump.
+ 14. On Log out, zero out the logged in user ID
+ 15. If your name is short, top menu tab highlights wrong.
+ 16. Get everything as smooth as my loads on the tabs. Accomplished by adding a callback to get or fetch
+      i think
+
+http://queststarter.herokuapp.com/api/users/1
+
+This one fetches nothing. But it does give me an empty collection. When I go to
+an individual game's page, that fetch goes successfully. So the empty collection
+gradually fills up, but I want the whole thing fetched!
+
+allGames: function (id) {
+  var view = new QuestStarter.Views.AllGames({
+    collection: QuestStarter.Collections.games
+  });
+
+  this._swapView(view);
+},
+
+This one gives me an empty collection with one dead model. Since it's re-fetched
+every time, it always overrides anything that may have been already fetched.
+
+allGames: function (id) {
+  var that = this;
+  QuestStarter.Collections.games.fetch({success: function(){
+    var view = new QuestStarter.Views.AllGames({
+      collection: QuestStarter.Collections.games
+    });
+
+    that._swapView(view);
+  }});
+},
+
+It says 'collection: QuestStarter.Collections.games', but what I actually get
+back is the JSON for the whole collection. It's all there, but I can't seem
+to shove it into a collection.
+
+
+
+allGames: function () {
+  var games = QuestStarter.Collections.games;
+  var that = this;
+  games = QuestStarter.Collections.games.fetch({success: function () {
+    var view = new QuestStarter.Views.AllGames({
+      collection: games
+    });
+
+    that._swapView(view);
+  }});
+},
 
 {"games":[
   {
@@ -40,35 +122,3 @@ So just put them in backwards. Clearly these things always come in the right ord
     "comments":[]
   }
 ]}
-
-
-For every number from 0 or 1 to the length of this collection, get or fetch!
-
-
-
-BARE MINIMUM
-
-  7. Insert the comments and updates FROM THE TOP, instead of from the bottom.
-      Gods I hope editing a comment won't fuck that up. Maybe post by date edited then?
-  8. Redo the CSS. Round the corners, make the NEW UPDATE POST TITLE thing good looking instead of shit.
-      You can keep content editable on the edit updates, but not on the post updates, k?
-
-DONE
-
-  8. Get rid of FORM, and consolidate it into show. You click edit and jquery switches the tags
-      the show listener just takes car of everything.
-  9. When and where tabs.
-      Play with models.
-      Migration.
-      REDO game show and game mini show (and game form too!)
- 11. Make it ALL screen size responsive.
-        All font sizes will be in terms of vh or vw
-        Most space filling divs should have their heights also scale.
- 12. Make more things transparent. It looks nice.
- 13. Make the background not jump.
- 14. On Log out, zero out the logged in user ID
- 15. If your name is short, top menu tab highlights wrong.
- 16. Get everything as smooth as my loads on the tabs. Accomplished by adding a callback to get or fetch
-      i think
-
-http://queststarter.herokuapp.com/api/users/1

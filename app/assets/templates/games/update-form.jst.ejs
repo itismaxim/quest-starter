@@ -4,8 +4,10 @@
   <pre contenteditable="true"
   class="<%= "update-title editable-color " + indexClass + "-title"%>"><%= update.escape('title') %></pre>
 
-  <div class="update-date"><%= update.escape('created_at').slice(0,10) %></div>
-  <div class="update-br">-</div>
+  <div class="mini-line-break left">----- tiny text ----</div>
+  <div class="update-date left"><%= update.escape('created_at').slice(0,10) %></div>
+  <div class="mini-line-break left">----- tiny text ----</div>
+  <br style="clear: left;" />
 
   <pre contenteditable="true"
   class="<%= "update-text editable-color " + indexClass + "-text"%>"><%= update.escape('text') %></pre>

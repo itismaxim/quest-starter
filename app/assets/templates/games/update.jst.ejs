@@ -7,9 +7,11 @@
   <pre class="update-title"><%= update.escape('title') %></pre>
 </div>
 
-<div class="">
-  <div class="update-date"><%= update.escape('created_at').slice(0,10) %></div>
-  <div class="update-br">-  Long Text Block</div>
+<div class="update-spacing">
+  <div class="mini-line-break left">----- tiny text ----</div>
+  <div class="date left"><%= update.escape('created_at').slice(0,10) %></div>
+  <div class="mini-line-break left">----- tiny text ----</div>
+  <br style="clear: left;" />
 </div>
 
 <pre class="update-text"><%= update.escape('text') %></pre>
