@@ -4,6 +4,11 @@ QuestStarter.Collections.Games = Backbone.Collection.extend({
 
   comparator: 'created_at',
 
+  // comparator: function(model) {
+  //     debugger;
+  //     return -model.get('createdAt').getTime();
+  // },
+
   getOrFetch: function (id) {
     var game = this.get(id);
 

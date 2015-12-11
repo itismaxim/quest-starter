@@ -28,6 +28,9 @@ QuestStarter.Models.Game = Backbone.Model.extend({
       delete response.comments;
     }
 
+    // response.createdAt = new Date(response.created_at);
+    // response.updatedAt = new Date(response.updated_at);
+
     return response;
   }
 });

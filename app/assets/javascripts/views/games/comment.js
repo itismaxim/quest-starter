@@ -1,7 +1,6 @@
 QuestStarter.Views.Comment = Backbone.View.extend({
   template: JST['games/comment'],
 
-  // tagName: '',
   className: 'comment',
 
   events: {
@@ -20,8 +19,9 @@ QuestStarter.Views.Comment = Backbone.View.extend({
   render: function () {
     var view = this.template({
       comment: this.model,
-      gameId: this.gameId
+      gameId: this.gameId,
     });
+    debugger;
     this.$el.html(view);
     return this;
   }

@@ -1,5 +1,14 @@
 json.extract! @game, :id, :author_id, :author_name, :title, :summary, :image_url
-json.extract! @game, :description, :active, :followers, :updates, :comments
+json.extract! @game, :description, :active, :followers, :updates #, :comments
+json.comments do
+  @comments = @game.comments
+  json.array! @comments do |comment|
+    json.extract! comment, :id, :game_id, :user_id, :poster_name
+    json.extract! comment, :text, :created_at, :updated_at
+    json.author_of_game comment.game.author_id
+  end
+end
+
 json.authored current_user && current_user.id == @game.author_id
 
 if current_user
@@ -10,6 +19,3 @@ else
 end
 
 # If not logged in, those last two are null
-
-# Remember mate, survey stuff is gonna go here.
-# Probably.

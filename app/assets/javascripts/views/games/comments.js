@@ -2,7 +2,6 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
   template: JST['games/comments'],
 
   className: "game-comments group",
-  // these do nothing?
 
   events: {
     'click #comment-form-submit': 'addNewComment',
@@ -21,7 +20,7 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
   addComment: function (comment) {
     var view = new QuestStarter.Views.Comment({
       model: comment,
-      gameId: this.gameId
+      gameId: this.gameId,
     });
     this.addSubview('#game-old-comments', view);
   },

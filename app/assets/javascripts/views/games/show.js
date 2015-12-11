@@ -10,13 +10,15 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     this.page = options.page;
     this.currentView;
     this.createCurrentView(options.page);
+    debugger;
   },
 
   createCurrentView: function (newPage) {
     if (newPage === 'comments') {
       this.currentView = new QuestStarter.Views.Comments({
         collection: this.model.comments(),
-        gameId: this.model.id
+        gameId: this.model.id,
+        authorId: this.model.get('author_id')
       });
     } else if (newPage === 'updates') {
       this.currentView = new QuestStarter.Views.Updates({

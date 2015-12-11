@@ -3,6 +3,16 @@ Todo list 2: Electric Boogaloo
 • Dec 1 Seed Data
 All Games Page
 
+I can't make the comparator work.
+I unshift, but it adds comments at the bottom.
+  When I refresh the page, the collection gets remade, apparently in order.
+So just put them in backwards. Clearly these things always come in the right order, so fuck it.
+
+
+ 3. Posted Date on Updates (copy code from comments)
+ 4. Use divs to make the posted date appear on the right.
+10. Copy code, let comments be editable.
+11. You can delete anon comments
 
 {"games":[
   {
@@ -34,26 +44,12 @@ All Games Page
 ]}
 
 
-Not only I am inserting extra line breaks, they aren't even displaying
-
 For every number from 0 or 1 to the length of this collection, get or fetch!
 
-Okay so now it only shows YOUR Games
-and
-the link in the nav bar don't work?
 
- 1. Followers is glitching on the form screen.
- 1. Following a game makes you switch to the description tab? But only up top? What?
- 2. Seed Data
- 3. If your name is short, top menu tab highlights wrong.
-      Always looked a little ugly. Wanna just turn that off?
- 3. There are no updates for this game.
 
 BARE MINIMUM
 
-  3. Posted Date on Updates (copy code from comments)
-  4. Use divs to make the posted date appear on the right.
-  5. Editing updates saves with new lines. Fix that.
   7. Insert the comments and updates FROM THE TOP, instead of from the bottom.
       Gods I hope editing a comment won't fuck that up. Maybe post by date edited then?
   8. Redo the CSS. Round the corners, make the NEW UPDATE POST TITLE thing good looking instead of shit.
@@ -61,18 +57,19 @@ BARE MINIMUM
 
 DONE
 
+  8. Get rid of FORM, and consolidate it into show. You click edit and jquery switches the tags
+      the show listener just takes car of everything.
   9. When and where tabs.
+      For comments: add the gameId and the AuthorId as fields, or at least, use the belongs to thing.
       Play with models.
       Migration.
       REDO game show and game mini show (and game form too!)
- 10. Copy code, let comments be editable.
  11. Make it ALL screen size responsive.
         All font sizes will be in terms of vh or vw
         Most space filling divs should have their heights also scale.
  12. Make more things transparent. It looks nice.
  13. Make the background not jump.
  14. On Log out, zero out the logged in user ID
+ 15. If your name is short, top menu tab highlights wrong.
 
-
-READ THIS YOU TWIT: you are saving things with extra spaces.
 http://queststarter.herokuapp.com/api/users/1

@@ -21,9 +21,6 @@ class User < ActiveRecord::Base
   has_many :followed_games, through: :follows, source: :game
   has_many :comments
   has_many :updates
-  # has_many :surveys, through: :surveys
-  # I think I won't need this at all. When do you call ALL the surveys?
-  # You always sort them by board don't you?
 
   after_initialize :ensure_session_token
 

@@ -1,6 +1,6 @@
 <% if (QuestStarter.currentUser &&
    (  (QuestStarter.currentUser.id === comment.get('user_id'))
-   || (QuestStarter.currentUser.id == gameId)
+   || (QuestStarter.currentUser.id === comment.get('author_of_game'))
    )) { %>
   <div class="corner-button delete-color"> ✗ </div>
 <% } %>
