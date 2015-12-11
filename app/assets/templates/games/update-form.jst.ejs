@@ -1,13 +1,15 @@
 <form>
-  <div class="edit-update corner-button edit-button">Finish Editing</div>
+  <div class="corner-button edit-button">Finish Editing</div>
 
-  <pre contenteditable="true"
-  class="<%= "update-title editable-color " + indexClass + "-title"%>"><%= update.escape('title') %></pre>
+  <div contenteditable="true"
+  class="<%= "update-title editable-color " + indexClass + "-title"%>"><%= update.escape('title') %></div>
 
+<div class="update-spacing">
   <div class="mini-line-break left">----- tiny text ----</div>
-  <div class="update-date left"><%= update.escape('created_at').slice(0,10) %></div>
+  <div class="date left "><%= update.escape('created_at').slice(0,10) %></div>
   <div class="mini-line-break left">----- tiny text ----</div>
   <br style="clear: left;" />
+</div>
 
   <pre contenteditable="true"
   class="<%= "update-text editable-color " + indexClass + "-text"%>"><%= update.escape('text') %></pre>

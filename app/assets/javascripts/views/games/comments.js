@@ -9,6 +9,7 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.gameId = options.gameId;
+    this.lastIndex = 0;
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addComment);
     this.listenTo(this.collection, 'destroy', this.removeComment);
@@ -19,9 +20,11 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
 
   addComment: function (comment) {
     var view = new QuestStarter.Views.Comment({
-      model: comment
+      model: comment,
+      index: this.lastIndex
     });
     this.addSubview('#game-old-comments', view);
+    this.lastIndex++;
   },
 
   addNewComment: function (event) {
@@ -53,6 +56,7 @@ QuestStarter.Views.Comments = Backbone.CompositeView.extend({
     var view = this.template();
     this.$el.html(view);
     this.attachSubviews();
+    this.lastIndex = 0;
     return this;
   }
 });

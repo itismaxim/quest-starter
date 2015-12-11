@@ -1,13 +1,10 @@
 Todo list 2: Electric Boogaloo
 
 • Dec 1 Seed Data
-    Delete all the icky extra spaces and stuff
-      You will need to make the title, summary, and description all pre
-        and then afterwards you will need to change it back
-          Game Title
-          Game Summary
-          Title Update
-          Comment Text
+
+You never made the edit page match the show description. Need to update that css.
+div display errors make it pretty on Comments
+and on game form? fuck if I know
 
 All Games Page
 
@@ -15,10 +12,6 @@ I can't make the comparator work.
 I unshift, but it adds comments at the bottom.
   When I refresh the page, the collection gets remade, apparently in order.
 So just put them in backwards. Clearly these things always come in the right order, so fuck it.
-
- 3. Posted Date on Updates (copy code from comments)
- 4. Use divs to make the posted date appear on the right.
-10. Copy code, let comments be editable.
 
 For every number from 0 or 1 to the length of this collection, get or fetch!
 

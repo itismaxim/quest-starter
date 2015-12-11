@@ -10,7 +10,7 @@ QuestStarter.Views.Update = Backbone.ErrorView.extend({
   },
 
   initialize: function (options) {
-    this.indexClass = 'update' + options.index
+    this.indexClass = 'update' + options.index;
     this.listenTo(this.model, 'sync', this.render);
     this.editing = false;
   },

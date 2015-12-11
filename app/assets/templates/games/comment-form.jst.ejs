@@ -1,0 +1,15 @@
+<form>
+  <div class="corner-button edit-button-smaller">Finish Editing</div>
+
+  <div class="comment-author"><%= comment.escape('poster_name') %></div>
+
+  <div class="mini-line-break left">----- tiny text ----</div>
+  <div class="date left"><%= comment.escape('created_at').slice(0,10) %></div>
+  <div class="mini-line-break left">----- tiny text ----</div>
+  <br style="clear: left;" />
+
+  <pre contenteditable="true"
+  class="<%= "comment-body editable-color " + indexClass + "-text"%>"><%= comment.escape('text') %></pre>
+
+  <div class="display-errors"></div>
+</form>

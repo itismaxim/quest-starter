@@ -1,5 +1,5 @@
 <h2 class="vertical-padding-50px">
-  <pre class="header-inside editing" contenteditable="true" id="title"><%= game.escape('title') %></pre>
+  <div class="header-inside editing" contenteditable="true" id="title"><%= game.escape('title') %></div>
 </h2>
 
 <div class="game-top-box group">
@@ -32,7 +32,8 @@
         </div>
       <% } %>
 
-      <pre class="game-summary editing" id= "summary" contenteditable="true"><%= game.escape('summary') %></pre>
+      <pre class="game-summary editing" id= "summary"
+        contenteditable="true"><%= game.escape('summary') %></pre>
 
       <% if (game.followers === 1) { %>
         <div class="sidebar-el-small game-followers">
@@ -52,5 +53,5 @@
 
 <div class="game-nav group description-box">
   <div id="description-title">Description</div>
-  <pre id="description" class="editing" contenteditable="true"><%= game.escape('description') %></pre>
+  <pre id="description" class="editing game-tab-text-box" contenteditable="true"><%= game.escape('description') %></pre>
 </div>
