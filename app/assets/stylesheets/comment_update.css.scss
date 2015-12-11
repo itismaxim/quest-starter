@@ -43,6 +43,7 @@ $dark_purple: #800040;
   height: 28px;
   line-height: 28px;
   text-align:center;
+  font-size: 16px;
 }
 
 .delete-button {
@@ -52,13 +53,23 @@ $dark_purple: #800040;
   line-height: 40px;
   text-align:center;
 }
-.delete-button:hover { background-color: $light_purple; }
+
+.delete-button:hover, .delete-button-smaller:hover { background-color: $light_purple; }
+
+.edit-button-smaller {
+  background-color: $dark_green;
+  margin-right: 7px;
+  padding: 4px 8px;
+  font-size: 16px;
+}
+
 .edit-button {
   background-color: $dark_green;
   margin-right: 7px;
   padding: 9px 18px;
 }
-.edit-button:hover { background-color: $light_green; }
+
+.edit-button:hover, .edit-button-smaller:hover { background-color: $light_green; }
 
 .comment-body, .update-text { color: $dark_grey; }
 
@@ -93,7 +104,6 @@ $dark_purple: #800040;
   text-align: center;
   background-color: white;
   width: 12%;
-  // display: inline-block;
   float: left;
 }
 
