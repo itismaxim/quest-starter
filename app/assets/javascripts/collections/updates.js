@@ -3,10 +3,10 @@ QuestStarter.Collections.Updates = Backbone.Collection.extend({
   url: 'api/updates',
 
   // comparator: function(model) {
-  //     debugger;
+  //     // debugger;
   //     return -model.get('createdAt').getTime();
   // },
-  
+
   getOrFetch: function (id) {
     var update = this.get(id);
 

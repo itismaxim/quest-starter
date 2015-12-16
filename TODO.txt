@@ -1,32 +1,42 @@
 Todo list 2: Electric Boogaloo
 
-• Dec 1 Seed Data
+redo the stupid color css
+  make all the clicky things on ids, all the listeners
+    make just purple and purple-on-hover
 
-You never made the edit page match the show description. Need to update that css.
-div display errors make it pretty on Comments
-and on game form? fuck if I know
+WHY IS NOTHING FADING IN???
 
-All Games Page
-
-I can't make the comparator work.
-I unshift, but it adds comments at the bottom.
-  When I refresh the page, the collection gets remade, apparently in order.
-So just put them in backwards. Clearly these things always come in the right order, so fuck it.
-
-For every number from 0 or 1 to the length of this collection, get or fetch!
+http://localhost:3000/#games/undefined should redirect to a 404. or Home.
+Or a this game doesn't exists page.
 
 
-BARE MINIMUM
+1. tabs up and down
+  z position -1, go down height of tab. Maybe that will work.
+  You'll need their position to be relative then.
 
-  7. Insert the comments and updates FROM THE TOP, instead of from the bottom.
-      Gods I hope editing a comment won't fuck that up. Maybe post by date edited then?
-  8. Redo the CSS. Round the corners, make the NEW UPDATE POST TITLE thing good looking instead of shit.
-      You can keep content editable on the edit updates, but not on the post updates, k?
+2. Get rid of that delete button when in save mode.
+  Either no text, or just rip it out.
+    OH SHIT MAKE IT WIDTH 0 hahahahahaha
+      and side padding I guess.
+
+3. div display errors make it pretty on Comments
+
+4. and on game form? fuck if I know
+    It doesn't HAVE errors. Well fuck. Put those in.
+
+5. New game isn't building the sidebar :c
+
+6. delete game form stuff
+
+7. Seed Data
+
+8. I want to insert new comment views above, not below the last comment.
+    Thinking about having each comment have a div for the next comment in it.
+      When I attach the comment, I then erase the old div that it attached to.
+        So only the new one is left.
 
 DONE
 
-  8. Get rid of FORM, and consolidate it into show. You click edit and jquery switches the tags
-      the show listener just takes car of everything.
   9. When and where tabs.
       Play with models.
       Migration.
@@ -40,78 +50,3 @@ DONE
  15. If your name is short, top menu tab highlights wrong.
  16. Get everything as smooth as my loads on the tabs. Accomplished by adding a callback to get or fetch
       i think
-
-http://queststarter.herokuapp.com/api/users/1
-
-This one fetches nothing. But it does give me an empty collection. When I go to
-an individual game's page, that fetch goes successfully. So the empty collection
-gradually fills up, but I want the whole thing fetched!
-
-allGames: function (id) {
-  var view = new QuestStarter.Views.AllGames({
-    collection: QuestStarter.Collections.games
-  });
-
-  this._swapView(view);
-},
-
-This one gives me an empty collection with one dead model. Since it's re-fetched
-every time, it always overrides anything that may have been already fetched.
-
-allGames: function (id) {
-  var that = this;
-  QuestStarter.Collections.games.fetch({success: function(){
-    var view = new QuestStarter.Views.AllGames({
-      collection: QuestStarter.Collections.games
-    });
-
-    that._swapView(view);
-  }});
-},
-
-It says 'collection: QuestStarter.Collections.games', but what I actually get
-back is the JSON for the whole collection. It's all there, but I can't seem
-to shove it into a collection.
-
-
-
-allGames: function () {
-  var games = QuestStarter.Collections.games;
-  var that = this;
-  games = QuestStarter.Collections.games.fetch({success: function () {
-    var view = new QuestStarter.Views.AllGames({
-      collection: games
-    });
-
-    that._swapView(view);
-  }});
-},
-
-{"games":[
-  {
-    "id":1,
-    "author_id":6,
-    "author_name":"Hiring Guy",
-    "title":"\n    My Cool Game\n  ",
-    "summary":"\n        Summarize your game here. Make is short but sweet!\n      ",
-    "image_url":"http://res.cloudinary.com/dar1oti2e/image/upload/w_700,h_500,c_fill/v1447300087/kpzpw79z8k4lq6e7a52o.jpg",
-    "description":"\n    Describe your game here. This is where you can get in depth and describe what system you want to run, what the setting will be, and what kind of characters the players will have. Feel free to add anything else!\n  ",
-    "active":false,
-    "followers":0,
-    "updates":[],
-    "comments":[]
-  },
-  {
-    "id":2,
-    "author_id":6,
-    "author_name":"Hiring Guy",
-    "title":"888888888",
-    "summary":"\n        jjjjjj",
-    "image_url":"http://res.cloudinary.com/dar1oti2e/image/upload/w_700,h_500,c_fill/v1447300087/kpzpw79z8k4lq6e7a52o.jpg",
-    "description":"\n    jhjhgjhgjhjhjh",
-    "active":false,
-    "followers":0,
-    "updates":[],
-    "comments":[]
-  }
-]}

@@ -7,7 +7,7 @@ Backbone.ErrorView = Backbone.View.extend({
       allErrors += response.responseJSON[i];
       allErrors += ".\n";
     };
-    debugger;
+    //debugger;
     $('.display-errors').html(allErrors);
   }
 });

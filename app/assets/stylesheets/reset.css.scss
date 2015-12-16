@@ -102,10 +102,6 @@ input[type="submit"] {
   clear: both;
 }
 
-.fuckoff {
-  font-size: 80px;
-}
-
 // Test to see if :not(:focus) fucks everything up.
 // It doesn't seem to work, at least.
 *[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {

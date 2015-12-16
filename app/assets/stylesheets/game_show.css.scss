@@ -27,6 +27,8 @@ $dark_purple: #800040;
   margin-left: auto;
   margin-right: auto;
   width: 66.66%;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .game-image-container {
@@ -41,8 +43,6 @@ $dark_purple: #800040;
 .game-image {
   width: 100%;
   height: 500px;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
 }
 
 .game-sidebar {
@@ -59,11 +59,8 @@ $dark_purple: #800040;
 
 .game-author {
   background-color: $dark_cyan;
-  border-top-right-radius: 20px;
  }
 .game-author:hover { background-color: $light_cyan; }
-
-.active-button { border-top-right-radius: 20px; }
 
 .deactivate { background-color: $dark_purple; }
 .deactivate:hover { background-color: $light_purple; }
@@ -71,12 +68,8 @@ $dark_purple: #800040;
 .activate:hover { background-color: $light_green; }
 .running { background-color: $dark_green; }
 .dormant { background-color: $dark_grey; }
-
 .game-followers { background-color: $dark_grey; }
-.game-following {
-  background-color: $dark_cyan;
-    border-bottom-right-radius: 20px;
-}
+.game-following { background-color: $dark_cyan; }
 .game-following:hover { background-color: $light_cyan; }
 
 .cursor-hover { cursor: pointer;}
@@ -88,13 +81,11 @@ $dark_purple: #800040;
 }
 
 .edit:hover { background-color: $light_green; }
-.delete {
-  background-color: $dark_purple;
-  border-bottom-right-radius: 20px;
- }
+.delete { background-color: $dark_purple; }
 .delete:hover { background-color: $light_purple; }
 
 .game-summary {
+  // color: white;
   font-size: 18px;
   padding: 15px 10px;
   height: 270px;
@@ -120,6 +111,7 @@ $dark_purple: #800040;
 .nav-option-center {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  margin: auto;
 }
 .nav-option-right { border-top-left-radius: 20px; }
 
@@ -136,6 +128,10 @@ $dark_purple: #800040;
   margin-right: auto;
 }
 
+.invisible-tab {
+  opacity: 0;
+}
+
 .game-tab-text-box {
   background-color: white;
   color: $dark_grey;
@@ -144,4 +140,8 @@ $dark_purple: #800040;
   border-radius: 20px;
   padding: 25px;
   text-align: center;
+}
+
+.unselected {
+  cursor: pointer;
 }

@@ -5,15 +5,19 @@
 <div class="game-top-box group">
     <div class="game-image-container">
       <img class="game-image" src="<%= game.escape('image_url') %>"/>
+
+      <div class="overlay">
+          <p class="overlay-text">Upload New Image</p>
+      </div>
     </div>
 
     <pre class="game-sidebar"></pre>
 </div>
 
 <ul class="game-nav group">
-  <li class="nav-option nav-option-left unselected" name='updates'>Updates</li>
-  <li class="nav-option nav-option-center unselected" name='description'>Description</li>
-  <li class="nav-option nav-option-right unselected" name='comments'>Comments</li>
+    <li class="nav-option nav-option-left unselected" name='updates'>Updates</li>
+    <li class="nav-option nav-option-center unselected" name='description'>Description</li>
+    <li class="nav-option nav-option-right unselected" name='comments'>Comments</li>
 </ul>
 
 <div class="game-tab"></div>

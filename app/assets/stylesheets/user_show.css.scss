@@ -60,11 +60,13 @@ div.followed-games, div.authored-games, div.all-games {
 .even-square { background-color: $dark_cyan }
 .mini-show:hover > .even-square { background-color: $dark_purple; }
 
-p, h4, .mini-show-image, author-link {
+.mini-show-byline, .mini-show-title, .mini-show-image, .author-link {
   position: relative;  transition:all 0.0s;
   -webkit-transition:all 0.0s;
   -moz-transition: all 0.0s;
 }
+
+// JUST HIT THE WHOLE MINI SHOW DIV ASS
 
 .mini-show-image {
   position: absolute;

@@ -2,7 +2,7 @@ QuestStarter.Collections.Games = Backbone.Collection.extend({
   model: QuestStarter.Models.Game,
   url: 'api/games',
 
-  comparator: 'created_at',
+  // comparator: 'created_at',
 
   // comparator: function(model) {
   //     debugger;

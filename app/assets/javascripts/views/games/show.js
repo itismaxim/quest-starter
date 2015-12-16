@@ -5,31 +5,6 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
 
   className: 'game',
 
-  initialize: function (options) {
-    this.listenTo(this.model, 'sync', this.render);
-    this.page = options.page;
-    this.currentView;
-    this.createCurrentView(options.page);
-  },
-
-  createCurrentView: function (newPage) {
-    if (newPage === 'comments') {
-      this.currentView = new QuestStarter.Views.Comments({
-        collection: this.model.comments(),
-        gameId: this.model.id
-      });
-    } else if (newPage === 'updates') {
-      this.currentView = new QuestStarter.Views.Updates({
-        collection: this.model.updates(),
-        model: this.model
-      });
-    } else {
-      this.currentView = new QuestStarter.Views.Description({
-        model: this.model
-      });
-    }
-  },
-
   events: {
     'click .unselected'        : 'switchView',
     'click .follow'            : 'followGame',
@@ -37,18 +12,27 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     'click .activate'          : 'activateGame',
     'click .deactivate'        : 'deactivateGame',
     'click .delete'            : 'deleteGame',
-    'click .edit'              : 'editGame',
+    'click .edit'              : 'toggleEditForm',
     'input *[data-placeholder]': 'divPlaceholder',
     'blur  *[data-placeholder]': 'divPlaceholder',
+    'click .outer'             : 'submitImage',
+  },
+
+  initialize: function (options) {
+    this.listenTo(this.model, 'sync', this.render);
+    this.page = options.page;
+    this.currentView;
+    this.createCurrentView(options.page);
+    this.editing = this.model.get('id') ? false : true;
   },
 
   divPlaceholder: function (event) {
     if (event.currentTarget.text) {
-			$(event.currentTarget).removeAttribute('data-div-placeholder-content');
-		} else {
+      $(event.currentTarget).removeAttribute('data-div-placeholder-content');
+    } else {
       $(event.currentTarget).attr('data-div-placeholder-content', 'true');
       // doesn't put it back. Maybe cause you took away not:focus?
-		}
+    }
   },
 
   deleteGame: function () {
@@ -59,8 +43,72 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     });
   },
 
-  editGame: function () {
-    Backbone.history.navigate('games/' + this.model.id + '/edit', {trigger: true});
+  toggleEditForm: function () {
+    //debugger;
+    if (this.editing) {
+      this.saveGame();
+
+      $('.header-inside').removeClass('editing').removeAttr( 'contenteditable' ).removeAttr( 'id' )
+      $('.game-summary').removeClass('editing').removeAttr( 'contenteditable' ).removeAttr( 'id' )
+      $('.the-game-description').removeClass('editing-description').removeAttr( 'contenteditable' ).removeAttr( 'id' )
+      $('.game-image-container').removeClass('outer');
+      $('.edit').text('Edit');
+      // and also change it into a save button instead
+
+      //then add the delete button
+      $('.nav-option-left').addClass('unselected').removeClass('invisible-tab');
+      $('.nav-option-right').addClass('unselected').removeClass('invisible-tab');
+
+      this.editing = false;
+    } else {
+      $('.nav-option').removeClass('unselected').removeClass('selected').addClass('invisible-tab');
+      $('.nav-option-center').addClass('selected').removeClass('invisible-tab');
+      this.createCurrentView('description');
+      this.renderCurrentView();
+
+      $('.header-inside').addClass('editing').attr( 'contenteditable', 'true' ).attr( 'id', 'title' );
+      $('.game-summary').addClass('editing').attr( 'contenteditable', 'true' ).attr( 'id', 'summary' );
+      $('.the-game-description').addClass('editing-description').attr( 'contenteditable', 'true' ).attr( 'id', 'description' );
+      $('.game-image-container').addClass('outer');
+      $('.edit').text('Save');
+      // turn this into the save button also
+      //$('.delete').addClass('delete-disabled')
+      // hmmmm
+
+// <div class='sidebar-el-small delete cursor-hover'>Delete</div>
+//  var $delete = $('<div>', { class: 'sidebar-el-small delete cursor-hover' }).text('Delete');
+
+      this.editing = true;
+    }
+  },
+
+  saveGame: function () {
+    var title = $('#title').text();
+    var summary = $('#summary').text();
+    // debugger;
+    var description = $('#description').text();
+    var that = this;
+    this.model.save({
+      title: title,
+      summary: summary,
+      image_url: this.imageUrl,
+      description: description
+    }, {error: that.error});
+  },
+
+  submitImage: function () {
+    cloudinary.openUploadWidget(
+      CLOUDINARY_OPTIONS,
+      function (error, result) {
+        var uncutImageArray = result[0].url.split("upload/");
+        var cutImageUrl = uncutImageArray[0].concat('upload/w_700,h_500,c_fill/').concat(uncutImageArray[1]);
+        this.imageUrl = cutImageUrl;
+        // only uncomment then next line if you want to ignore all
+        // uploaded images in favor of a photo of Nick Cage
+        // this.imageUrl = "http://holdupnow.com/wp-content/uploads/2014/10/cage1.jpg";
+        $('.game-image').attr( "src", this.imageUrl );
+      }.bind(this)
+    );
   },
 
   followGame: function () {
@@ -111,7 +159,7 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     var authored = this.model.get('authored');
 
     if (authored === true) {
-      var $activeButton = $('<div>', { class: 'sidebar-el-small active-button game-activate cursor-hover' });
+      var $activeButton = $('<div>', { class: 'sidebar-el-small game-activate cursor-hover' });
       if (active === true) {
         $activeButton.text('Deactivate This Game').addClass('deactivate');
       } else {
@@ -169,9 +217,28 @@ QuestStarter.Views.GameShow = Backbone.CompositeView.extend({
     }
   },
 
+  createCurrentView: function (newPage) {
+    if (newPage === 'comments') {
+      this.currentView = new QuestStarter.Views.Comments({
+        collection: this.model.comments(),
+        gameId: this.model.id
+      });
+    } else if (newPage === 'updates') {
+      this.currentView = new QuestStarter.Views.Updates({
+        collection: this.model.updates(),
+        model: this.model
+      });
+    } else {
+      this.currentView = new QuestStarter.Views.Description({
+        model: this.model
+      });
+    }
+  },
+
   render: function () {
     var view = this.template({
-      game: this.model
+      game: this.model,
+      gameIsNew: this.gameIsNew
     });
     this.$el.html(view);
     this.$sidebar = $('.game-sidebar');

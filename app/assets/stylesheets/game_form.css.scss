@@ -18,17 +18,13 @@ $dark_purple: #800040;
   font-size: 20px;
 }
 
-.editing {
-  color: rgb(175, 175, 175);
-}
-
-.editing:focus {
-  color: white;
-}
+.editing, .editing-description { color: rgb(175, 175, 175); }
+.editing:focus { color: white;}
+.editing-description:focus { color: $dark_grey;}
 
 .save {
   background-color: $dark_green;
-  border-bottom-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
  }
 
 .save:hover { background-color: $light_green; }
@@ -52,30 +48,23 @@ $dark_purple: #800040;
   background-color: $dark_cyan;
 }
 
-#description {
-  font-size: 24px;
-  margin-bottom: 100px;
-  padding: 80px 50px 50px;
-  background-color: $dark_cyan;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
 .outer {
   position: relative;
 }
 
-.outer:hover .overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0.5;
-    top: 0;
+.outer > .overlay {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+  top: 0;
 }
 
-.outer:hover .text {
+.outer .overlay-text {
   opacity: 1;
+
 }
 
 .overlay {
@@ -89,7 +78,7 @@ $dark_purple: #800040;
     top: 0;
 }
 
-.text {
+.overlay-text {
     position: absolute;
     top: 50%;
     left: 50%;
